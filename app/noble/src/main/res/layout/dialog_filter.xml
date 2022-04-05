@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <RelativeLayout
+            android:id="@+id/rlCover"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/lblCover"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorLightGray"
+                android:padding="7dp"
+                android:text="@string/cover" />
+
+            <RadioGroup
+                android:id="@+id/rgCoverFor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblCover"
+                android:layout_marginTop="10dp"
+                android:checkedButton="@+id/c1"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/c1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/img_border"
+                    android:paddingEnd="10dp"
+                    android:text="1 Year" />
+
+                <RadioButton
+                    android:id="@+id/c2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/img_border"
+                    android:paddingEnd="10dp"
+                    android:text="2 Year" />
+
+                <RadioButton
+                    android:id="@+id/c3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/img_border"
+                    android:paddingEnd="10dp"
+                    android:text="3 Year" />
+            </RadioGroup>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/lblACover"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlCover"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorLightGray"
+            android:padding="7dp"
+            android:text="@string/addon_cover" />
+
+        <RelativeLayout
+            android:id="@+id/rlAddOnCover"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblACover">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swZD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layoutDirection="rtl"
+                android:padding="10dp"
+                android:text="@string/zero_depreciation"
+                android:textColor="@color/colorPrimaryDark"
+                app:switchPadding="8dp"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swRsa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/swZD"
+                android:layout_marginTop="10dp"
+                android:layoutDirection="rtl"
+                android:padding="10dp"
+                android:text="@string/rsa"
+                android:textColor="@color/colorPrimaryDark"
+                app:switchPadding="8dp"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swUnnamed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/swRsa"
+                android:layout_marginTop="10dp"
+                android:layoutDirection="rtl"
+                android:padding="10dp"
+                android:text="@string/pa_cover_for_unnamed_persons"
+                android:textColor="@color/colorPrimaryDark"
+                app:switchPadding="8dp"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            <LinearLayout
+                android:id="@+id/llPD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/swUnnamed"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/img_border">
+
+                <Spinner
+                    android:id="@+id/spnUnnamedValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/unnamed_person"
+                    android:padding="5dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swPaid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llPD"
+                android:layout_marginTop="10dp"
+                android:layoutDirection="rtl"
+                android:padding="10dp"
+                android:text="@string/legal_liability_to_paid_driver"
+                android:textColor="@color/colorPrimaryDark"
+                app:switchPadding="8dp"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ccV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlAddOnCover">
+
+            <TextView
+                android:id="@+id/lblNCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorLightGray"
+                android:padding="7dp"
+                android:text="Update NCB" />
+
+            <TextView
+                android:id="@+id/lblClaim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblNCB"
+                android:layout_marginTop="10dp"
+                android:text="Previous there any claim in last year?"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <RadioGroup
+                android:id="@+id/rgClaim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblClaim"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:checkedButton="@+id/cNo"
+                android:orientation="horizontal">
+
+
+                <RadioButton
+                    android:id="@+id/cYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/img_border"
+                    android:paddingEnd="10dp"
+                    android:text="@string/yes" />
+
+                <RadioButton
+                    android:id="@+id/cNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:background="@drawable/img_border"
+                    android:paddingEnd="10dp"
+                    android:text="@string/no" />
+            </RadioGroup>
+
+
+            <RelativeLayout
+                android:id="@+id/cc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rgClaim">
+
+
+                <TextView
+                    android:id="@+id/lblC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Previous NCB"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <LinearLayout
+                    android:id="@+id/llGender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblC"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/img_border"
+                    android:padding="5dp">
+
+                    <Spinner
+                        android:id="@+id/spnNCB"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/nCB"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/lblDiscount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ccV"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorLightGray"
+            android:padding="7dp"
+            android:text="Discount" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/swTppd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblDiscount"
+            android:layout_marginTop="10dp"
+            android:layoutDirection="rtl"
+            android:padding="10dp"
+            android:text="TPPD Restricted    "
+            android:textColor="@color/colorPrimaryDark"
+            app:switchPadding="8dp"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/swTppd"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/closeDialog"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/red_theme"
+                android:text="@string/close"
+                android:textColor="@color/colorRed" />
+
+            <Button
+                android:id="@+id/btnUpdateFilter"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/green_theme"
+                android:text="@string/update"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

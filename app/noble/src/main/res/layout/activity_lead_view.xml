@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg"
+    tools:context=".activity_pos.LeadViewActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvLP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0.0px"
+                app:cardCornerRadius="5dp"
+                card_view:cardElevation="8dp"
+                card_view:cardPreventCornerOverlap="false">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/lblLD"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="5dp"
+                        android:text="@string/lead_detail"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textColor="@android:color/holo_orange_dark" />
+
+                    <TextView
+                        android:id="@+id/txtStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/divider"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/dark_theme"
+                        android:padding="5dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:text="PENDING"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white" />
+
+
+                    <include
+                        layout="@layout/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtStatus" />
+
+                    <TextView
+                        android:id="@+id/txtName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtStatus"
+                        android:layout_marginTop="10dp"
+                        android:drawableStart="@drawable/ic_user"
+                        android:drawablePadding="10dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textIsSelectable="true" />
+
+                    <TextView
+                        android:id="@+id/txtRmContact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtName"
+                        android:layout_marginTop="10dp"
+                        android:drawableStart="@drawable/ic_mail"
+                        android:drawablePadding="10dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textIsSelectable="true" />
+
+                    <TextView
+                        android:id="@+id/txtRmName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtRmContact"
+                        android:layout_marginTop="10dp"
+                        android:drawableStart="@drawable/ic_phone"
+                        android:drawablePadding="10dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textIsSelectable="true" />
+
+                    <include
+                        android:id="@+id/dp"
+                        layout="@layout/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtRmName"
+                        android:layout_marginTop="10dp" />
+
+                    <TextView
+                        android:id="@+id/lblAssign"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/dp"
+                        android:layout_margin="10dp"
+                        android:text="@string/assign_to"
+                        android:textColor="@color/colorPrimaryDark" />
+
+                    <TextView
+                        android:id="@+id/txtAssign"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/dp"
+                        android:layout_margin="10dp"
+                        android:layout_toEndOf="@+id/lblAssign"
+                        android:textIsSelectable="true" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/rlAddedBy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtAssign"
+                        android:visibility="gone">
+
+                        <include
+                            android:id="@+id/dAddedBy"
+                            layout="@layout/divider"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp" />
+
+                        <TextView
+                            android:id="@+id/lblAddedBy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/dAddedBy"
+                            android:layout_margin="10dp"
+                            android:text="@string/addedBy"
+                            android:textColor="@color/colorPrimaryDark" />
+
+                        <TextView
+                            android:id="@+id/txtAddedBy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/dAddedBy"
+                            android:layout_margin="10dp"
+                            android:layout_toEndOf="@+id/lblAddedBy"
+                            android:textIsSelectable="true" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlMappedBranch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rlAddedBy"
+                        android:visibility="visible">
+
+                        <include
+                            android:id="@+id/dMappedBranch"
+                            layout="@layout/divider"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp" />
+
+                        <TextView
+                            android:id="@+id/lblMappedBranch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/dMappedBranch"
+                            android:layout_margin="10dp"
+                            android:text="@string/mappedBranch"
+                            android:textColor="@color/colorPrimaryDark" />
+
+                        <TextView
+                            android:id="@+id/txtMappedBranch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/dMappedBranch"
+                            android:layout_margin="10dp"
+                            android:layout_toEndOf="@+id/lblMappedBranch"
+                            android:textIsSelectable="true" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlMappedEmp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rlMappedBranch"
+                        android:visibility="visible">
+
+                        <include
+                            android:id="@+id/dMappedEmp"
+                            layout="@layout/divider"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp" />
+
+                        <TextView
+                            android:id="@+id/lblMappedEmp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/dMappedEmp"
+                            android:layout_margin="10dp"
+                            android:text="@string/mappedEmp"
+                            android:textColor="@color/colorPrimaryDark" />
+
+                        <TextView
+                            android:id="@+id/txtMappedEmp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/dMappedEmp"
+                            android:layout_margin="10dp"
+                            android:layout_toEndOf="@+id/lblMappedEmp"
+                            android:textIsSelectable="true" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlAssignTo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rlInProgress"
+                        android:visibility="gone">
+
+                        <include
+                            android:id="@+id/dAssignToEmp"
+                            layout="@layout/divider"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp" />
+
+                        <TextView
+                            android:id="@+id/lblAssignTo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/dAssignToEmp"
+                            android:layout_margin="10dp"
+                            android:text="@string/assign_to"
+                            android:textColor="@color/colorPrimaryDark" />
+
+                        <TextView
+                            android:id="@+id/txtAssignTo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/dAssignToEmp"
+                            android:layout_margin="10dp"
+                            android:layout_toEndOf="@+id/lblAssignTo"
+                            android:textIsSelectable="true" />
+
+                        <TextView
+                            android:id="@+id/lblAssignToNumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtAssignTo"
+                            android:layout_margin="10dp"
+                            android:text="@string/assign_to_number"
+                            android:textColor="@color/colorPrimaryDark" />
+
+                        <TextView
+                            android:id="@+id/txtAssignToNumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtAssignTo"
+                            android:layout_margin="10dp"
+                            android:layout_toEndOf="@+id/lblAssignToNumber"
+                            android:textIsSelectable="true" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlInProgress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rlMappedEmp"
+                        android:visibility="gone">
+
+                        <include
+                            android:id="@+id/dInProgress"
+                            layout="@layout/divider"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp" />
+
+                        <TextView
+                            android:id="@+id/lblInProgress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/dInProgress"
+                            android:layout_margin="10dp"
+                            android:text="@string/in_process_status"
+                            android:textColor="@color/colorPrimaryDark" />
+
+                        <TextView
+                            android:id="@+id/txtInProgressStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/dInProgress"
+                            android:layout_margin="10dp"
+                            android:layout_toEndOf="@+id/lblInProgress"
+                            android:textIsSelectable="true" />
+
+                        <TextView
+                            android:id="@+id/lblInProgressTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtInProgressStatus"
+                            android:layout_margin="10dp"
+                            android:text="@string/in_process_time"
+                            android:textColor="@color/colorPrimaryDark" />
+
+                        <TextView
+                            android:id="@+id/txtInProgressTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtInProgressStatus"
+                            android:layout_margin="10dp"
+                            android:layout_toEndOf="@+id/lblInProgress"
+                            android:textIsSelectable="true" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlClose"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rlMappedEmp"
+                        android:visibility="gone">
+
+                        <include
+                            android:id="@+id/dp1"
+                            layout="@layout/divider"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp" />
+
+                        <TextView
+                            android:id="@+id/lblplP"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/dp1"
+                            android:layout_margin="10dp"
+                            android:text="@string/policy_premium"
+                            android:textColor="@color/colorPrimaryDark" />
+
+                        <TextView
+                            android:id="@+id/txtPolicyPremium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/dp1"
+                            android:layout_margin="10dp"
+                            android:layout_toEndOf="@+id/lblplP"
+                            android:textIsSelectable="true" />
+
+                        <TextView
+                            android:id="@+id/lblIn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtPolicyPremium"
+                            android:layout_margin="10dp"
+                            android:text="@string/insurer"
+                            android:textColor="@color/colorPrimaryDark" />
+
+                        <TextView
+                            android:id="@+id/txtInsurer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtPolicyPremium"
+                            android:layout_margin="10dp"
+                            android:layout_toEndOf="@+id/lblIn"
+                            android:textIsSelectable="true" />
+
+                        <TextView
+                            android:id="@+id/txtPolicyPdf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtInsurer"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/light_theme"
+                            android:onClick="onDownloadPdf"
+                            android:padding="5dp"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:text="@string/download_policy"
+                            android:textIsSelectable="true" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlLost"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rlMappedEmp"
+                        android:visibility="gone">
+
+                        <include
+                            android:id="@+id/dp2"
+                            layout="@layout/divider"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp" />
+
+                        <TextView
+                            android:id="@+id/lblRs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/dp2"
+                            android:layout_margin="10dp"
+                            android:text="@string/rejection"
+                            android:textColor="@color/colorPrimaryDark" />
+
+                        <TextView
+                            android:id="@+id/txtRejectionReason"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/dp2"
+                            android:layout_margin="10dp"
+                            android:layout_toEndOf="@+id/lblRs"
+                            android:textIsSelectable="true" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <RelativeLayout
+                android:id="@+id/rlAll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cvLP">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvLH"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="0.0px"
+                    android:visibility="gone"
+                    app:cardCornerRadius="5dp"
+                    card_view:cardElevation="8dp"
+                    card_view:cardPreventCornerOverlap="false">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+
+                        <TextView
+                            android:id="@+id/lblTP"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minWidth="100dp"
+                            android:text="@string/plan_type"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/txtPlanType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_toEndOf="@+id/lblTP"
+                            android:text="@string/individual" />
+
+                        <TextView
+                            android:id="@+id/lblSA"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblTP"
+                            android:minWidth="100dp"
+                            android:text="@string/sum_assured"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/txtSumAssured"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblTP"
+                            android:layout_marginStart="10dp"
+                            android:layout_toEndOf="@+id/lblSA" />
+
+
+                        <TextView
+                            android:id="@+id/lblPC"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblSA"
+                            android:minWidth="100dp"
+                            android:text="@string/pin"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/txtPincode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblSA"
+                            android:layout_marginStart="10dp"
+                            android:layout_toEndOf="@+id/lblPC" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvLC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="0.0px"
+                    android:visibility="gone"
+                    app:cardCornerRadius="5dp"
+                    card_view:cardElevation="8dp"
+                    card_view:cardPreventCornerOverlap="false">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+
+                        <TextView
+                            android:id="@+id/lblCN"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minWidth="100dp"
+                            android:text="@string/company"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/txtCompanyName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_toEndOf="@+id/lblCN"
+                            android:text="@string/square_insurance_brokers_pvt_ltd"
+                            android:textIsSelectable="true" />
+
+                        <TextView
+                            android:id="@+id/lblIT"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtCompanyName"
+                            android:minWidth="100dp"
+                            android:text="@string/insurance_type"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/txtInsuranceType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtCompanyName"
+                            android:layout_marginStart="10dp"
+                            android:layout_toEndOf="@+id/lblIT" />
+
+
+                        <TextView
+                            android:id="@+id/lblCity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblIT"
+                            android:minWidth="100dp"
+                            android:text="@string/city"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/txtCityName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblIT"
+                            android:layout_marginStart="10dp"
+                            android:layout_toEndOf="@+id/lblCity" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvLM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="0.0px"
+                    android:visibility="gone"
+                    app:cardCornerRadius="5dp"
+                    card_view:cardElevation="8dp"
+                    card_view:cardPreventCornerOverlap="false">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+
+                        <TextView
+                            android:id="@+id/lblV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minWidth="100dp"
+                            android:text="@string/vehicle"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/txtVehicle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_toEndOf="@+id/lblV" />
+
+                        <TextView
+                            android:id="@+id/lblBT"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblV"
+                            android:minWidth="100dp"
+                            android:text="@string/business_tpye"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/txtBusinessType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblV"
+                            android:layout_marginStart="10dp"
+                            android:layout_toEndOf="@+id/lblBT" />
+
+                        <TextView
+                            android:id="@+id/lblReg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblBT"
+                            android:minWidth="100dp"
+                            android:text="@string/registration_num_rto"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/txtRegistration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblBT"
+                            android:layout_marginStart="10dp"
+                            android:layout_toEndOf="@+id/lblReg" />
+
+
+                        <TextView
+                            android:id="@+id/lblPP"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblReg"
+                            android:minWidth="100dp"
+                            android:text="@string/pre_insurance"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/txtPreInsuranceType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblReg"
+                            android:layout_marginStart="10dp"
+                            android:layout_toEndOf="@+id/lblPP"
+                            android:text="@string/comprehensive" />
+
+                        <TextView
+                            android:id="@+id/lblPE"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblPP"
+                            android:minWidth="100dp"
+                            android:text="@string/policy_expire"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/txtPrePolicyExp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblPP"
+                            android:layout_marginStart="10dp"
+                            android:layout_toEndOf="@+id/lblPE" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/llDocs1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlAll"
+                android:layout_margin="10dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0.0px"
+                app:cardCornerRadius="5dp"
+                card_view:cardElevation="8dp"
+                android:visibility="gone"
+                card_view:cardPreventCornerOverlap="false">
+
+                <LinearLayout
+                    android:id="@+id/lm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/txtDoc1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/docImage1"
+                            android:layout_margin="5dp"
+                            android:textAlignment="center" />
+
+                        <ImageView
+                            android:id="@+id/docImage1"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:scaleType="fitXY" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlImage2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/txtDoc2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/docImage2"
+                            android:layout_margin="5dp"
+                            android:textAlignment="center" />
+
+                        <ImageView
+                            android:id="@+id/docImage2"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:scaleType="fitXY" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

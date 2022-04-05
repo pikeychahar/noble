@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg"
+    tools:context=".activity_motor.NomineeDetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ccNm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0.0px"
+                android:elevation="8dp"
+                card_view:cardElevation="10dp"
+                card_view:cardPreventCornerOverlap="false">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/txtNomineeName"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/edtNomineeName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/user_logo"
+                            android:drawablePadding="10dp"
+                            android:hint="@string/nominee_name"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapCharacters"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/txtDob"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtNomineeName"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/edtDob"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_event"
+                            android:drawablePadding="10dp"
+                            android:focusable="false"
+                            android:hint="@string/date_of_birth"
+                            android:importantForAutofill="no"
+                            android:inputType="none"
+                            android:maxLines="1"
+                            android:onClick="onDateClick"
+                            android:singleLine="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <TextView
+                        android:id="@+id/lblNomineeR"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtDob"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/nominee_relation"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:id="@+id/lblNominee"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lblNomineeR"
+                        android:background="@drawable/img_border">
+
+                        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                            android:id="@+id/spnRelationShip"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-10dp"
+                            android:layout_marginBottom="-10dp" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/lblNomineeGender"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lblNominee"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/img_border"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/lblGender"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/nominee_gender" />
+
+                        <RadioGroup
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/lblGender"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/btnMale"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true"
+                                android:text="@string/male" />
+
+                            <RadioButton
+                                android:id="@+id/btnFemale"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:text="@string/female" />
+                        </RadioGroup>
+                    </RelativeLayout>
+
+                    <include
+                        android:id="@+id/div"
+                        layout="@layout/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lblNomineeGender"
+                        android:layout_marginTop="10dp" />
+
+                    <CheckBox
+                        android:id="@+id/checkKyc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/div"
+                        android:layout_marginTop="5dp"
+                        android:onClick="onKycCheck"
+                        android:text="@string/upload_kyc_documents" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlKyc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/checkKyc"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/txtPan"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/textview_border"
+                            android:hint="@string/upload_pan_card"
+                            android:onClick="onUploadKycDoc"
+                            android:padding="10dp"
+                            app:drawableEndCompat="@drawable/ic_cloud_upload" />
+
+                        <TextView
+                            android:id="@+id/txtCheque"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtPan"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/textview_border"
+                            android:hint="@string/upload_cancel_cheque"
+                            android:onClick="onUploadKycDoc"
+                            android:padding="10dp"
+                            app:drawableEndCompat="@drawable/ic_cloud_upload" />
+
+                        <TextView
+                            android:id="@+id/lblOther"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtCheque"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/other_documents" />
+
+                        <TextView
+                            android:id="@+id/txtAadharFront"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblOther"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/textview_border"
+                            android:hint="@string/upload_aadhar_card_front"
+                            android:onClick="onUploadKycDoc"
+                            android:padding="10dp"
+                            app:drawableEndCompat="@drawable/ic_cloud_upload" />
+
+                        <TextView
+                            android:id="@+id/txtAadharBack"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtAadharFront"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/textview_border"
+                            android:hint="@string/upload_aadhar_card_back"
+                            android:onClick="onUploadKycDoc"
+                            android:padding="10dp"
+                            app:drawableEndCompat="@drawable/ic_cloud_upload" />
+
+                        <TextView
+                            android:id="@+id/txtElectricBill"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtAadharBack"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/textview_border"
+                            android:hint="@string/upload_electricity_bill"
+                            android:onClick="onUploadKycDoc"
+                            android:padding="10dp"
+                            app:drawableEndCompat="@drawable/ic_cloud_upload" />
+
+                        <TextView
+                            android:id="@+id/txtCertificate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtElectricBill"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/textview_border"
+                            android:hint="@string/upload_org_reg_certificate"
+                            android:onClick="onUploadKycDoc"
+                            android:padding="10dp"
+                            app:drawableEndCompat="@drawable/ic_cloud_upload" />
+
+                        <TextView
+                            android:id="@+id/txtPhoto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtCertificate"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/textview_border"
+                            android:hint="@string/upload_photo_passport_size"
+                            android:onClick="onUploadKycDoc"
+                            android:padding="10dp"
+                            app:drawableEndCompat="@drawable/ic_cloud_upload" />
+
+                        <Button
+                            android:id="@+id/btnUploadDoc"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_below="@+id/txtPhoto"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/green_theme"
+                            android:onClick="onDocumentUploadClick"
+                            android:text="@string/document_upload"
+                            android:textColor="@color/colorGreen" />
+
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rlKyc"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/button_bg"
+                        android:onClick="onNomineeFinish"
+                        android:text="@string/btn_continue"
+                        android:textColor="@android:color/white" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@+id/ccNm"
+                android:layout_margin="10dp" />
+
+        </RelativeLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

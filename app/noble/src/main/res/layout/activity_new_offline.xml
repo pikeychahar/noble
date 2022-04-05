@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_crm.NewOfflineActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:id="@+id/txtCi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:text="@string/customer_detail"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textStyle="bold" />
+
+            <include
+                android:id="@+id/d1"
+                layout="@layout/divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtCi"
+                android:layout_marginTop="5dp" />
+
+            <LinearLayout
+                android:id="@+id/llCus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/d1"
+                android:layout_marginTop="5dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txtName"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/edtCustomerName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="5dp"
+                        android:hint="@string/name"
+                        android:inputType="textCapCharacters"
+                        android:maxLines="1"
+                        android:textSize="12sp"
+                        tools:ignore="Autofill" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txtCustomerMobile"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/edtCustomerPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="5dp"
+                        android:hint="@string/phone_number"
+                        android:inputType="phone"
+                        android:maxLength="10"
+                        android:textSize="12sp"
+                        tools:ignore="Autofill" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txtCustomerEmail"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/edtCustomerEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="5dp"
+                        android:hint="@string/email"
+                        android:inputType="textEmailAddress"
+                        android:textSize="12sp"
+                        tools:ignore="Autofill" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtVi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llCus"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/vehicle_policy_detail"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textStyle="bold" />
+
+            <include
+                android:id="@+id/d2"
+                layout="@layout/divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtVi"
+                android:layout_marginTop="5dp" />
+
+            <LinearLayout
+                android:id="@+id/llHr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/d2"
+                android:layout_marginTop="5dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RadioGroup
+                    android:id="@+id/rgVehType"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/txtV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/vehicleType"
+                        android:textColor="@color/colorPrimaryDark" />
+
+                    <RadioButton
+                        android:id="@+id/btnTw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/_2_wheeler" />
+
+                    <RadioButton
+                        android:id="@+id/btnPc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pvt_car" />
+
+                    <RadioButton
+                        android:id="@+id/btnPcv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pcv" />
+
+                    <RadioButton
+                        android:id="@+id/btnGcv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/gcv" />
+
+                    <RadioButton
+                        android:id="@+id/btnMiscD"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/miscd" />
+                </RadioGroup>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <RadioGroup
+                        android:id="@+id/rvT"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/txtPt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/policy_type"
+                            android:textColor="@color/colorPrimaryDark" />
+
+                        <RadioButton
+                            android:id="@+id/btnComprehensive"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="@string/comprehensive" />
+
+                        <RadioButton
+                            android:id="@+id/btnTp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/third_party" />
+
+                        <RadioButton
+                            android:id="@+id/btnSAOD"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/standalone" />
+                    </RadioGroup>
+
+                    <RadioGroup
+                        android:id="@+id/rvT1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rvT">
+
+                        <TextView
+                            android:id="@+id/txtFt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/file_type"
+                            android:textColor="@color/colorPrimaryDark" />
+
+                        <RadioButton
+                            android:id="@+id/btnRollover"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="@string/rollover" />
+
+                        <RadioButton
+                            android:id="@+id/btnNew"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/new_vehicle" />
+                    </RadioGroup>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtTenure"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llHr"
+                app:helperText="Tenure">
+
+                <Spinner
+                    android:id="@+id/spnTenure"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:entries="@array/tenure_year"
+                    app:hintText="Select NCB" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/llB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtTenure"
+                android:layout_marginTop="10dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/registration_date"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/registration_number"
+                    android:textColor="@color/colorPrimaryDark" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll12"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/llB"
+                android:layout_marginTop="2dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <EditText
+                    android:id="@+id/edtRegDate"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/img_border"
+                    android:drawableStart="@drawable/ic_event"
+                    android:drawablePadding="10dp"
+                    android:focusable="false"
+                    android:hint="@string/dd_mm_yyyy"
+                    android:importantForAutofill="no"
+                    android:inputType="none"
+                    android:onClick="onDateClick"
+                    android:padding="5dp"
+                    tools:ignore="TextFields" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/img_border"
+                    android:padding="5dp">
+
+                    <EditText
+                        android:id="@+id/edt1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:hint="XX"
+                        android:importantForAutofill="no"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="2"
+                        android:minWidth="10dp" />
+
+                    <EditText
+                        android:id="@+id/slash1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="5dp"
+                        android:layout_toEndOf="@+id/edt1"
+                        android:background="@android:color/transparent"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:gravity="center"
+                        android:importantForAutofill="no"
+                        android:inputType="none"
+                        android:minWidth="10dp"
+                        android:text="-" />
+
+                    <EditText
+                        android:id="@+id/edt2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_toEndOf="@+id/slash1"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:hint="00"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:minWidth="10dp" />
+
+                    <EditText
+                        android:id="@+id/slash2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="5dp"
+                        android:layout_toEndOf="@+id/edt2"
+                        android:background="@android:color/transparent"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:gravity="center"
+                        android:importantForAutofill="no"
+                        android:inputType="none"
+                        android:minWidth="10dp"
+                        android:text="-" />
+
+                    <EditText
+                        android:id="@+id/edt3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="5dp"
+                        android:layout_toEndOf="@+id/slash2"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:hint="XXX"
+                        android:inputType="textCapCharacters"
+                        android:maxLength="3"
+                        android:minWidth="10dp" />
+
+                    <EditText
+                        android:id="@+id/slash3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="5dp"
+                        android:layout_toEndOf="@+id/edt3"
+                        android:background="@android:color/transparent"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:gravity="center"
+                        android:importantForAutofill="no"
+                        android:inputType="none"
+                        android:minWidth="10dp"
+                        android:text="-" />
+
+                    <EditText
+                        android:id="@+id/edt4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_toEndOf="@+id/slash3"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:hint="0000"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:minWidth="10dp"
+                        tools:ignore="Autofill" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/llSAOD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll12"
+                android:layout_marginTop="5dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/lblTPD"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="THIRD PARTY POLICY DETAILS"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/holo_orange_dark"
+                    android:textStyle="bold" />
+
+
+                <LinearLayout
+                    android:id="@+id/txtPreInsurer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblTPD"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/img_border"
+                    android:gravity="center"
+                    android:minHeight="35dp">
+
+                    <com.square.pos.utils.SearchableSpinner
+                        android:id="@+id/edtTpPreInsurer"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        app:hintText="Select Previous Insurer" />
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txtPN"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtPreInsurer"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/edtPN"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:hint="@string/policy_number"
+                        android:inputType="textCapCharacters"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textSize="12sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txtTpDob"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtPN"
+                    android:layout_marginTop="10dp">
+
+                    <EditText
+                        android:id="@+id/edtTpExpDat"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:drawableStart="@drawable/ic_event"
+                        android:drawablePadding="10dp"
+                        android:focusable="false"
+                        android:hint="@string/third_party_date"
+                        android:importantForAutofill="no"
+                        android:inputType="none"
+                        android:maxLines="1"
+                        android:onClick="onDateClick"
+                        android:singleLine="true"
+                        android:textSize="12sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </RelativeLayout>
+
+            <include
+                android:id="@+id/includePreviousPolicy"
+                layout="@layout/layout_crm_offline_previous_policy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llSAOD"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:id="@+id/txtPQ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/includePreviousPolicy"
+                android:layout_marginTop="15dp"
+                android:text="@string/quote_request_from_insurer_s"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textStyle="bold" />
+
+            <include
+                android:id="@+id/divP"
+                layout="@layout/divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtPQ"
+                android:layout_marginTop="5dp" />
+
+            <RadioGroup
+                android:id="@+id/rvPQ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divP"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/preferred_quote"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="12sp" />
+
+                <RadioButton
+                    android:id="@+id/btnPreferredYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/yes"
+                    android:textSize="12sp" />
+
+                <RadioButton
+                    android:id="@+id/btnPreferredNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:checked="true"
+                    android:text="@string/no"
+                    android:textSize="12sp" />
+            </RadioGroup>
+
+            <LinearLayout
+                android:id="@+id/llPQ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rvPQ"
+                android:layout_marginTop="10dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="2">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:helperText="Insurers">
+
+                    <TextView
+                        android:id="@+id/spnInsurer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginTop="5dp"
+                        android:onClick="onInsurersClick"
+                        android:text="@string/select_insurer"
+                        android:textColor="@android:color/black" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:helperText="Add-ons">
+
+                    <TextView
+                        android:id="@+id/spnCover"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_marginTop="5dp"
+                        android:onClick="onAddonClick"
+                        android:text="@string/select_addon"
+                        android:textColor="@android:color/black" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llIdv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llPQ"
+                android:layout_marginTop="10dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="2">
+
+                <EditText
+                    android:id="@+id/edtMinIdv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/min_idv"
+                    android:importantForAutofill="no"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/edtMaxIdv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/max_idv"
+                    android:importantForAutofill="no"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtDoc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llIdv"
+                android:layout_marginTop="15dp"
+                android:text="@string/document_upload"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textStyle="bold" />
+
+            <include
+                android:id="@+id/divDoc"
+                layout="@layout/divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtDoc"
+                android:layout_marginTop="5dp" />
+
+            <TextView
+                android:id="@+id/txtDocRCF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/divDoc"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/img_border"
+                android:hint="@string/rcf"
+                android:onClick="onUploadOfflineDoc"
+                android:padding="10dp"
+                app:drawableEndCompat="@drawable/ic_cloud_upload" />
+
+            <TextView
+                android:id="@+id/txtDocRCB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtDocRCF"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/img_border"
+                android:hint="@string/rcb"
+                android:onClick="onUploadOfflineDoc"
+                android:padding="10dp"
+                app:drawableEndCompat="@drawable/ic_cloud_upload" />
+
+            <TextView
+                android:id="@+id/txtDocPreviousPolicy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtDocRCB"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/img_border"
+                android:hint="@string/previous_policy"
+                android:onClick="onUploadOfflineDoc"
+                android:padding="10dp"
+                app:drawableEndCompat="@drawable/ic_cloud_upload" />
+
+            <TextView
+                android:id="@+id/txtDocInvoice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtDocPreviousPolicy"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/img_border"
+                android:hint="@string/invoice"
+                android:onClick="onUploadOfflineDoc"
+                android:padding="10dp"
+                android:visibility="gone"
+                app:drawableEndCompat="@drawable/ic_cloud_upload" />
+
+            <TextView
+                android:id="@+id/txtDocOther"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtDocInvoice"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="2dp"
+                android:background="@drawable/img_border"
+                android:hint="@string/other_documents"
+                android:onClick="onUploadOfflineDoc"
+                android:padding="10dp"
+                app:drawableEndCompat="@drawable/ic_cloud_upload" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtRemark"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtDocOther"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/edtRemark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/remarks"
+                    android:importantForAutofill="no"
+                    android:inputType="textCapWords"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtRemark"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="10dp"
+                android:background="@drawable/primary_theme"
+                android:onClick="onSubmitOfflineQuote"
+                android:text="@string/submit"
+                android:textColor="@color/colorPrimaryDark" />
+
+        </RelativeLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

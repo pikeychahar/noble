@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:paddingBottom="20dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtRegYear"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp">
+
+            <EditText
+                android:id="@+id/edtRegYear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="5dp"
+                android:hint="@string/registration_year"
+                android:inputType="number"
+                android:maxLength="4"
+                android:textSize="12sp"
+                tools:ignore="Autofill" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtMake"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtRegYear"
+            android:layout_margin="2dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/edtMake"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="5dp"
+                android:hint="@string/manufacture"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:inputType="textCapCharacters"
+                android:textSize="12sp"
+                tools:ignore="Autofill" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtModel"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtMake"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:layout_margin="2dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/edtModel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="5dp"
+                android:hint="@string/model"
+                android:inputType="textCapCharacters"
+                android:textSize="12sp"
+                tools:ignore="Autofill" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtVariant"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtModel"
+            android:layout_margin="2dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/edtVariant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="5dp"
+                android:hint="@string/variant"
+                android:inputType="textCapCharacters"
+                android:textSize="12sp"
+                tools:ignore="Autofill" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtFuel"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtVariant"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:layout_margin="2dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/edtFuel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="5dp"
+                android:hint="@string/fuel"
+                android:inputType="textCapCharacters"
+                android:textSize="12sp"
+                tools:ignore="Autofill" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtEngine"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtFuel"
+            android:layout_margin="2dp">
+
+            <EditText
+                android:id="@+id/edtEngine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="5dp"
+                android:hint="@string/engine_number"
+                android:inputType="textCapCharacters"
+                android:textSize="12sp"
+                tools:ignore="Autofill" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtChassis"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtEngine"
+            android:layout_margin="2dp">
+
+            <EditText
+                android:id="@+id/edtChassis"
+                style="@style/formEditText"
+                android:hint="@string/chassis_number"
+                android:importantForAutofill="no"
+                android:inputType="textCapCharacters" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtCubic"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtChassis"
+            android:layout_margin="2dp">
+
+            <EditText
+                android:id="@+id/edtCubic"
+                style="@style/formEditText"
+                android:hint="@string/cubic"
+                android:importantForAutofill="no"
+                android:inputType="textCapCharacters" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtCNGIdv"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtCubic"
+            android:layout_margin="2dp">
+
+            <EditText
+                android:id="@+id/edtCNGIdv"
+                style="@style/formEditText"
+                android:hint="@string/cng_idv"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="6" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtPaCover"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtCNGIdv"
+            android:layout_margin="2dp">
+
+            <EditText
+                android:id="@+id/edtPa"
+                style="@style/formEditText"
+                android:hint="@string/pa_cover"
+                android:importantForAutofill="no"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtUnnamedPa"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtPaCover"
+            android:layout_margin="2dp">
+
+            <EditText
+                android:id="@+id/edtUnnamed"
+                style="@style/formEditText"
+                android:hint="@string/pa_cover_for_unnamed_persons"
+                android:importantForAutofill="no"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtLegalLiability"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtUnnamedPa"
+            android:layout_margin="2dp">
+
+            <EditText
+                android:id="@+id/edtLegal"
+                style="@style/formEditText"
+                android:hint="@string/legal_liability_to_paid_driver"
+                android:importantForAutofill="no"
+                android:inputType="textCapCharacters" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtLegalEmp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtLegalLiability"
+            android:layout_margin="2dp">
+
+            <EditText
+                android:id="@+id/edtLegalEmp"
+                style="@style/formEditText"
+                android:hint="@string/legal_liability_for_emp"
+                android:importantForAutofill="no"
+                android:inputType="textCapCharacters" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </RelativeLayout>
+</ScrollView>

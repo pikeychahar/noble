@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.square.pos.activity_profile.DocumentsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:paddingBottom="20dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/CLView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/ulPAN"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/textview_border"
+                android:drawableEnd="@drawable/ic_show"
+                android:onClick="onViewOrUpload"
+                android:padding="10dp"
+                android:text="@string/pancard"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/ulAF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/textview_border"
+                android:drawableEnd="@drawable/ic_show"
+                android:onClick="onViewOrUpload"
+                android:padding="10dp"
+                android:text="@string/aadhar_front"
+                app:layout_constraintTop_toBottomOf="@+id/ulPAN" />
+
+            <TextView
+                android:id="@+id/ulAB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/textview_border"
+                android:drawableEnd="@drawable/ic_show"
+                android:onClick="onViewOrUpload"
+                android:padding="10dp"
+                android:text="@string/aadhar_back"
+                app:layout_constraintTop_toBottomOf="@+id/ulAF" />
+
+            <TextView
+                android:id="@+id/ulQualification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/textview_border"
+                android:drawableEnd="@drawable/ic_show"
+                android:onClick="onViewOrUpload"
+                android:padding="10dp"
+                android:text="@string/qualification"
+                app:layout_constraintTop_toBottomOf="@+id/ulAB" />
+
+            <TextView
+                android:id="@+id/ulCheck"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/textview_border"
+                android:drawableEnd="@drawable/ic_show"
+                android:onClick="onViewOrUpload"
+                android:padding="10dp"
+                android:text="@string/bank_cheque"
+                app:layout_constraintTop_toBottomOf="@+id/ulQualification" />
+
+            <TextView
+                android:id="@+id/ulProfilePhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/textview_border"
+                android:drawableEnd="@drawable/ic_show"
+                android:onClick="onViewOrUpload"
+                android:padding="10dp"
+                android:text="@string/profile_pic"
+                app:layout_constraintTop_toBottomOf="@+id/ulCheck" />
+
+            <TextView
+                android:id="@+id/ulSign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/textview_border"
+                android:drawableEnd="@drawable/ic_show"
+                android:onClick="onViewOrUpload"
+                android:padding="10dp"
+                android:text="@string/signature"
+                app:layout_constraintTop_toBottomOf="@+id/ulProfilePhoto" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/CLEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/ulPAN1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/textview_border"
+                android:drawableEnd="@drawable/ic_cloud_upload"
+                android:hint="@string/upload_pan_card"
+                android:onClick="onUploadDoc"
+                android:padding="10dp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/ulAF1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/textview_border"
+                android:drawableEnd="@drawable/ic_cloud_upload"
+                android:hint="@string/upload_aadhar_card_front"
+                android:onClick="onUploadDoc"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/ulPAN1" />
+
+            <TextView
+                android:id="@+id/ulAB1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/textview_border"
+                android:drawableEnd="@drawable/ic_cloud_upload"
+                android:hint="@string/upload_aadhar_card_back"
+                android:onClick="onUploadDoc"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/ulAF1" />
+
+            <TextView
+                android:id="@+id/ulQualification1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/textview_border"
+                android:drawableEnd="@drawable/ic_cloud_upload"
+                android:hint="@string/upload_marksheet"
+                android:onClick="onUploadDoc"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/ulAB1" />
+
+            <TextView
+                android:id="@+id/ulCheck1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/textview_border"
+                android:drawableEnd="@drawable/ic_cloud_upload"
+                android:hint="@string/upload_check"
+                android:onClick="onUploadDoc"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/ulQualification1" />
+
+            <TextView
+                android:id="@+id/ulProfilePhoto1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/textview_border"
+                android:drawableEnd="@drawable/ic_cloud_upload"
+                android:hint="@string/upload_profile_photo"
+                android:onClick="onUploadDoc"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/ulCheck1" />
+
+            <TextView
+                android:id="@+id/ulSign1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/textview_border"
+                android:drawableEnd="@drawable/ic_cloud_upload"
+                android:hint="@string/upload_signature"
+                android:onClick="onUploadDoc"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/ulProfilePhoto1" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

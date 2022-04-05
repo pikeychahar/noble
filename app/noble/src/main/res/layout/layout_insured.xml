@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    app:ignore="NamespaceTypo">
+
+    <TextView
+        android:id="@+id/txtInsuredMember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Spouse"
+        android:textColor="?attr/colorPrimary"
+        android:textStyle="bold" />
+
+    <include
+        layout="@layout/divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtInsuredMember" />
+
+    <TextView
+        android:id="@+id/lblName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtInsuredMember"
+        android:layout_margin="5dp"
+        android:minWidth="50dp"
+        android:text="@string/name"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <TextView
+        android:id="@+id/lblGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblName"
+        android:layout_margin="5dp"
+        android:minWidth="50dp"
+        android:text="@string/gender"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtInsuredMember"
+        android:layout_margin="5dp"
+        android:layout_toEndOf="@+id/lblName"
+        android:minWidth="50dp"
+        android:text="@string/name" />
+
+    <TextView
+        android:id="@+id/txtGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblName"
+        android:layout_margin="5dp"
+        android:layout_toEndOf="@+id/lblGender"
+        android:minWidth="50dp"
+        android:text="@string/gender" />
+
+    <TextView
+        android:id="@+id/lblDob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblName"
+        android:layout_margin="5dp"
+        android:layout_toEndOf="@+id/txtGender"
+        android:minWidth="50dp"
+        android:text="@string/date_of_birth"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <TextView
+        android:id="@+id/txtDob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblName"
+        android:layout_margin="5dp"
+        android:layout_toEndOf="@+id/lblDob"
+        android:minWidth="50dp"
+        android:text="12-12-2020" />
+
+</RelativeLayout>

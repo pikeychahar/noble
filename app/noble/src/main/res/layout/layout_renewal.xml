@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="10dp"
+        android:paddingBottom="20dp"
+        card_view:cardCornerRadius="5dp"
+        card_view:cardElevation="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/txtCustomerName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="80dp"
+                android:text="@string/developer_name"
+                android:textColor="?attr/colorPrimary"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtRenewalStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@color/colorGray"
+                android:minWidth="70dp"
+                android:padding="4dp"
+                android:text="Follow Up"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+
+            <TextView
+                android:id="@+id/lblRenewal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtLob"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                android:minWidth="70dp"
+                android:text="Expiry In"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtLob"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtRenewalStatus"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="3dp"
+                android:layout_toStartOf="@+id/txtType"
+                android:background="@android:color/holo_orange_dark"
+                android:maxWidth="70dp"
+                android:padding="3dp"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtRenewalStatus"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="3dp"
+                android:background="@android:color/holo_green_dark"
+                android:padding="3dp"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtRenewal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblRenewal"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/light_theme"
+                android:minWidth="70dp"
+                android:padding="5dp"
+                android:text="100"
+                android:textAlignment="center"
+                android:textColor="?attr/colorPrimary" />
+
+            <TextView
+                android:id="@+id/txtVehicleNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtCustomerName"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="80dp"
+                android:text="RJ14Dff3738"
+                android:textColor="@color/colorGreen" />
+
+            <TextView
+                android:id="@+id/txtPolicyNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtVehicleNo"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="80dp"
+                android:text="Policy No. MJ878300"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtFileType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtPolicyNo"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/colorPrimary"
+                android:padding="3dp"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtDownload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtPolicyNo"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toEndOf="@+id/txtFileType"
+                android:background="@color/colorPrimaryDark"
+                android:padding="3dp"
+                android:text="@string/download_policy"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txtCall"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_below="@+id/txtRenewal"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/ic_call"
+                android:contentDescription="@string/phone"
+                android:padding="12dp"
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/div"
+                layout="@layout/divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtCall"
+                android:layout_margin="2dp" />
+
+            <Spinner
+                android:id="@+id/spnRenewalStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/div"
+                android:layout_marginTop="8dp"
+                android:entries="@array/renewal_action" />
+
+            <TextView
+                android:id="@+id/txtQuickRenewal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/div"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_toStartOf="@+id/txtProceed"
+                android:background="@drawable/txt_border"
+                android:padding="5dp"
+                android:text="Quick Renewal"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/txtProceed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/div"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/txt_border"
+                android:padding="5dp"
+                android:text="@string/proceed"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

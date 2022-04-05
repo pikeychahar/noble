@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp">
+
+    <ImageView
+        android:id="@+id/imgInsureLogo"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:contentDescription="@string/app_name" />
+
+    <TextView
+        android:id="@+id/txtPlanName"
+        style="@style/smallTextView"
+        android:layout_below="@+id/imgInsureLogo"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Arogya setu plan 1000" />
+
+
+    <TextView
+        android:id="@+id/txtPlanType"
+        style="@style/smallTextView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:text="Individual" />
+
+    <include
+        android:id="@+id/d1"
+        layout="@layout/divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtPlanName"
+        android:layout_margin="5dp" />
+
+
+    <TextView
+        android:id="@+id/lblPD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/d1"
+        android:layout_margin="10dp"
+        android:text="Premium Details:"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/lblNet"
+        style="@style/smallTextView"
+        android:layout_below="@+id/lblPD"
+        android:minWidth="150dp"
+        android:text="Net Premium" />
+
+    <TextView
+        android:id="@+id/txtNetPremium"
+        style="@style/smallTextView"
+        android:layout_below="@+id/lblPD"
+        android:layout_toEndOf="@+id/lblNet"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/lblGST"
+        style="@style/smallTextView"
+        android:layout_below="@+id/txtNetPremium"
+        android:layout_marginTop="5dp"
+        android:minWidth="150dp"
+        android:text="GST @18%" />
+
+    <TextView
+        android:id="@+id/txtGST"
+        style="@style/smallTextView"
+        android:layout_below="@+id/txtNetPremium"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/lblGST"
+        android:textStyle="bold" />
+
+    <include
+        android:id="@+id/d2"
+        layout="@layout/divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtGST"
+        android:layout_margin="5dp" />
+    <TextView
+        android:id="@+id/lblFP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/d2"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:minWidth="150dp"
+        android:textStyle="bold"
+        android:text="Final Premium" />
+
+    <TextView
+        android:id="@+id/txtFinalPremium"
+        style="@style/smallTextView"
+        android:layout_below="@+id/d2"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/lblFP"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtFinalPremium"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:layout_weight="2"
+            android:background="@android:color/holo_red_light"
+            android:text="@string/close"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+</RelativeLayout>

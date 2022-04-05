@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp">
+
+    <RelativeLayout
+        android:id="@+id/rlBasic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txtIndividualName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/self"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold" />
+
+        <include
+            android:id="@+id/divIn"
+            layout="@layout/divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtIndividualName"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:id="@+id/lblSalutation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/divIn"
+            android:text="@string/salutation"
+            android:visibility="gone" />
+
+        <Spinner
+            android:id="@+id/spnSalutation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblSalutation"
+            android:visibility="gone" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtFirstName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spnSalutation"
+            android:layout_marginTop="10dp"
+            android:minWidth="100dp">
+
+            <EditText
+                android:id="@+id/edtFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:drawableStart="@drawable/user_logo"
+                android:drawablePadding="5dp"
+                android:hint="@string/first_name"
+                android:importantForAutofill="no"
+                android:inputType="textCapCharacters"
+                android:maxLines="1"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtLastName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtFirstName"
+            android:layout_marginTop="10dp"
+            android:minWidth="100dp">
+
+            <EditText
+                android:id="@+id/edtLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:drawableStart="@drawable/user_logo"
+                android:drawablePadding="5dp"
+                android:hint="@string/last_name"
+                android:importantForAutofill="no"
+                android:inputType="textCapCharacters"
+                android:maxLines="1"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/oDob"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtLastName"
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:id="@+id/edtDob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_date"
+                android:drawablePadding="5dp"
+                android:hint="@string/date_of_birth"
+                android:importantForAutofill="no"
+                android:inputType="date"
+                android:maxLines="1"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/spnMaterial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/oDob"
+            android:layout_alignParentEnd="true"
+            android:entries="@array/material_health" />
+
+        <Spinner
+            android:id="@+id/spnGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/oDob"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:entries="@array/gender_health" />
+
+        <include
+            android:id="@+id/div1"
+            layout="@layout/divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spnMaterial"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:id="@+id/lblHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div1"
+            android:layout_margin="5dp"
+            android:text="@string/height"
+            android:textColor="@android:color/black" />
+
+        <EditText
+            android:id="@+id/edtInches"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div1"
+            android:layout_alignBaseline="@+id/lblHeight"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:hint="@string/height_cm"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="3"
+            android:singleLine="true"
+            android:textSize="12sp" />
+
+
+        <include
+            android:id="@+id/div2"
+            layout="@layout/divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblHeight"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:id="@+id/lblWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div2"
+            android:layout_margin="5dp"
+            android:text="@string/weight"
+            android:textColor="@android:color/black" />
+
+        <EditText
+            android:id="@+id/edtWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div2"
+            android:layout_alignBaseline="@+id/lblWeight"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:hint="@string/kgs"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="3"
+            android:minWidth="50dp"
+            android:singleLine="true"
+            android:textSize="12sp" />
+
+        <include
+            android:id="@+id/div3"
+            layout="@layout/divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblWeight"
+            android:layout_margin="5dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_occ"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div3"
+            android:layout_marginTop="10dp"
+            app:helperText="Select Occupation">
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/spnOccupation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-15dp"
+                android:layout_marginBottom="-15dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textRelation"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_occ"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            app:helperText="Select Relation with policy holder">
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/spnRelation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-15dp"
+                android:layout_marginBottom="-15dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textDes"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textRelation"
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:id="@+id/edtDes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_info_blue"
+                android:drawablePadding="10dp"
+                android:hint="@string/designation"
+                android:importantForAutofill="no"
+                android:inputType="textCapCharacters"
+                android:maxLines="1"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/lblMedi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textDes"
+            android:layout_marginTop="10dp"
+            android:text="@string/medical_question"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold" />
+
+        <include
+            android:id="@+id/div6"
+            layout="@layout/divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblMedi"
+            android:layout_margin="5dp" />
+
+        <include
+            android:id="@+id/layoutRoyal"
+            layout="@layout/layout_royal_life_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div6"
+            android:layout_margin="5dp"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/layoutApollo"
+            layout="@layout/layout_apollo_life_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div6"
+            android:layout_margin="5dp"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/layoutBajaj"
+            layout="@layout/layout_bajaj_life_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layoutApollo"
+            android:layout_margin="5dp"
+            android:visibility="gone" />
+        <include
+            android:id="@+id/layoutSbi"
+            layout="@layout/layout_sbi_life_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layoutBajaj"
+            android:layout_margin="5dp"
+            android:visibility="gone" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

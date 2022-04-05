@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg"
+    tools:context=".activity_motor.OwnerDetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="30dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cVQuote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0.0px"
+                android:elevation="8dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:stateListAnimator="@anim/animation"
+                app:layout_constraintTop_toTopOf="parent"
+                card_view:cardElevation="10dp"
+                card_view:cardPreventCornerOverlap="false">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:id="@+id/imgInsurer"
+                        android:layout_width="60dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/img_border"
+                        android:contentDescription="@string/insurer"
+                        android:scaleType="fitCenter" />
+
+                    <TextView
+                        android:id="@+id/txtQuoteId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@+id/imgInsurer"
+                        android:textIsSelectable="true"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtPolicyType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtQuoteId"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@+id/imgInsurer"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:textSize="12sp"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/txtTotalPremium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/imgInsurer"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtVehicle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtTotalPremium"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="12sp" />
+
+                    <include
+                        layout="@layout/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtVehicle" />
+
+                    <TextView
+                        android:id="@+id/txtPolicyTenure"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtVehicle"
+                        android:layout_marginTop="10dp" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cVQuote"
+                android:layout_margin="10dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0.0px"
+                android:elevation="8dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:stateListAnimator="@anim/animation"
+                app:layout_constraintTop_toTopOf="parent"
+                card_view:cardElevation="10dp"
+                card_view:cardPreventCornerOverlap="false">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/lblOD"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/owner_detail_as_per_rc"
+                        android:textColor="@color/colorPrimaryDark" />
+
+                    <include
+                        android:id="@+id/div"
+                        layout="@layout/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lblOD"
+                        android:layout_marginTop="2dp" />
+
+                    <TextView
+                        android:id="@+id/lblSS"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/div"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/select_salutation"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:id="@+id/llTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lblSS"
+                        android:background="@drawable/img_border">
+
+                        <Spinner
+                            android:id="@+id/salutation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-10dp"
+                            android:layout_marginBottom="-10dp" />
+                    </LinearLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/text_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/llTitle"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/editOFirstName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/user_logo"
+                            android:drawablePadding="5dp"
+                            android:hint="@string/first_name"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapCharacters"
+                            android:maxLength="20"
+                            android:maxLines="1"
+                            android:nextFocusRight="@id/editOLastName"
+                            android:nextFocusDown="@id/editOLastName"
+                            android:nextFocusForward="@id/editOLastName"
+                            android:singleLine="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textLastName"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_input_layout"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/editOLastName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/user_logo"
+                            android:drawablePadding="5dp"
+                            android:hint="@string/last_name"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapCharacters"
+                            android:maxLength="25"
+                            android:maxLines="1"
+                            android:nextFocusRight="@id/gender"
+                            android:nextFocusDown="@id/gender"
+                            android:nextFocusForward="@id/gender"
+                            android:singleLine="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llGender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textLastName"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/img_border">
+
+                        <Spinner
+                            android:id="@+id/gender"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-10dp"
+                            android:layout_marginBottom="-10dp"
+                            android:minWidth="100dp"
+                            android:nextFocusRight="@id/material"
+                            android:nextFocusDown="@id/material"
+                            android:nextFocusForward="@id/material" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llMarital"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textLastName"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@+id/llGender"
+                        android:background="@drawable/img_border">
+
+                        <Spinner
+                            android:id="@+id/material"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-10dp"
+                            android:layout_marginBottom="-10dp"
+                            android:nextFocusRight="@id/oDob1"
+                            android:nextFocusDown="@id/oDob1"
+                            android:nextFocusForward="@id/oDob1" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvPer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cvName"
+                android:layout_margin="10dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0.0px"
+                android:elevation="8dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:stateListAnimator="@anim/animation"
+                card_view:cardElevation="10dp"
+                card_view:cardPreventCornerOverlap="false">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/lblCD"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/communication_detail"
+                        android:textColor="@color/colorPrimaryDark" />
+
+                    <include
+                        android:id="@+id/div1"
+                        layout="@layout/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lblCD"
+                        android:layout_marginTop="2dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/oDob"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtOrgName"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/oDob1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_event"
+                            android:drawablePadding="5dp"
+                            android:focusable="false"
+                            android:hint="@string/date_of_birth"
+                            android:importantForAutofill="no"
+                            android:inputType="none"
+                            android:maxLines="1"
+                            android:onClick="onDateClick"
+                            android:singleLine="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/txtOrgName"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/div1"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/edtOrgName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/organization_name"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapWords"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/text_input_pass"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/oDob"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/oEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_email"
+                            android:drawablePadding="5dp"
+                            android:hint="@string/email"
+                            android:importantForAutofill="no"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/text_phone"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_input_pass"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/oPhone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_call"
+                            android:drawablePadding="5dp"
+                            android:hint="@string/phone_number"
+                            android:importantForAutofill="no"
+                            android:inputType="phone"
+                            android:maxLength="10"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/text_additional_phone"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_phone"
+                        android:visibility="gone"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/oAdditionalPhone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_call"
+                            android:drawablePadding="5dp"
+                            android:hint="@string/additional_contact_number"
+                            android:importantForAutofill="no"
+                            android:inputType="phone"
+                            android:maxLength="10"
+                            android:maxLines="1"
+                            android:singleLine="true"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/text_pan_card"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_additional_phone"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/oPanCard"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_docs"
+                            android:drawablePadding="5dp"
+                            android:hint="@string/pan"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapCharacters"
+                            android:maxLength="10"
+                            android:maxLines="1"
+                            android:nextFocusRight="@id/nationality"
+                            android:nextFocusDown="@id/nationality"
+                            android:nextFocusForward="@id/nationality"
+                            android:singleLine="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cvPer"
+                android:layout_margin="10dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0.0px"
+                android:elevation="8dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:stateListAnimator="@anim/animation"
+                card_view:cardElevation="10dp"
+                card_view:cardPreventCornerOverlap="false">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/lblCA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/communication_address"
+                        android:textColor="@color/colorPrimaryDark" />
+
+                    <include
+                        android:id="@+id/div2"
+                        layout="@layout/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lblCA"
+                        android:layout_marginTop="2dp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/lblOccupation"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/nationality"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone"
+                        app:helperText="Select Occupation">
+
+                        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                            android:id="@+id/occupation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-15dp"
+                            android:layout_marginBottom="-15dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Spinner
+                        android:id="@+id/nationality"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/div2"
+                        android:layout_marginTop="12dp"
+                        android:entries="@array/nationality"
+                        android:visibility="gone" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/text_State"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lblOccupation"
+                        android:visibility="gone"
+                        app:helperText="Select State">
+
+                        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                            android:id="@+id/state"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-15dp"
+                            android:layout_marginBottom="-15dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/text_city"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_State"
+                        android:visibility="gone"
+                        app:helperText="Select City">
+
+                        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                            android:id="@+id/city"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="-15dp"
+                            android:layout_marginBottom="-15dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/text_reference"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_city"
+                        android:visibility="gone"
+                        app:helperText="Select Pincode / Area">
+
+                        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                            android:id="@+id/oPinCode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/nationality"
+                            android:layout_marginTop="-15dp"
+                            android:layout_marginBottom="-15dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/txtPincode"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_reference">
+
+                        <EditText
+                            android:id="@+id/edtPinCode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_location"
+                            android:drawablePadding="5dp"
+                            android:hint="@string/pincode"
+                            android:importantForAutofill="no"
+                            android:inputType="number"
+                            android:maxLength="6"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/text_aadhar"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtPincode"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/oAddress1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_map"
+                            android:drawablePadding="5dp"
+                            android:hint="@string/house_no_building_name"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapCharacters"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/text_pass"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_aadhar"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/oAddress2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_map"
+                            android:drawablePadding="5dp"
+                            android:hint="@string/road_name_are_colony"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapCharacters"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/text_pass1"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_pass"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/oAddress22"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_map"
+                            android:drawablePadding="5dp"
+                            android:hint="@string/village_city"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapCharacters"
+                            android:maxLength="50"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/text_gst"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/text_pass1"
+                        android:layout_marginTop="10dp"
+                        android:minWidth="100dp"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/oGst"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_docs"
+                            android:drawablePadding="5dp"
+                            android:hint="@string/gstin"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapCharacters"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/regCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cvCity"
+                android:checked="true"
+                android:onClick="onRegAddressClick"
+                android:text="@string/registration_address_is_same_as_above" />
+
+            <RelativeLayout
+                android:id="@+id/rRL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/regCheck"
+                android:visibility="gone">
+
+                <include
+                    layout="@layout/proposal_reg_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rRL"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_bg"
+                android:onClick="onOwnerDetailSubmit"
+                android:text="@string/next"
+                android:textColor="@android:color/white" />
+        </RelativeLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

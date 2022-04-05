@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ContactActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cVQuote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0.0px"
+                android:elevation="8dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:stateListAnimator="@anim/animation"
+                card_view:cardElevation="10dp"
+                card_view:cardPreventCornerOverlap="false">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/txtOrg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Post An Query"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/colorPrimaryDark" />
+
+                    <include
+                        layout="@layout/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtOrg" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/txtName"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtOrg"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/edtUserName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/name"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapCharacters"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/txtMobile"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtName"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/edtUserMobile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/phone_number"
+                            android:importantForAutofill="no"
+                            android:inputType="phone"
+                            android:maxLength="10"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/txtEmail"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtMobile"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/edtUserEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/email"
+                            android:importantForAutofill="no"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/txtRemark"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtEmail"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/edtRemark"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/message"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapCharacters"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtRemark"
+                        android:layout_margin="20dp"
+                        android:background="@drawable/button_bg"
+                        android:onClick="onSubmitClick"
+                        android:text="@string/submit"
+                        android:textColor="@android:color/white" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cVQuote1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cVQuote"
+                android:layout_margin="10dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0.0px"
+                android:elevation="8dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:stateListAnimator="@anim/animation"
+                card_view:cardElevation="10dp"
+                card_view:cardPreventCornerOverlap="false">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txtMail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:drawablePadding="10dp"
+                        android:onClick="onEmail"
+                        android:text="info@squareinsurance.in"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textIsSelectable="true"
+                        app:drawableStartCompat="@drawable/ic_mail" />
+
+                    <TextView
+                        android:id="@+id/txtPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtMail"
+                        android:layout_margin="10dp"
+                        android:drawablePadding="10dp"
+                        android:onClick="onPhoneCall"
+                        android:text="18001205430"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textIsSelectable="true"
+                        app:drawableStartCompat="@drawable/ic_phone" />
+
+                    <TextView
+                        android:id="@+id/txtWeb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtPhone"
+                        android:layout_margin="10dp"
+                        android:drawablePadding="10dp"
+                        android:onClick="onWebClick"
+                        android:text="www.squareinsurance.in"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textIsSelectable="true"
+                        app:drawableStartCompat="@drawable/ic_web" />
+
+                    <TextView
+                        android:id="@+id/txtAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtWeb"
+                        android:layout_margin="10dp"
+                        android:drawablePadding="10dp"
+                        android:onClick="onAddressClick"
+                        android:text="506, 5th Floor, V-Jai City Point , Ahinsha Circle, C-Scheme , Jaipur"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textIsSelectable="true"
+                        app:drawableStartCompat="@drawable/ic_outline_location" />
+
+                    <TextView
+                        android:id="@+id/lblAdmin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtAddress"
+                        android:layout_margin="5dp"
+                        android:text="@string/legal_and_admin_policies"
+                        android:textStyle="bold" />
+
+                    <include
+                        layout="@layout/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lblAdmin" />
+
+                    <TextView
+                        android:id="@+id/txtPrivacy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lblAdmin"
+                        android:onClick="onPrivacyClick"
+                        android:padding="10dp"
+                        android:text="@string/privacy"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textIsSelectable="true" />
+
+                    <TextView
+                        android:id="@+id/txtTerms"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtPrivacy"
+                        android:onClick="onTermsClick"
+                        android:padding="10dp"
+                        android:text="@string/terms"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textIsSelectable="true" />
+
+                    <TextView
+                        android:id="@+id/txtGrievance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtTerms"
+                        android:onClick="onGrievanceClick"
+                        android:padding="10dp"
+                        android:text="@string/grievance_redress_policy"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textIsSelectable="true" />
+
+                    <TextView
+                        android:id="@+id/txtRefund"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtGrievance"
+                        android:onClick="onRefundClick"
+                        android:padding="10dp"
+                        android:text="@string/refund_policy_and_cancellation_policy"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textIsSelectable="true" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtRefund"
+                        android:layout_margin="10dp"
+                        android:baselineAligned="true"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:onClick="onWhatsApp"
+                            android:src="@drawable/ic_whatsapp"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:onClick="onFacebookClick"
+                            android:src="@drawable/ic_facebook"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:onClick="onTwitterClick"
+                            android:src="@drawable/ic_twitter"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:onClick="onInstaClick"
+                            android:src="@drawable/ic_instagram"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:onClick="onLinkedInClick"
+                            android:src="@drawable/ic_linkedin"
+                            tools:ignore="ContentDescription" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:onClick="onYoutubeClick"
+                            android:src="@drawable/ic_youtube"
+                            tools:ignore="ContentDescription" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

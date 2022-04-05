@@ -1,0 +1,348 @@
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.square.pos.activity.ui.other.OtherFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="30dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:minHeight="150dp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvHelp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="15dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="10dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:id="@+id/lblContact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="@string/contact_us"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textStyle="bold" />
+
+                <include
+                    android:id="@+id/divider"
+                    layout="@layout/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblContact" />
+
+                <TextView
+                    android:id="@+id/txtRmName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/divider"
+                    android:layout_margin="10dp"
+                    android:autoLink="phone"
+                    android:background="@android:color/transparent"
+                    android:drawablePadding="10dp"
+                    android:text="@string/_91_8441990000"
+                    app:drawableStartCompat="@drawable/ic_call" />
+
+                <TextView
+                    android:id="@+id/txtRmContact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtRmName"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:autoLink="email"
+                    android:background="@android:color/transparent"
+                    android:drawablePadding="10dp"
+                    android:text="@string/support_squareinsurance_in"
+                    app:drawableStartCompat="@drawable/ic_email" />
+
+                <include
+                    android:id="@+id/divider1"
+                    layout="@layout/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtRmContact" />
+
+                <TextView
+                    android:id="@+id/txtAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/divider1"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:autoLink="map"
+                    android:background="@android:color/transparent"
+                    android:drawablePadding="10dp"
+                    android:textIsSelectable="true"
+                    android:text="@string/square_address"
+                    app:drawableStartCompat="@drawable/ic_location" />
+
+
+                <include
+                    android:id="@+id/divider2"
+                    layout="@layout/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtAddress" />
+
+                <RelativeLayout
+                    android:id="@+id/rlRm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/divider2">
+
+                    <TextView
+                        android:id="@+id/txtRM"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="Relationship Manager Details"
+                        android:textColor="?attr/colorPrimary"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvRmName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtRM"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@android:color/transparent"
+                        android:drawablePadding="5dp"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:textIsSelectable="true"
+                        android:textSize="12sp"
+                        app:drawableStartCompat="@drawable/user_logo" />
+
+                    <TextView
+                        android:id="@+id/tvRmContact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtRM"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@android:color/transparent"
+                        android:drawablePadding="5dp"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textIsSelectable="true"
+                        android:textSize="12sp"
+                        app:drawableStartCompat="@drawable/ic_call" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/txtWhatsApp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rlRm"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/green_theme"
+                    android:drawablePadding="10dp"
+                    android:paddingStart="15dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="15dp"
+                    android:visibility="gone"
+                    android:paddingBottom="5dp"
+                    android:text="Chat On WhatsApp"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:drawableStartCompat="@drawable/ic_whatsapp" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvSupport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="15dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/cvHelp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:id="@+id/lblSupport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/support"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <include
+                    android:id="@+id/div1"
+                    layout="@layout/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/lblSupport" />
+
+                <TextView
+                    android:id="@+id/lblAboutUs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:text="@string/about_us"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:drawableEndCompat="@drawable/ic_forward"
+                    app:layout_constraintTop_toBottomOf="@+id/div1" />
+
+                <TextView
+                    android:id="@+id/lblShare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:text="@string/menu_share"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:drawableEndCompat="@drawable/ic_forward"
+                    app:layout_constraintTop_toBottomOf="@+id/lblAboutUs" />
+
+                <TextView
+                    android:id="@+id/lblHelp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:text="@string/help_support"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:drawableEndCompat="@drawable/ic_forward"
+                    app:layout_constraintTop_toBottomOf="@+id/lblShare" />
+
+                <TextView
+                    android:id="@+id/lblAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/account_setting"
+                    app:layout_constraintTop_toBottomOf="@+id/lblHelp" />
+
+                <include
+                    android:id="@+id/div2"
+                    layout="@layout/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/lblAccount" />
+
+                <TextView
+                    android:id="@+id/lblCp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:text="@string/change_password"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:drawableEndCompat="@drawable/ic_forward"
+                    app:layout_constraintTop_toBottomOf="@+id/div2" />
+
+                <TextView
+                    android:id="@+id/lblPP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:text="@string/privacy"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:drawableEndCompat="@drawable/ic_forward"
+                    app:layout_constraintTop_toBottomOf="@+id/lblCp" />
+
+                <TextView
+                    android:id="@+id/lblOther"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/communication"
+                    app:layout_constraintTop_toBottomOf="@+id/lblPP" />
+
+                <include
+                    android:id="@+id/div3"
+                    layout="@layout/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/lblOther" />
+
+
+                <TextView
+                    android:id="@+id/lblRate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:text="@string/rate_us"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:drawableEndCompat="@drawable/ic_forward"
+                    app:layout_constraintTop_toBottomOf="@+id/div3" />
+
+                <TextView
+                    android:id="@+id/lblLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:text="@string/action_logout"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorRed"
+                    app:layout_constraintTop_toBottomOf="@+id/lblRate" />
+
+                <TextView
+                    android:id="@+id/lblVersion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:textAlignment="center"
+                    app:layout_constraintTop_toBottomOf="@+id/lblLogout" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:layout_constraintTop_toBottomOf="@+id/cvSupport" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

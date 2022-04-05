@@ -1,0 +1,1705 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".activity.QuotesActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ScrollView
+                android:id="@+id/scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clQuote1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:indeterminate="true"
+                        android:indeterminateTint="@color/colorPrimaryDark"
+                        android:maxHeight="15dip"
+                        android:minHeight="15dip"
+                        android:progress="50"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/rrl1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@android:color/white"
+                        android:foregroundGravity="center"
+                        android:gravity="center"
+                        android:minHeight="50dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3"
+                        app:layout_constraintTop_toBottomOf="@+id/progressBar">
+
+                        <RelativeLayout
+                            android:id="@+id/rlIDV"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:layout_weight="0.8"
+                            android:onClick="onIDV"
+                            android:padding="5dp">
+
+                            <TextView
+                                android:id="@+id/ldvLbl"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="IDV : (INR)"
+                                android:textAlignment="center"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                            <View
+                                android:id="@+id/v12"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_below="@+id/ldvLbl"
+                                android:layout_gravity="center"
+                                android:layout_margin="1dp"
+                                android:background="#C1CAD1" />
+
+                            <TextView
+                                android:id="@+id/txtIDV"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/v12"
+                                android:drawableEnd="@drawable/ic_edit"
+                                android:drawablePadding="11dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="12sp" />
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:background="#C1CAD1" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlNcb"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:layout_weight="1.4"
+                            android:padding="5dp">
+
+                            <Spinner
+                                android:id="@+id/spnPolicyType"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:entries="@array/policyType"
+                                android:textAlignment="textStart" />
+                        </RelativeLayout>
+
+                        <View
+                            android:id="@+id/ncbView"
+                            android:layout_width="1dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:background="#C1CAD1" />
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:layout_weight="0.8"
+                            android:padding="5dp">
+
+                            <Switch
+                                android:id="@+id/swPA"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:onClick="onPACover"
+                                android:text="@string/pa_cover"
+                                android:textSize="12sp" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/clQuotation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="8dp"
+                        android:paddingBottom="20dp"
+                        app:layout_constraintTop_toBottomOf="@+id/rrl1"
+                        card_view:cardElevation="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp">
+
+                            <TextView
+                                android:id="@+id/lblQuote"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/quotation_id" />
+
+                            <TextView
+                                android:id="@+id/txtQuoteId"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_toEndOf="@+id/lblQuote"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textIsSelectable="true"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/rlSOD"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toBottomOf="@+id/clQuotation">
+
+                        <LinearLayout
+                            android:id="@+id/rrl2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="@android:color/white"
+                            android:foregroundGravity="center"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/txtPreIns"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dp"
+                                android:layout_weight="1"
+                                android:text="Previous Insurer" />
+
+                            <TextView
+                                android:id="@+id/txtPEDate"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dp"
+                                android:layout_weight="1"
+                                android:drawableEnd="@drawable/ic_edit"
+                                android:drawablePadding="5dp"
+                                android:onClick="onEditSaOd"
+                                android:text="12-11-2020" />
+                        </LinearLayout>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/llSAOD"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:elevation="8dp"
+                            app:layout_constraintTop_toBottomOf="@+id/rrl2"
+                            card_view:cardElevation="10dp">
+
+                            <RelativeLayout
+                                android:id="@+id/rrl3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                app:layout_constraintTop_toBottomOf="@+id/rrl2">
+
+                                <TextView
+                                    android:id="@+id/lblTPD"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="10dp"
+                                    android:text="THIRD PARTY POLICY DETAILS"
+                                    android:textAlignment="center"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textStyle="bold" />
+
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/txtPreInsurer"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/lblTPD"
+                                    android:layout_margin="10dp"
+                                    android:padding="5dp"
+                                    app:helperText="Previous Insurer">
+
+                                    <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                                        android:id="@+id/edtPreInsurer"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="-5dp"
+                                        android:layout_marginTop="5dp"
+                                        app:hintText="Select Previous Insurer" />
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <include
+                                    android:id="@+id/in5"
+                                    layout="@layout/divider"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/txtPreInsurer"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp" />
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/txtPN"
+                                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/in5"
+                                    android:layout_margin="10dp"
+                                    android:minWidth="100dp"
+                                    app:boxStrokeColor="@color/colorPrimary">
+
+                                    <EditText
+                                        android:id="@+id/edtPN"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:hint="@string/policy_number"
+                                        android:inputType="textCapCharacters"
+                                        android:maxLines="1"
+                                        android:singleLine="true" />
+                                </com.google.android.material.textfield.TextInputLayout>
+
+                                <TextView
+                                    android:id="@+id/txtTED"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/txtPN"
+                                    android:layout_margin="10dp"
+                                    android:background="@drawable/textview_border"
+                                    android:drawableEnd="@drawable/ic_calendar"
+                                    android:hint="@string/select_date"
+                                    android:onClick="onDatePicker"
+                                    android:padding="10dp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/txtTED"
+                                    android:layout_margin="10dp"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <TextView
+                                        android:id="@+id/btnCancel"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/light_theme"
+                                        android:onClick="onHideSaOdClick"
+                                        android:padding="2dp"
+                                        android:text="@string/cancel"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/design_default_color_primary" />
+
+                                    <TextView
+                                        android:id="@+id/btnUpdate"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/dark_theme"
+                                        android:onClick="onHideSaOdClick"
+                                        android:padding="2dp"
+                                        android:text="@string/update"
+                                        android:textAlignment="center"
+                                        android:textColor="@android:color/white" />
+
+                                </LinearLayout>
+
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clQuote"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/rlSOD">
+
+                        <LinearLayout
+                            android:id="@+id/ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@color/colorPrimary"
+                            android:orientation="horizontal"
+                            android:padding="2dp"
+                            android:weightSum="3"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Insurer"
+                                android:textAlignment="center"
+                                android:textColor="@android:color/white" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textAlignment="center"
+                                android:textColor="@android:color/white" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Premium"
+                                android:textAlignment="center"
+                                android:textColor="@android:color/white" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtGstEx"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="*Premium have Excluding GST"
+                            android:textAlignment="center"
+                            android:textSize="12sp"
+                            app:layout_constraintTop_toBottomOf="@+id/ll" />
+
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/llPolicy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:elevation="8dp"
+                            app:layout_constraintTop_toBottomOf="@+id/txtGstEx"
+                            card_view:cardElevation="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/llAcko"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp">
+
+                                    <ImageView
+                                        android:id="@+id/imgAcko"
+                                        android:layout_width="80dp"
+                                        android:layout_height="50dp"
+                                        android:scaleType="fitXY" />
+
+                                    <RelativeLayout
+                                        android:id="@+id/rlPBAcko"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/imgAcko"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:onClick="onPremiumBreak">
+
+                                        <TextView
+                                            android:id="@+id/ackoZD"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:minWidth="80dp"
+                                            android:text="@string/zero_dept_cover"
+                                            android:textColor="@android:color/holo_green_dark"
+                                            android:visibility="gone" />
+
+                                        <androidx.appcompat.widget.AppCompatButton
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="30dp"
+                                            android:layout_alignParentEnd="true"
+                                            android:background="@color/colorPrimary"
+                                            android:clickable="false"
+                                            android:gravity="center"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="10dp"
+                                            android:text="@string/premium_break"
+                                            android:textAlignment="center"
+                                            android:textColor="@android:color/white" />
+                                    </RelativeLayout>
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/btnPremium"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="30dp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_margin="5dp"
+                                        android:background="@color/colorPrimaryDark"
+                                        android:drawableEnd="@drawable/ic_right_arrow"
+                                        android:gravity="center"
+                                        android:minWidth="150dp"
+                                        android:onClick="onAckoPremiumClick"
+                                        android:paddingStart="10dp"
+                                        android:paddingEnd="10dp"
+                                        android:text="₹ XXXX"
+                                        android:textAlignment="center"
+                                        android:textColor="@android:color/white" />
+
+                                    <include
+                                        android:id="@+id/div4"
+                                        layout="@layout/divider"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/rlPBAcko"
+                                        android:layout_margin="5dp" />
+
+                                    <TextView
+                                        android:id="@+id/preRate"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/div4"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginEnd="15dp"
+                                        android:singleLine="true"
+                                        android:text="1Year"
+                                        android:textAlignment="center"
+                                        android:textSize="12sp" />
+
+                                    <TextView
+                                        android:id="@+id/updatedIdv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/div4"
+                                        android:layout_margin="5dp"
+                                        android:text="₹ XX,XXX"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorPrimary" />
+
+                                </RelativeLayout>
+
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/llPolicyShriRam"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:elevation="8dp"
+                            app:layout_constraintTop_toBottomOf="@+id/llPolicy"
+                            card_view:cardElevation="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/llShriram"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp">
+
+                                    <ImageView
+                                        android:id="@+id/imgShriram"
+                                        android:layout_width="80dp"
+                                        android:layout_height="50dp"
+                                        android:scaleType="fitXY" />
+
+                                    <RelativeLayout
+                                        android:id="@+id/rlPBShriram"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/imgShriram"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:onClick="onPremiumBreak">
+
+                                        <TextView
+                                            android:id="@+id/shriramZD"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:minWidth="80dp"
+                                            android:text="@string/zero_dept_cover"
+                                            android:textColor="@android:color/holo_green_dark"
+                                            android:visibility="gone" />
+
+                                        <androidx.appcompat.widget.AppCompatButton
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="30dp"
+                                            android:layout_alignParentEnd="true"
+                                            android:background="@color/colorPrimary"
+                                            android:clickable="false"
+                                            android:gravity="center"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="10dp"
+                                            android:text="@string/premium_break"
+                                            android:textAlignment="center"
+                                            android:textColor="@android:color/white" />
+                                    </RelativeLayout>
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/btnSRPremium"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="30dp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_margin="5dp"
+                                        android:background="@color/colorPrimaryDark"
+                                        android:drawableEnd="@drawable/ic_right_arrow"
+                                        android:gravity="center"
+                                        android:minWidth="150dp"
+                                        android:onClick="onShriramPremiumClick"
+                                        android:paddingStart="10dp"
+                                        android:paddingEnd="10dp"
+                                        android:text="₹ XXXX"
+                                        android:textAlignment="center"
+                                        android:textColor="@android:color/white" />
+
+                                    <include
+                                        android:id="@+id/div41"
+                                        layout="@layout/divider"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/rlPBShriram"
+                                        android:layout_margin="5dp" />
+
+                                    <TextView
+                                        android:id="@+id/preSRRate"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/div41"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginEnd="15dp"
+                                        android:singleLine="true"
+                                        android:text="1Year"
+                                        android:textAlignment="center"
+                                        android:textSize="12sp" />
+
+                                    <TextView
+                                        android:id="@+id/updatedSRIdv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/div41"
+                                        android:layout_margin="5dp"
+                                        android:text="₹ XX,XXX"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorPrimary" />
+
+                                </RelativeLayout>
+
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/llPolicyHdfc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:elevation="8dp"
+                            app:layout_constraintTop_toBottomOf="@+id/llPolicyShriRam"
+                            card_view:cardElevation="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/llHdfc"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp">
+
+                                    <ImageView
+                                        android:id="@+id/imgHdfc"
+                                        android:layout_width="80dp"
+                                        android:layout_height="50dp"
+                                        android:scaleType="fitXY" />
+
+                                    <RelativeLayout
+                                        android:id="@+id/rlPBHdfc"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/imgHdfc"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:onClick="onPremiumBreak">
+
+                                        <TextView
+                                            android:id="@+id/hdfcZD"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:minWidth="80dp"
+                                            android:text="@string/zero_dept_cover"
+                                            android:textColor="@android:color/holo_green_dark"
+                                            android:visibility="gone" />
+
+                                        <androidx.appcompat.widget.AppCompatButton
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="30dp"
+                                            android:layout_alignParentEnd="true"
+                                            android:background="@color/colorPrimary"
+                                            android:clickable="false"
+                                            android:gravity="center"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="10dp"
+                                            android:text="@string/premium_break"
+                                            android:textAlignment="center"
+                                            android:textColor="@android:color/white" />
+                                    </RelativeLayout>
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/btnHPremium"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="30dp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_margin="5dp"
+                                        android:background="@color/colorPrimaryDark"
+                                        android:drawableEnd="@drawable/ic_right_arrow"
+                                        android:gravity="center"
+                                        android:minWidth="150dp"
+                                        android:onClick="onHdfcPremiumClick"
+                                        android:paddingStart="10dp"
+                                        android:paddingEnd="10dp"
+                                        android:text="₹ XXXX"
+                                        android:textAlignment="center"
+                                        android:textColor="@android:color/white" />
+
+                                    <include
+                                        android:id="@+id/div1"
+                                        layout="@layout/divider"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/rlPBHdfc"
+                                        android:layout_margin="5dp" />
+
+                                    <TextView
+                                        android:id="@+id/preHRate"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/div1"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginEnd="15dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:textSize="12sp" />
+
+                                    <TextView
+                                        android:id="@+id/updatedHdfcIdv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/div1"
+                                        android:layout_margin="5dp"
+                                        android:text="₹ XX,XXX"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorPrimary" />
+
+                                </RelativeLayout>
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/llPolicyBajaj"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:elevation="8dp"
+                            app:layout_constraintTop_toBottomOf="@+id/llPolicyHdfc"
+                            card_view:cardElevation="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/llBajaj"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp">
+
+                                    <ImageView
+                                        android:id="@+id/imgBajaj"
+                                        android:layout_width="80dp"
+                                        android:layout_height="50dp"
+                                        android:scaleType="fitXY" />
+
+                                    <RelativeLayout
+                                        android:id="@+id/rlPBBajaj"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/imgBajaj"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:onClick="onPremiumBreak">
+
+                                        <TextView
+                                            android:id="@+id/bajajZD"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:minWidth="80dp"
+                                            android:text="@string/zero_dept_cover"
+                                            android:textColor="@android:color/holo_green_dark"
+                                            android:visibility="gone" />
+
+                                        <androidx.appcompat.widget.AppCompatButton
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="30dp"
+                                            android:layout_alignParentEnd="true"
+                                            android:background="@color/colorPrimary"
+                                            android:clickable="false"
+                                            android:gravity="center"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="10dp"
+                                            android:text="@string/premium_break"
+                                            android:textAlignment="center"
+                                            android:textColor="@android:color/white" />
+                                    </RelativeLayout>
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/btnBPremium"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="30dp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_margin="5dp"
+                                        android:background="@color/colorPrimaryDark"
+                                        android:drawableEnd="@drawable/ic_right_arrow"
+                                        android:gravity="center"
+                                        android:minWidth="150dp"
+                                        android:onClick="onBajajPremiumClick"
+                                        android:paddingStart="10dp"
+                                        android:paddingEnd="10dp"
+                                        android:text="₹ XXXX"
+                                        android:textAlignment="center"
+                                        android:textColor="@android:color/white" />
+
+                                    <include
+                                        android:id="@+id/div1B"
+                                        layout="@layout/divider"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/rlPBBajaj"
+                                        android:layout_margin="5dp" />
+
+                                    <TextView
+                                        android:id="@+id/preBRate"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/div1B"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginEnd="15dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:textSize="12sp" />
+
+                                    <TextView
+                                        android:id="@+id/updatedBajajIdv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/div1B"
+                                        android:layout_margin="5dp"
+                                        android:text="₹ XX,XXX"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorPrimary" />
+
+                                </RelativeLayout>
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/llPolicyIffco"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:elevation="8dp"
+                            app:layout_constraintTop_toBottomOf="@+id/llPolicyBajaj"
+                            card_view:cardElevation="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/llIffco"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp">
+
+                                    <ImageView
+                                        android:id="@+id/imgIffco"
+                                        android:layout_width="80dp"
+                                        android:layout_height="50dp"
+                                        android:scaleType="fitXY" />
+
+                                    <RelativeLayout
+                                        android:id="@+id/rlPBIffco"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/imgIffco"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:onClick="onPremiumBreak">
+
+                                        <TextView
+                                            android:id="@+id/iffcoZD"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:minWidth="80dp"
+                                            android:text="@string/zero_dept_cover"
+                                            android:textColor="@android:color/holo_green_dark"
+                                            android:visibility="gone" />
+
+                                        <androidx.appcompat.widget.AppCompatButton
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="30dp"
+                                            android:layout_alignParentEnd="true"
+                                            android:background="@color/colorPrimary"
+                                            android:clickable="false"
+                                            android:gravity="center"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="10dp"
+                                            android:text="@string/premium_break"
+                                            android:textAlignment="center"
+                                            android:textColor="@android:color/white" />
+                                    </RelativeLayout>
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/btnIffcoPremium"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="30dp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_margin="5dp"
+                                        android:background="@color/colorPrimaryDark"
+                                        android:drawableEnd="@drawable/ic_right_arrow"
+                                        android:gravity="center"
+                                        android:minWidth="150dp"
+                                        android:onClick="onIffcoPremiumClick"
+                                        android:paddingStart="10dp"
+                                        android:paddingEnd="10dp"
+                                        android:text="₹ XXXX"
+                                        android:textAlignment="center"
+                                        android:textColor="@android:color/white" />
+
+                                    <include
+                                        android:id="@+id/div1If"
+                                        layout="@layout/divider"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/rlPBIffco"
+                                        android:layout_margin="5dp" />
+
+                                    <TextView
+                                        android:id="@+id/preIffcoRate"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/div1If"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginEnd="15dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:textSize="12sp" />
+
+                                    <TextView
+                                        android:id="@+id/updatedIffcoIdv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/div1If"
+                                        android:layout_margin="5dp"
+                                        android:text="₹ XX,XXX"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorPrimary" />
+
+                                </RelativeLayout>
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/llPolicyOriental"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:elevation="8dp"
+                            app:layout_constraintTop_toBottomOf="@+id/llPolicyIffco"
+                            card_view:cardElevation="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/llOriental"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp">
+
+                                    <ImageView
+                                        android:id="@+id/imgOriental"
+                                        android:layout_width="80dp"
+                                        android:layout_height="50dp"
+                                        android:scaleType="fitXY" />
+
+                                    <RelativeLayout
+                                        android:id="@+id/rlPBOriental"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/imgOriental"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:onClick="onPremiumBreak">
+
+                                        <TextView
+                                            android:id="@+id/orientalZD"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:minWidth="80dp"
+                                            android:text="@string/zero_dept_cover"
+                                            android:textColor="@android:color/holo_green_dark"
+                                            android:visibility="gone" />
+
+                                        <androidx.appcompat.widget.AppCompatButton
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="30dp"
+                                            android:layout_alignParentEnd="true"
+                                            android:background="@color/colorPrimary"
+                                            android:clickable="false"
+                                            android:gravity="center"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="10dp"
+                                            android:text="@string/premium_break"
+                                            android:textAlignment="center"
+                                            android:textColor="@android:color/white" />
+                                    </RelativeLayout>
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/btnOrientalPremium"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="30dp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_marginBottom="5dp"
+                                        android:background="@color/colorPrimaryDark"
+                                        android:drawableEnd="@drawable/ic_right_arrow"
+                                        android:gravity="center"
+                                        android:minWidth="150dp"
+                                        android:onClick="onOrientalPremiumClick"
+                                        android:paddingStart="10dp"
+                                        android:paddingEnd="10dp"
+                                        android:text="₹ XXXX"
+                                        android:textAlignment="center"
+                                        android:textColor="@android:color/white" />
+
+                                    <include
+                                        android:id="@+id/div1Oriental"
+                                        layout="@layout/divider"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/rlPBOriental"
+                                        android:layout_margin="5dp" />
+
+                                    <TextView
+                                        android:id="@+id/preOrientalRate"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/div1Oriental"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginEnd="15dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:textSize="12sp" />
+
+                                    <TextView
+                                        android:id="@+id/updatedOrientalIdv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/div1Oriental"
+                                        android:layout_margin="5dp"
+                                        android:text="₹ XX,XXX"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorPrimary" />
+
+                                </RelativeLayout>
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/llPolicyTata"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:elevation="8dp"
+                            app:layout_constraintTop_toBottomOf="@+id/llPolicyOriental"
+                            card_view:cardElevation="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/llTata"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp">
+
+                                    <ImageView
+                                        android:id="@+id/imgTata"
+                                        android:layout_width="80dp"
+                                        android:layout_height="50dp"
+                                        android:contentDescription="tata"
+                                        android:scaleType="fitXY" />
+
+                                    <RelativeLayout
+                                        android:id="@+id/rlPBTata"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/imgTata"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:onClick="onPremiumBreak">
+
+                                        <TextView
+                                            android:id="@+id/tataZD"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:minWidth="80dp"
+                                            android:text="@string/zero_dept_cover"
+                                            android:textColor="@android:color/holo_green_dark"
+                                            android:visibility="gone" />
+
+                                        <androidx.appcompat.widget.AppCompatButton
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="30dp"
+                                            android:layout_alignParentEnd="true"
+                                            android:background="@color/colorPrimary"
+                                            android:clickable="false"
+                                            android:gravity="center"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="10dp"
+                                            android:text="@string/premium_break"
+                                            android:textAlignment="center"
+                                            android:textColor="@android:color/white" />
+                                    </RelativeLayout>
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/btnTataPremium"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="30dp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_margin="5dp"
+                                        android:background="@color/colorPrimaryDark"
+                                        android:drawableEnd="@drawable/ic_right_arrow"
+                                        android:gravity="center"
+                                        android:minWidth="150dp"
+                                        android:onClick="onTataPremiumClick"
+                                        android:paddingStart="10dp"
+                                        android:paddingEnd="10dp"
+                                        android:text="₹ XXXX"
+                                        android:textAlignment="center"
+                                        android:textColor="@android:color/white" />
+
+                                    <include
+                                        android:id="@+id/div1T"
+                                        layout="@layout/divider"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/rlPBTata"
+                                        android:layout_margin="5dp" />
+
+                                    <TextView
+                                        android:id="@+id/preTataRate"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/div1T"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginEnd="15dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:textSize="12sp" />
+
+                                    <TextView
+                                        android:id="@+id/updatedTataIdv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/div1T"
+                                        android:layout_margin="5dp"
+                                        android:text="₹ XX,XXX"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorPrimary" />
+
+                                </RelativeLayout>
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/llPolicyBharti"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:elevation="8dp"
+                            app:layout_constraintTop_toBottomOf="@+id/llPolicyTata"
+                            card_view:cardElevation="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/llBharti"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp">
+
+                                    <ImageView
+                                        android:id="@+id/imgBharti"
+                                        android:layout_width="80dp"
+                                        android:layout_height="50dp"
+                                        android:scaleType="fitXY" />
+
+                                    <RelativeLayout
+                                        android:id="@+id/rlPBBharti"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/imgBharti"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:onClick="onPremiumBreak">
+
+                                        <TextView
+                                            android:id="@+id/bhartiZD"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:minWidth="80dp"
+                                            android:text="@string/zero_dept_cover"
+                                            android:textColor="@android:color/holo_green_dark"
+                                            android:visibility="gone" />
+
+                                        <androidx.appcompat.widget.AppCompatButton
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="30dp"
+                                            android:layout_alignParentEnd="true"
+                                            android:background="@color/colorPrimary"
+                                            android:clickable="false"
+                                            android:gravity="center"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="10dp"
+                                            android:text="@string/premium_break"
+                                            android:textAlignment="center"
+                                            android:textColor="@android:color/white" />
+                                    </RelativeLayout>
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/btnBhartiPremium"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="30dp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_margin="5dp"
+                                        android:background="@color/colorPrimaryDark"
+                                        android:drawableEnd="@drawable/ic_right_arrow"
+                                        android:gravity="center"
+                                        android:minWidth="150dp"
+                                        android:onClick="onBhartiPremiumClick"
+                                        android:paddingStart="10dp"
+                                        android:paddingEnd="10dp"
+                                        android:text="₹ XXXX"
+                                        android:textAlignment="center"
+                                        android:textColor="@android:color/white" />
+
+                                    <include
+                                        android:id="@+id/div1BB"
+                                        layout="@layout/divider"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/rlPBBharti"
+                                        android:layout_margin="5dp" />
+
+                                    <TextView
+                                        android:id="@+id/preBhartiRate"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/div1BB"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginEnd="15dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:textSize="12sp" />
+
+                                    <TextView
+                                        android:id="@+id/updatedBhartiIdv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/div1BB"
+                                        android:layout_margin="5dp"
+                                        android:text="₹ XX,XXX"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorPrimary" />
+
+                                </RelativeLayout>
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/llPolicyReliance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:elevation="8dp"
+                            app:layout_constraintTop_toBottomOf="@+id/llPolicyBharti"
+                            card_view:cardElevation="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/llReliance"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp">
+
+                                    <ImageView
+                                        android:id="@+id/imgReliance"
+                                        android:layout_width="80dp"
+                                        android:layout_height="50dp"
+                                        android:contentDescription="reliance"
+                                        android:scaleType="fitXY" />
+
+                                    <RelativeLayout
+                                        android:id="@+id/rlPBReliance"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/imgReliance"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:onClick="onPremiumBreak">
+
+                                        <TextView
+                                            android:id="@+id/relianceZD"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:minWidth="80dp"
+                                            android:text="@string/zero_dept_cover"
+                                            android:textColor="@android:color/holo_green_dark"
+                                            android:visibility="gone" />
+
+                                        <androidx.appcompat.widget.AppCompatButton
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="30dp"
+                                            android:layout_alignParentEnd="true"
+                                            android:background="@color/colorPrimary"
+                                            android:clickable="false"
+                                            android:gravity="center"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="10dp"
+                                            android:text="@string/premium_break"
+                                            android:textAlignment="center"
+                                            android:textColor="@android:color/white" />
+                                    </RelativeLayout>
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/btnReliancePremium"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="30dp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_margin="5dp"
+                                        android:background="@color/colorPrimaryDark"
+                                        android:drawableEnd="@drawable/ic_right_arrow"
+                                        android:gravity="center"
+                                        android:minWidth="150dp"
+                                        android:onClick="onReliancePremiumClick"
+                                        android:paddingStart="10dp"
+                                        android:paddingEnd="10dp"
+                                        android:text="₹ XXXX"
+                                        android:textAlignment="center"
+                                        android:textColor="@android:color/white" />
+
+                                    <include
+                                        android:id="@+id/divR"
+                                        layout="@layout/divider"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/rlPBReliance"
+                                        android:layout_margin="5dp" />
+
+                                    <TextView
+                                        android:id="@+id/preRelianceRate"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/divR"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginEnd="15dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:textSize="12sp" />
+
+                                    <TextView
+                                        android:id="@+id/updatedRelianceIdv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/divR"
+                                        android:layout_margin="5dp"
+                                        android:text="₹ XX,XXX"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorPrimary" />
+
+                                </RelativeLayout>
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/llPolicyIcici"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:elevation="8dp"
+                            android:visibility="gone"
+                            app:layout_constraintTop_toBottomOf="@+id/llPolicyReliance"
+                            card_view:cardElevation="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/llIcici"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp">
+
+                                    <ImageView
+                                        android:id="@+id/imgIcici"
+                                        android:layout_width="80dp"
+                                        android:layout_height="50dp"
+                                        android:scaleType="fitXY"
+                                        android:src="@drawable/icici" />
+
+                                    <RelativeLayout
+                                        android:id="@+id/rlPBIcici"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/imgIcici"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:onClick="onPremiumBreak">
+
+                                        <TextView
+                                            android:id="@+id/iciciZD"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:minWidth="80dp"
+                                            android:text="@string/zero_dept_cover"
+                                            android:textColor="@android:color/holo_green_dark"
+                                            android:visibility="gone" />
+
+                                        <androidx.appcompat.widget.AppCompatButton
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="30dp"
+                                            android:layout_alignParentEnd="true"
+                                            android:background="@color/colorPrimary"
+                                            android:clickable="false"
+                                            android:gravity="center"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="10dp"
+                                            android:text="@string/premium_break"
+                                            android:textAlignment="center"
+                                            android:textColor="@android:color/white" />
+                                    </RelativeLayout>
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/btnIciciPremium"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="30dp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_margin="5dp"
+                                        android:background="@color/colorPrimaryDark"
+                                        android:drawableEnd="@drawable/ic_right_arrow"
+                                        android:gravity="center"
+                                        android:minWidth="150dp"
+                                        android:onClick="onIciciPremiumClick"
+                                        android:paddingStart="10dp"
+                                        android:paddingEnd="10dp"
+                                        android:text="₹ XXXX"
+                                        android:textAlignment="center"
+                                        android:textColor="@android:color/white" />
+
+                                    <include
+                                        android:id="@+id/divI"
+                                        layout="@layout/divider"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/rlPBIcici"
+                                        android:layout_margin="5dp" />
+
+                                    <TextView
+                                        android:id="@+id/preIciciRate"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/divI"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginEnd="15dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:textSize="12sp" />
+
+                                    <TextView
+                                        android:id="@+id/updatedIciciIdv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/divI"
+                                        android:layout_margin="5dp"
+                                        android:text="₹ XX,XXX"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorPrimary" />
+
+                                </RelativeLayout>
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/llPolicyDigit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:elevation="8dp"
+                            app:layout_constraintTop_toBottomOf="@+id/llPolicyIcici"
+                            card_view:cardElevation="10dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/llDigit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp">
+
+                                    <ImageView
+                                        android:id="@+id/imgDigit"
+                                        android:layout_width="80dp"
+                                        android:layout_height="50dp"
+                                        android:scaleType="fitXY" />
+
+                                    <RelativeLayout
+                                        android:id="@+id/rlPBDigit"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/imgDigit"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:onClick="onPremiumBreak">
+
+                                        <TextView
+                                            android:id="@+id/digitZD"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:minWidth="80dp"
+                                            android:text="@string/zero_dept_cover"
+                                            android:textColor="@android:color/holo_green_dark"
+                                            android:visibility="gone" />
+
+                                        <androidx.appcompat.widget.AppCompatButton
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="30dp"
+                                            android:layout_alignParentEnd="true"
+                                            android:background="@color/colorPrimary"
+                                            android:clickable="false"
+                                            android:gravity="center"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="10dp"
+                                            android:text="@string/premium_break"
+                                            android:textAlignment="center"
+                                            android:textColor="@android:color/white" />
+                                    </RelativeLayout>
+
+                                    <androidx.appcompat.widget.AppCompatButton
+                                        android:id="@+id/btnDigitPremium"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="30dp"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_margin="5dp"
+                                        android:background="@color/colorPrimaryDark"
+                                        android:drawableEnd="@drawable/ic_right_arrow"
+                                        android:gravity="center"
+                                        android:minWidth="150dp"
+                                        android:onClick="onDigitPremiumClick"
+                                        android:paddingStart="10dp"
+                                        android:paddingEnd="10dp"
+                                        android:text="₹ XXXX"
+                                        android:textAlignment="center"
+                                        android:textColor="@android:color/white" />
+
+                                    <include
+                                        android:id="@+id/divD"
+                                        layout="@layout/divider"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/rlPBDigit"
+                                        android:layout_margin="5dp" />
+
+                                    <TextView
+                                        android:id="@+id/preDRate"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/divD"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginEnd="15dp"
+                                        android:singleLine="true"
+                                        android:textAlignment="center"
+                                        android:textSize="12sp" />
+
+                                    <TextView
+                                        android:id="@+id/updatedDigitIdv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/divD"
+                                        android:layout_margin="5dp"
+                                        android:text="₹ XX,XXX"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/colorPrimary" />
+
+                                </RelativeLayout>
+
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            app:layout_constraintTop_toBottomOf="@+id/llPolicyDigit" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/msg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:elevation="8dp"
+                        app:layout_constraintTop_toBottomOf="@+id/clQuote"
+                        card_view:cardElevation="10dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="@string/msg_quote"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/black"
+                            android:textSize="12sp" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        app:layout_constraintTop_toBottomOf="@+id/msg" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </ScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rr12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:alpha=".35"
+                android:contentDescription="@string/app_name"
+                app:srcCompat="@drawable/ic_panda" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/empty"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center" />
+        </RelativeLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floating_action_button"
+            style="@style/Widget.Design.FloatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:onClick="onShareClick"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:srcCompat="@drawable/ic_share" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg"
+    android:backgroundTintMode="multiply"
+    tools:context=".activity.travel.GeographicalActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/lblCon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="By clicking on NEXT, you agree to our"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@+id/btnNext" />
+
+        <TextView
+            android:id="@+id/lblTerm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onTermsClick"
+            android:padding="5dp"
+            android:text="Privacy Policy &amp; Terms of Use"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintTop_toBottomOf="@+id/lblCon" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/button_bg"
+            android:minWidth="150dp"
+            android:onClick="onGetQuoteClick"
+            android:shadowRadius="10"
+            android:text="@string/get_premium"
+            android:textColor="@android:color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cc3" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cc2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:dividerHeight="0.0px"
+            android:elevation="8dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:orientation="vertical"
+            android:padding="5dp"
+            android:stateListAnimator="@anim/animation"
+            app:layout_constraintTop_toBottomOf="@+id/cc1"
+            card_view:cardElevation="10dp"
+            card_view:cardPreventCornerOverlap="false">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp">
+
+                <LinearLayout
+                    android:id="@+id/ll1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblDes"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    tools:ignore="DisableBaselineAlignment">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/lblFrom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="From Date" />
+
+                        <TextView
+                            android:id="@+id/fromDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblFrom"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/textview_border"
+                            android:gravity="center"
+                            android:hint="@string/select_date"
+                            android:onClick="onDateClick"
+                            android:padding="5dp"
+                            android:textSize="15sp"
+                            app:drawableStartCompat="@drawable/ic_event" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/lblTo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="To Date" />
+
+                        <TextView
+                            android:id="@+id/toDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblTo"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/textview_border"
+                            android:gravity="center"
+                            android:hint="@string/select_date"
+                            android:onClick="onDateClick"
+                            android:padding="5dp"
+                            android:textSize="15sp"
+                            app:drawableStartCompat="@drawable/ic_event" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/lblDes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select Travel Calender"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <include
+                    android:id="@+id/div1"
+                    layout="@layout/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblDes" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cc1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:dividerHeight="0.0px"
+            android:elevation="8dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:padding="5dp"
+            android:stateListAnimator="@anim/animation"
+            app:layout_constraintTop_toTopOf="parent"
+            card_view:cardElevation="10dp"
+            card_view:cardPreventCornerOverlap="false">
+
+            <RelativeLayout
+                android:id="@+id/layoutL1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/lblAge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select Travel Plan For"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorPrimaryDark"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/lblFamily"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/div2"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/dark_theme"
+                    android:minWidth="80dp"
+                    android:onClick="onFamilyClick"
+                    android:padding="5dp"
+                    android:text="Family"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/lblGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/div2"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/lblFamily"
+                    android:background="@drawable/light_theme"
+                    android:minWidth="120dp"
+                    android:onClick="onGroupClick"
+                    android:padding="5dp"
+                    android:text="Group/Friends"
+                    android:textAlignment="center"
+                    android:textColor="?attr/colorPrimary" />
+
+                <TextView
+                    android:id="@+id/lblIndividual"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/div2"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/lblGroup"
+                    android:background="@drawable/light_theme"
+                    android:minWidth="100dp"
+                    android:onClick="onIndividualClick"
+                    android:padding="5dp"
+                    android:text="Individual"
+                    android:textAlignment="center"
+                    android:textColor="?attr/colorPrimary" />
+
+                <include
+                    android:id="@+id/div2"
+                    layout="@layout/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblAge" />
+
+                <include
+                    android:id="@+id/div21"
+                    layout="@layout/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblDestination" />
+
+                <TextView
+                    android:id="@+id/lblDestination"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblGroup"
+                    android:layout_marginTop="20dp"
+                    android:text="Select Destination"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <com.square.pos.utils.SearchableSpinner
+                    android:id="@+id/spnCountry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/div21"
+                    android:layout_marginTop="-10dp"
+                    android:layout_marginBottom="-10dp"/>
+
+                <include
+                    android:id="@+id/div111"
+                    layout="@layout/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblSum" />
+
+                <TextView
+                    android:id="@+id/lblSum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spnCountry"
+                    android:layout_marginTop="20dp"
+                    android:text="Select Sum-Insured"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <Spinner
+                    android:id="@+id/spnSumInsured"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/travel_sum"
+                    android:layout_below="@+id/lblSum" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cc3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:dividerHeight="0.0px"
+            android:elevation="8dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:padding="5dp"
+            android:stateListAnimator="@anim/animation"
+            app:layout_constraintTop_toBottomOf="@+id/cc2"
+            card_view:cardElevation="10dp"
+            card_view:cardPreventCornerOverlap="false">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp">
+
+                <TextView
+                    android:id="@+id/lblAg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select Age (Years)"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <include
+                    android:id="@+id/idIns"
+                    layout="@layout/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblAg"
+                    android:layout_margin="2dp" />
+
+                <TextView
+                    android:id="@+id/txtAge1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/idIns"
+                    android:layout_marginTop="10dp" />
+
+                <EditText
+                    android:id="@+id/edtMember1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtAge1"
+                    android:background="@drawable/textview_border"
+                    android:drawablePadding="10dp"
+                    android:hint="@string/age"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:maxLines="1"
+                    android:padding="5dp"
+                    android:singleLine="true" />
+
+                <LinearLayout
+                    android:id="@+id/lLay1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edtMember1"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:id="@+id/txtAge2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/txtAge3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/txtAge4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lVal1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lLay1"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <EditText
+                        android:id="@+id/edtMember2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/textview_border"
+                        android:hint="@string/age"
+                        android:importantForAutofill="no"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:maxLines="1"
+                        android:padding="5dp"
+                        android:singleLine="true" />
+
+                    <EditText
+                        android:id="@+id/edtMember3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/textview_border"
+                        android:hint="@string/age"
+                        android:importantForAutofill="no"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:maxLines="1"
+                        android:padding="5dp"
+                        android:singleLine="true" />
+
+                    <EditText
+                        android:id="@+id/edtMember4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/textview_border"
+                        android:hint="@string/age"
+                        android:importantForAutofill="no"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:maxLines="1"
+                        android:padding="5dp"
+                        android:singleLine="true" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lLay2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lVal1"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <TextView
+                        android:id="@+id/txtAge5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/txtAge6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/txtAge7"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lVal2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lLay2"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <EditText
+                        android:id="@+id/edtMember5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/textview_border"
+                        android:hint="@string/age"
+                        android:importantForAutofill="no"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:maxLines="1"
+                        android:padding="5dp"
+                        android:singleLine="true" />
+
+                    <EditText
+                        android:id="@+id/edtMember6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/textview_border"
+                        android:hint="@string/age"
+                        android:importantForAutofill="no"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:maxLines="1"
+                        android:padding="5dp"
+                        android:singleLine="true" />
+
+                    <EditText
+                        android:id="@+id/edtMember7"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/textview_border"
+                        android:hint="@string/age"
+                        android:importantForAutofill="no"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:maxLines="1"
+                        android:padding="5dp"
+                        android:singleLine="true" />
+                </LinearLayout>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+
+

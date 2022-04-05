@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.square.pos.activity.health.Member4DetailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/inc"
+            layout="@layout/layout_health_life_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/inc"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="20dp"
+            android:background="@color/colorGreen"
+            android:drawableEnd="@drawable/ic_greater_white"
+            android:minWidth="10dp"
+            android:onClick="onNextClick"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="@string/next"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+
+</ScrollView>

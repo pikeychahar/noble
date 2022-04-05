@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="policyType">
+        <item>Comprehensive</item>
+        <item>Third Party</item>
+        <item>StandAlone OD</item>
+    </array>
+
+    <array name="policyType_1">
+        <item>Comprehensive</item>
+        <item>Third Party</item>
+    </array>
+
+    <array name="crm_raise_tickets">
+        <item>Payment done policy not received</item>
+        <item>Make model update</item>
+        <item>Hypothecation Update</item>
+        <item>Quote not reflecting</item>
+        <item>Error during policy issuance</item>
+        <item>Other</item>
+    </array>
+
+    <array name="error_pages">
+        <item>Quote Page</item>
+        <item>Proposal Page</item>
+        <item>Proposal Page</item>
+        <item>Review Page</item>
+        <item>Payment Page</item>
+    </array>
+    <array name="policyExpire">
+        <item>Not Expired</item>
+        <item>Expired within 90 days</item>
+        <item>Expired more than 90 days</item>
+    </array>
+    <array name="vOwnedBY">
+        <item>Individual</item>
+        <item>Organization</item>
+    </array>
+
+    <array name="account_type">
+        <item>Saving Account</item>
+        <item>Current Account</item>
+    </array>
+
+    <array name="treatment">
+        <item>Select Treatment Status</item>
+        <item>Received</item>
+        <item>Receiving</item>
+    </array>
+
+    <array name="pcv_companies">
+        <item>Shriram</item>
+        <item>Digit</item>
+        <item>Reliance</item>
+    </array>
+
+    <array name="treatment_outcome">
+        <item>Select Treatment Outcome</item>
+        <item>Fully Covered</item>
+        <item>Partially Covered</item>
+        <item>Ongoing</item>
+    </array>
+
+    <array name="months">
+        <item>Select Month</item>
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </array>
+    <array name="gender">
+        <item>Select Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+    </array>
+
+    <array name="tpa">
+        <item>Select TPA</item>
+        <item>Paramount Health Services (TPA) Pvt Ltd</item>
+        <item>Medi Assist Insurance (TPA) Pvt Ltd</item>
+        <item>Raksha Health Insurance TPA PVT. LTD</item>
+    </array>
+    <array name="material_health">
+        <item>Married</item>
+        <item>Unmarried</item>
+    </array>
+    <array name="gender_health">
+        <item>Male</item>
+        <item>Female</item>
+    </array>
+    <array name="plan">
+        <item>Classic</item>
+        <item>Elite</item>
+        <item>Supreme</item>
+    </array>
+    <array name="v_type">
+        <item>RC</item>
+        <item>GST</item>
+        <item>Insurance</item>
+        <item>Other</item>
+    </array>
+    <array name="doc_type">
+        <item>Motor</item>
+        <item>Non Motor</item>
+        <item>Health</item>
+    </array>
+    <array name="lead_type">
+        <item>Bike</item>
+        <item>Pvt Car</item>
+        <item>Health</item>
+        <item>Corporate</item>
+    </array>
+    <array name="n_type">
+        <item>Mandate</item>
+        <item>Proposal Form</item>
+        <item>KYC</item>
+    </array>
+    <array name="h_type">
+        <item>Proposal Form</item>
+        <item>KYC</item>
+    </array>
+    <array name="f_type">
+        <item>Petrol</item>
+        <item>Diesel</item>
+        <item>CNG</item>
+    </array>
+    <string-array name="tenure">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="tenure_year">
+        <item>1 Year</item>
+        <item>2 Year</item>
+        <item>3 Year</item>
+    </string-array>
+
+    <string-array name="classic_sum">
+        <item>200000</item>
+        <item>300000</item>
+        <item>400000</item>
+        <item>500000</item>
+        <item>700000</item>
+        <item>1000000</item>
+        <item>1500000</item>
+        <item>2000000</item>
+        <item>5000000</item>
+        <item>10000000</item>
+        <item>15000000</item>
+    </string-array>
+
+    <array name="nationality">
+        <item>Select Nationality</item>
+        <item>Indian</item>
+        <item>Others</item>
+    </array>
+    <array name="vehicle_owned">
+        <item>Vehicle Owned By</item>
+        <item>Individual</item>
+        <item>Organization</item>
+    </array>
+    <array name="vehicle_type">
+        <item>Two-Wheeler</item>
+        <item>Pvt Car</item>
+        <item>PCV</item>
+        <item>GCV</item>
+        <item>MISC-D</item>
+    </array>
+    <array name="qualification">
+        <item>Select Qualification</item>
+        <item>10 Pass</item>
+        <item>12 Pass</item>
+        <item>Graduation</item>
+        <item>Post Graduation</item>
+    </array>
+    <array name="material">
+        <item>Select Material Status</item>
+        <item>Single</item>
+        <item>Married</item>
+        <item>Divorced</item>
+        <item>Widowed</item>
+        <item>Separated</item>
+        <item>Other</item>
+    </array>
+    <array name="reg_years">
+        <item>New Bike</item>
+        <item>2018</item>
+        <item>2017</item>
+        <item>2016</item>
+        <item>2015</item>
+        <item>2014</item>
+        <item>2013</item>
+        <item>2012</item>
+        <item>2011</item>
+        <item>2010</item>
+        <item>2009</item>
+        <item>2008</item>
+        <item>2007</item>
+        <item>2006</item>
+        <item>2005</item>
+        <item>2004</item>
+        <item>2003</item>
+    </array>
+
+    <string-array name="nCB">
+        <item>0%</item>
+        <item>20%</item>
+        <item>25%</item>
+        <item>35%</item>
+        <item>45%</item>
+        <item>50%</item>
+    </string-array>
+
+    <string-array name="salutation">
+        <item>Mr</item>
+        <item>Miss</item>
+        <item>Mrs</item>
+        <item>Dr</item>
+    </string-array>
+    <string-array name="unnamed_person">
+        <item>10000</item>
+        <item>20000</item>
+        <item>30000</item>
+        <item>40000</item>
+        <item>50000</item>
+        <item>60000</item>
+        <item>70000</item>
+        <item>80000</item>
+        <item>90000</item>
+        <item>100000</item>
+    </string-array>
+
+    <string-array name="pa_sum">
+        <item>10000</item>
+        <item>20000</item>
+        <item>30000</item>
+        <item>40000</item>
+        <item>50000</item>
+        <item>60000</item>
+        <item>70000</item>
+        <item>80000</item>
+        <item>90000</item>
+        <item>100000</item>
+        <item>110000</item>
+        <item>120000</item>
+        <item>130000</item>
+        <item>140000</item>
+        <item>150000</item>
+        <item>160000</item>
+        <item>170000</item>
+        <item>180000</item>
+    </string-array>
+
+    <string-array name="drivers">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="life_array">
+        <item>No</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string-array name="voluntary">
+        <item>2500</item>
+        <item>5000</item>
+        <item>7500</item>
+        <item>15000</item>
+    </string-array>
+
+    <string-array name="diseases">
+        <item>No</item>
+        <item>Asthma</item>
+        <item>Cholesterol</item>
+        <item>Heart</item>
+        <item>Hypertension</item>
+        <item>Obesity</item>
+        <item>Diabetes</item>
+    </string-array>
+
+    <string-array name="lead_from">
+        <item>Self</item>
+        <item>POS</item>
+        <item>Reference</item>
+    </string-array>
+
+    <string-array name="intimate_by">
+        <item>Insured</item>
+        <item>Insured Relative</item>
+        <item>Agent</item>
+        <item>Employee</item>
+        <item>Garage</item>
+        <item>Driver</item>
+    </string-array>
+
+    <string-array name="yes_no">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="ins_mode">
+        <item>Self</item>
+        <item>Agency</item>
+    </string-array>
+
+    <string-array name="renewal_action">
+        <item>Action</item>
+        <item>Follow Up</item>
+        <item>Lost</item>
+    </string-array>
+
+    <string-array name="survey_type">
+        <item>Loss Assessment</item>
+        <item>Final</item>
+    </string-array>
+
+    <string-array name="no_yes">
+        <item>No</item>
+        <item>Yes</item>
+    </string-array>
+
+    <string-array name="crm_policy_type">
+        <item>OD</item>
+        <item>TP</item>
+    </string-array>
+
+    <string-array name="statement_year">
+        <item>2021</item>
+        <item>2020</item>
+    </string-array>
+    <string-array name="statement_month">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+
+    <string-array name="crm_loss">
+        <item>Fire</item>
+        <item>Accidental</item>
+        <item>Theft</item>
+        <item>Natural-Disaster</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="travel_sum">
+        <item>50000</item>
+        <item>100000</item>
+        <item>250000</item>
+        <item>500000</item>
+    </string-array>
+
+ <string-array name="financial_year">
+        <item>2022–2023</item>
+        <item>2021–2022</item>
+        <item>2020–2021</item>
+        <item>2019–2020</item>
+        <item>2018–2019</item>
+        <item>2017–2018</item>
+    </string-array>
+
+<string-array name="policy_source">
+        <item>Offline</item>
+        <item>Online</item>
+        <item>Excel</item>
+    </string-array>
+
+
+<string-array name="policy_lob">
+        <item>Motor</item>
+        <item>Health</item>
+        <item>Non-Motor</item>
+        <item>Life</item>
+    </string-array>
+
+
+</resources>

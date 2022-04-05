@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rlPrevious"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp">
+
+    <TextView
+        android:id="@+id/tx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:text="@string/previous_policy_detail"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textStyle="bold" />
+
+    <include
+        android:id="@+id/divP1"
+        layout="@layout/divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tx"
+        android:layout_marginTop="5dp" />
+
+    <RadioGroup
+        android:id="@+id/rvPY"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/divP1"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:text="@string/have_pyp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/btnPYPYes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/yes"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/btnPYPNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="@string/no_do_not"
+            android:textSize="12sp" />
+    </RadioGroup>
+
+    <RelativeLayout
+        android:id="@+id/rlPre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rvPY">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtDob"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:id="@+id/edtPED"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:drawableStart="@drawable/ic_event"
+                android:drawablePadding="10dp"
+                android:hint="@string/policy_expire_date"
+                android:importantForAutofill="no"
+                android:inputType="none"
+                android:focusable="false"
+                android:textSize="12sp"
+                android:maxLines="1"
+                android:onClick="onDateClick"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RadioGroup
+            android:id="@+id/rvOC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtDob"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="190dp"
+                android:text="@string/owner_changed"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/btnOCYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/btnOCNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/no"
+                android:checked="true"
+                android:textSize="12sp" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/rvNP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rvOC"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="190dp"
+                android:text="@string/previous_year_ncb_protection"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/btnNcbYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/btnNcbNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/no"
+                android:checked="true"
+                android:textSize="12sp" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/rvCS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rvNP"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="190dp"
+                android:text="@string/claim_made_in_expiring_policy"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/btnClaimYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/btnClaimNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/no"
+                android:checked="true"
+                android:textSize="12sp" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/llPP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rvCS"
+            android:layout_marginTop="10dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:helperText="Previous Insurer">
+
+                <com.square.pos.utils.SearchableSpinner
+                    android:id="@+id/spnPreInsurer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-5dp"
+                    android:layout_marginTop="5dp"
+                    app:hintText="Select Insurer" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/rlNcb"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:helperText="Last Year NCB">
+
+                <Spinner
+                    android:id="@+id/spnNcb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:entries="@array/nCB"
+                    app:hintText="Select NCB" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

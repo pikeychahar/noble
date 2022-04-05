@@ -1,0 +1,113 @@
+{
+  "project_info": {
+    "project_number": "785414023406",
+    "project_id": "square-insurance-e667c",
+    "storage_bucket": "square-insurance-e667c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785414023406:android:ba5e4e3a7e79c5e1dd2bff",
+        "android_client_info": {
+          "package_name": "com.sibpl.squarepos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "785414023406-5qagodtsg811hq3g37tsiool15uq8mph.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGqCekIM9mnkMYDq3mWuhpIqfu7oWs0GY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "785414023406-5qagodtsg811hq3g37tsiool15uq8mph.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785414023406:android:9022507ac8c51302dd2bff",
+        "android_client_info": {
+          "package_name": "com.square.pos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "785414023406-7b0hta98kk3nqklifk4c3dg2f1omgrq4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.square.pos",
+            "certificate_hash": "75f3a297413ed8c7630e86eeefee4a879285a252"
+          }
+        },
+        {
+          "client_id": "785414023406-5qagodtsg811hq3g37tsiool15uq8mph.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGqCekIM9mnkMYDq3mWuhpIqfu7oWs0GY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "785414023406-5qagodtsg811hq3g37tsiool15uq8mph.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785414023406:android:eea22c05b445fab9dd2bff",
+        "android_client_info": {
+          "package_name": "com.square.squareinsurance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "785414023406-j1bvb0nvl9oo0m09armd70pe6nplvnol.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.square.squareinsurance",
+            "certificate_hash": "75f3a297413ed8c7630e86eeefee4a879285a252"
+          }
+        },
+        {
+          "client_id": "785414023406-5qagodtsg811hq3g37tsiool15uq8mph.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGqCekIM9mnkMYDq3mWuhpIqfu7oWs0GY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "785414023406-5qagodtsg811hq3g37tsiool15uq8mph.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

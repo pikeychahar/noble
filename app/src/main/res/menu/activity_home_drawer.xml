@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home_icon"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_bike"
+            android:icon="@drawable/ic_cltwo"
+            android:title="@string/bike_insurance" />
+        <item
+            android:id="@+id/nav_car"
+            android:icon="@drawable/ic_clcar"
+            android:title="@string/car_insurance" />
+        <item
+            android:id="@+id/nav_travel"
+            android:icon="@drawable/ic_travel"
+            android:title="@string/travel_insurance" />
+        <item
+            android:id="@+id/nav_health"
+            android:icon="@drawable/ic_health"
+            android:title="@string/health_insurance" />
+        <item
+            android:id="@+id/nav_cv"
+            android:icon="@drawable/ic_clcvi"
+            android:title="@string/commercial_vehicle_insurance" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_about"
+            android:title="@string/my_account" />
+
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/menu_share" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/about_us"
+                android:title="@string/about_us" />
+            <item
+                android:id="@+id/nav_rate"
+                android:icon="@drawable/ic_rate_review"
+                android:title="@string/rate_us" />
+            <item
+                android:id="@+id/nav_privacy"
+                android:icon="@drawable/ic_privacy"
+                android:title="@string/privacy" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_logout"
+                android:title="@string/action_logout" />
+        </menu>
+    </item>
+
+</menu>

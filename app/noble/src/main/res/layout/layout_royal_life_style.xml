@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
+    <RelativeLayout
+        android:id="@+id/rlRoyalLife"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/lblC3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/royal_hl_q1"
+            android:textColor="@android:color/black" />
+
+        <RadioGroup
+            android:id="@+id/rgCase3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblC3"
+            android:layout_marginTop="10dp"
+            android:checkedButton="@+id/rbNoQue1"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbYesQue1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes" />
+
+            <RadioButton
+                android:id="@+id/rbNoQue1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no" />
+
+        </RadioGroup>
+
+        <include
+            android:id="@+id/div7"
+            layout="@layout/divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rgCase3"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:id="@+id/lblC4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div7"
+            android:layout_marginTop="5dp"
+            android:text="@string/royal_hl_q2"
+            android:textColor="@android:color/black" />
+
+        <RadioGroup
+            android:id="@+id/rgCase4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblC4"
+            android:layout_marginTop="10dp"
+            android:checkedButton="@+id/rbNoQue2"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbYesQue2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes" />
+
+            <RadioButton
+                android:id="@+id/rbNoQue2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no" />
+
+        </RadioGroup>
+
+        <include
+            android:id="@+id/div4"
+            layout="@layout/divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rgCase4"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:id="@+id/lblC1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div4"
+            android:layout_marginTop="5dp"
+            android:text="@string/royal_hl_q3"
+            android:textColor="@android:color/black" />
+
+        <RadioGroup
+            android:id="@+id/rgCase1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblC1"
+            android:layout_marginTop="10dp"
+            android:checkedButton="@+id/rbNoQue3"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbYesQue3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes" />
+
+            <RadioButton
+                android:id="@+id/rbNoQue3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no" />
+        </RadioGroup>
+
+        <include
+            android:id="@+id/div5"
+            layout="@layout/divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rgCase1"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:id="@+id/lblC2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div5"
+            android:layout_marginTop="5dp"
+            android:text="@string/royal_hl_q4"
+            android:textColor="@android:color/black" />
+
+        <RadioGroup
+            android:id="@+id/rgCase2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblC2"
+            android:layout_marginTop="10dp"
+            android:checkedButton="@+id/rbNoQue4"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbYesQue4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes" />
+
+            <RadioButton
+                android:id="@+id/rbNoQue4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no" />
+        </RadioGroup>
+
+        <include
+            android:id="@+id/div61"
+            layout="@layout/divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rgCase2"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:id="@+id/lblQ5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div61"
+            android:layout_marginTop="5dp"
+            android:text="@string/royal_hl_q5"
+            android:textColor="@android:color/black" />
+
+        <RadioGroup
+            android:id="@+id/rgQ5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblQ5"
+            android:layout_marginTop="10dp"
+            android:checkedButton="@+id/rbNoQue5"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbYesQue5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes" />
+
+            <RadioButton
+                android:id="@+id/rbNoQue5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no" />
+        </RadioGroup>
+
+        <include
+            android:id="@+id/div71"
+            layout="@layout/divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rgQ5"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:id="@+id/lblQ6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div71"
+            android:layout_marginTop="5dp"
+            android:text="@string/royal_hl_q6"
+            android:textColor="@android:color/black" />
+
+        <RadioGroup
+            android:id="@+id/rgQ6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblQ6"
+            android:layout_marginTop="10dp"
+            android:checkedButton="@+id/rbNoQue6"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbYesQue6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes" />
+
+            <RadioButton
+                android:id="@+id/rbNoQue6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no" />
+
+        </RadioGroup>
+
+        <RelativeLayout
+            android:id="@+id/rlMedOpt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rgQ6"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/lblMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/any_medical_question_is_opted" />
+
+            <Spinner
+                android:id="@+id/spnMonths"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblMore"
+                android:entries="@array/months" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtYear"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spnMonths"
+                android:layout_marginTop="10dp"
+                android:minWidth="100dp">
+
+                <EditText
+                    android:id="@+id/edtYear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:hint="@string/year"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtIll"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtYear"
+                android:layout_marginTop="10dp"
+                android:minWidth="100dp">
+
+                <EditText
+                    android:id="@+id/edtNameIllness"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:hint="@string/name_illness"
+                    android:importantForAutofill="no"
+                    android:inputType="textCapCharacters"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Spinner
+                android:id="@+id/spnTreatment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtIll"
+                android:layout_marginTop="10dp"
+                android:entries="@array/treatment" />
+
+            <Spinner
+                android:id="@+id/spnOutcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtIll"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/spnTreatment"
+                android:entries="@array/treatment_outcome" />
+
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/div1a"
+            layout="@layout/divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlMedOpt" />
+
+        <TextView
+            android:id="@+id/lblAlcohol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div1a"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/alcolol" />
+
+        <RadioGroup
+            android:id="@+id/rgAl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblAlcohol"
+            android:checkedButton="@id/alNo"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/alYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes" />
+
+            <RadioButton
+                android:id="@+id/alNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no" />
+
+            <EditText
+                android:id="@+id/edtAlQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:hint="@string/quantity_week"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/edtAlYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:hint="@string/number_of_years"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textSize="12sp"
+                android:visibility="gone" />
+        </RadioGroup>
+
+        <include
+            android:id="@+id/div2a"
+            layout="@layout/divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rgAl" />
+
+        <TextView
+            android:id="@+id/lblSmoke"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div2a"
+            android:layout_margin="5dp"
+            android:text="@string/do_you_smoke" />
+
+        <RadioGroup
+            android:id="@+id/rgSm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblSmoke"
+            android:checkedButton="@id/smokeNo"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/smokeYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes" />
+
+            <RadioButton
+                android:id="@+id/smokeNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no" />
+
+            <EditText
+                android:id="@+id/edtSmokeQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:hint="@string/quantity_week"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/edtSmokeYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:hint="@string/number_of_years"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textSize="12sp"
+                android:visibility="gone" />
+        </RadioGroup>
+
+        <include
+            android:id="@+id/div3a"
+            layout="@layout/divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rgSm" />
+
+        <TextView
+            android:id="@+id/lblTob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div3a"
+            android:layout_margin="5dp"
+            android:text="@string/do_you_consume_tobacco_gutka_pan_pan_masala" />
+
+        <RadioGroup
+            android:id="@+id/rgTob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblTob"
+            android:checkedButton="@id/tobNo"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/tobYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes" />
+
+            <RadioButton
+                android:id="@+id/tobNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no" />
+
+            <EditText
+                android:id="@+id/edtTobQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:hint="@string/quantity_week"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/edtTobYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:hint="@string/number_of_years"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textSize="12sp"
+                android:visibility="gone" />
+        </RadioGroup>
+
+        <include
+            android:id="@+id/div4a"
+            layout="@layout/divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rgTob" />
+
+        <TextView
+            android:id="@+id/lblNar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div4a"
+            android:layout_margin="5dp"
+            android:text="@string/do_you_consume_narcotics" />
+
+        <RadioGroup
+            android:id="@+id/rgNar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblNar"
+            android:checkedButton="@id/narNo"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/narYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes" />
+
+            <RadioButton
+                android:id="@+id/narNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no" />
+
+            <EditText
+                android:id="@+id/edtNarQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:hint="@string/quantity_week"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/edtNarYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:hint="@string/number_of_years"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textSize="12sp"
+                android:visibility="gone" />
+        </RadioGroup>
+
+
+        <include
+            android:id="@+id/div5a"
+            layout="@layout/divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rgNar" />
+
+        <TextView
+            android:id="@+id/lblOS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/div5a"
+            android:layout_margin="5dp"
+            android:text="@string/any_other_substance" />
+
+        <RadioGroup
+            android:id="@+id/rgOs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblOS"
+            android:checkedButton="@id/osNo"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/osYes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes" />
+
+            <RadioButton
+                android:id="@+id/osNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no" />
+
+            <EditText
+                android:id="@+id/edtOsQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:hint="@string/quantity_week"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/edtOsYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:hint="@string/number_of_years"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="2"
+                android:textSize="12sp"
+                android:visibility="gone" />
+        </RadioGroup>
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

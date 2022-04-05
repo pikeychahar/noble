@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/lblInsuredMember"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/self"
+        android:textColor="@android:color/holo_orange_dark" />
+
+    <include
+        layout="@layout/divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblInsuredMember"
+        android:layout_marginTop="1dp" />
+
+    <TextView
+        android:id="@+id/lblSS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblInsuredMember"
+        android:layout_marginTop="10dp"
+        android:text="@string/select_salutation" />
+
+    <Spinner
+        android:id="@+id/spnTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblSS"
+        android:layout_marginTop="-15dp"
+        android:padding="-5dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spnTitle">
+
+        <EditText
+            android:id="@+id/editFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/user_logo"
+            android:drawablePadding="5dp"
+            android:hint="@string/first_name"
+            android:inputType="textCapCharacters"
+            android:maxLength="12"
+            android:maxLines="1"
+            android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textLastName"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_input_layout"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/editLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/user_logo"
+            android:drawablePadding="5dp"
+            android:hint="@string/last_name"
+            android:inputType="textCapCharacters"
+            android:maxLength="25"
+            android:maxLines="1"
+            android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtDob"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textLastName"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/edtDob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_date"
+            android:drawablePadding="5dp"
+            android:hint="@string/date_of_birth"
+            android:inputType="none"
+            android:focusable="false"
+            android:maxLines="1"
+            android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Spinner
+        android:id="@+id/spnGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtDob"
+        android:nextFocusRight="@id/material"
+        android:nextFocusDown="@id/material"
+        android:nextFocusForward="@id/material"
+        android:padding="5dp" />
+
+    <Spinner
+        android:id="@+id/spnOccHealth"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtDob"
+        android:layout_toEndOf="@+id/spnGender"
+        android:nextFocusRight="@id/oDob1"
+        android:nextFocusDown="@id/oDob1"
+        android:nextFocusForward="@id/oDob1"
+        android:padding="5dp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/llHW"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spnGender"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <EditText
+            android:id="@+id/edtHeight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableStart="@drawable/ic_height"
+            android:drawablePadding="5dp"
+            android:hint="@string/height"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="3"
+            android:maxLines="1"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/edtWeight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableStart="@drawable/ic_upgrade"
+            android:drawablePadding="5dp"
+            android:hint="@string/weight"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="3"
+            android:maxLines="1"
+            android:singleLine="true" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/lblSS1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llHW"
+        android:text="@string/select_relation_applicant" />
+
+    <Spinner
+        android:id="@+id/spnRelation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblSS1"
+        android:layout_marginTop="-15dp"
+        android:padding="-5dp" />
+
+    <TextView
+        android:id="@+id/txtM"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spnRelation"
+        android:layout_margin="10dp"
+        android:background="@color/colorPrimaryDark"
+        android:padding="5dp"
+        android:text="@string/medical_history_of_insurer"
+        android:textColor="@android:color/white" />
+
+    <RadioGroup
+        android:id="@+id/rgIcici"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtM"
+        android:layout_margin="10dp"
+        android:checkedButton="@id/rbNo"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Have Any Medical History ?  " />
+
+        <RadioButton
+            android:id="@+id/rbYes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yes" />
+
+        <RadioButton
+            android:id="@+id/rbNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no" />
+    </RadioGroup>
+
+    <RelativeLayout
+        android:id="@+id/iffcoMedical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rgIcici"
+        android:visibility="gone"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/edtIffco1"
+            android:text="Q.1 Smoking per day acceptable?" />
+
+        <EditText
+            android:id="@+id/edtIffco1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="3"
+            android:minWidth="50dp"
+            android:text="0"
+            android:textAlignment="center"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/edtIffco2"
+            android:text="Q.2 Alcohol per day acceptable (ml.)?" />
+
+        <EditText
+            android:id="@+id/edtIffco2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:layout_below="@+id/edtIffco1"
+            android:maxLength="3"
+            android:minWidth="50dp"
+            android:text="0"
+            android:textAlignment="center"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/edtIffco3"
+            android:text="Q.2 Tobacco per day acceptable (gram)?" />
+
+        <EditText
+            android:id="@+id/edtIffco3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:importantForAutofill="no"
+            android:layout_below="@+id/edtIffco2"
+            android:inputType="number"
+            android:maxLength="3"
+            android:minWidth="50dp"
+            android:text="0"
+            android:textAlignment="center"
+            tools:ignore="LabelFor" />
+
+    </RelativeLayout>
+</RelativeLayout>

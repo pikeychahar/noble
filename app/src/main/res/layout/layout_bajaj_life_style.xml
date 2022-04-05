@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtAddressMob"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblAD1"
+        android:layout_marginTop="10dp"
+        android:minWidth="100dp">
+
+        <EditText
+            android:id="@+id/edtBajajMobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:drawableStart="@drawable/ic_call"
+            android:drawablePadding="10dp"
+            android:hint="@string/phone_number"
+            android:importantForAutofill="no"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtAddressEmail"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtAddressMob"
+        android:layout_marginTop="10dp"
+        android:minWidth="100dp">
+
+        <EditText
+            android:id="@+id/edtBajajEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:drawableStart="@drawable/ic_mail"
+            android:drawablePadding="10dp"
+            android:hint="@string/email"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtFNominee"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtAddressEmail"
+        android:layout_marginTop="10dp"
+        android:minWidth="100dp">
+
+        <EditText
+            android:id="@+id/edtFNomineeName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:drawableStart="@drawable/user_logo"
+            android:drawablePadding="10dp"
+            android:hint="@string/nominee_first_name"
+            android:importantForAutofill="no"
+            android:inputType="textCapCharacters"
+            android:maxLines="1"
+            android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtNominee"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtFNominee"
+        android:layout_marginTop="10dp"
+        android:minWidth="100dp">
+
+        <EditText
+            android:id="@+id/edtLNomineeName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:drawableStart="@drawable/user_logo"
+            android:drawablePadding="10dp"
+            android:hint="@string/nm_last_name"
+            android:importantForAutofill="no"
+            android:inputType="textCapCharacters"
+            android:maxLines="1"
+            android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_occ"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtNominee"
+        android:layout_marginTop="10dp"
+        app:helperText="Select Nominee Relationship">
+
+        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+            android:id="@+id/spnBajajNominee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-15dp"
+            android:layout_marginBottom="-15dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/lblBQ1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_occ"
+        android:layout_marginTop="10dp"
+        android:text="@string/bajaj_q1"
+        android:textColor="@android:color/black" />
+
+    <RadioGroup
+        android:id="@+id/rgCase3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblBQ1"
+        android:layout_margin="10dp"
+        android:checkedButton="@+id/rbB1No"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbB1Yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yes" />
+
+        <RadioButton
+            android:id="@+id/rbB1No"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/lblBQ2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rgCase3"
+        android:layout_marginTop="5dp"
+        android:text="@string/bajaj_q2"
+        android:textColor="@android:color/black" />
+
+    <RadioGroup
+        android:id="@+id/rgCase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblBQ2"
+        android:layout_margin="10dp"
+        android:checkedButton="@+id/rbB2No"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbB2Yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yes" />
+
+        <RadioButton
+            android:id="@+id/rbB2No"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/lblBQ3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rgCase"
+        android:layout_marginTop="5dp"
+        android:text="@string/bajaj_q3"
+        android:textColor="@android:color/black" />
+
+    <RadioGroup
+        android:id="@+id/rgCase2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblBQ3"
+        android:layout_margin="10dp"
+        android:checkedButton="@+id/rbB3No"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbB3Yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yes" />
+
+        <RadioButton
+            android:id="@+id/rbB3No"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no" />
+    </RadioGroup>
+
+    <RelativeLayout
+        android:id="@+id/rlDiseases"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rgCase2"
+        android:visibility="gone">
+
+        <include
+            layout="@layout/divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/select_diseases" />
+
+        <Spinner
+            android:id="@+id/spnDiseases"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:entries="@array/diseases" />
+    </RelativeLayout>
+</RelativeLayout>

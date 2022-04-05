@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.square.pos">
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" /> -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.NETWORK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/app_logo"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/app_logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".activity.NobleRedirectActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity_crm.PolicyFilterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.travel.TravelQuoteActivity"
+            android:exported="false"
+            android:label="Travel Insurance" />
+        <activity
+            android:name=".activity_motor.VahanRegActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity_motor.RaiseOfflineActivity"
+            android:exported="false"
+            android:label="Request Offline Quote" />
+        <activity
+            android:name=".activity_crm.InspectionViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity_crm.SurveyActivity"
+            android:exported="false"
+            android:label="Inspection List" />
+        <activity
+            android:name=".activity_crm.RaiseInspectionActivity"
+            android:exported="false"
+            android:label="Raise Inspection" />
+        <activity
+            android:name=".activity_crm.CancellationViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity_crm.RaiseEndorsementActivity"
+            android:exported="false"
+            android:label="Raise Endorsement" />
+        <activity
+            android:name=".activity_crm.NewCancellationActivity"
+            android:exported="false"
+            android:label="Raise Cancellation" />
+        <activity
+            android:name=".activity_crm.CancellationActivity"
+            android:exported="false"
+            android:label="Policy Cancellation" />
+        <activity
+            android:name=".activity_crm.ClaimViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity_crm.MobilePosActivity"
+            android:exported="false"
+            android:label="My Mobile" />
+        <activity
+            android:name=".activity_crm.ViewOfflineActivity"
+            android:exported="true"
+            android:label="Offline Quote" />
+        <activity
+            android:name=".activity_crm.EndorsementActivity"
+            android:exported="true"
+            android:label="Endorsement" />
+        <activity
+            android:name=".activity_crm.NewMobileActivity"
+            android:exported="true"
+            android:label="Mobile" />
+        <activity
+            android:name=".life.FilterLifeActivity"
+            android:exported="true"
+            android:label="Filter and Addon Cover" />
+        <activity
+            android:name=".life.OverviewLifeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".life.NomineeLifeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".life.ProposalLifeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".life.LifePremiumActivity"
+            android:exported="true" />
+        <activity
+            android:name=".life.PreQuoteLifeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".life.BasicLifeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity_crm.NewOfflineActivity"
+            android:exported="true"
+            android:label="Raise Request" />
+        <activity
+            android:name=".activity_crm.OfflineQuoteActivity"
+            android:exported="true"
+            android:label="Offline Quote" />
+        <activity
+            android:name=".activity_crm.NewEndorsementActivity"
+            android:exported="true"
+            android:label="Endorsement Detail" />
+        <activity
+            android:name=".activity_motor.FilterPcActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.ViewPdfActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity_crm.ChatActivity"
+            android:exported="true"
+            android:label="Chat With Manager" />
+        <activity
+            android:name=".activity_crm.NewTicketActivity"
+            android:exported="true"
+            android:label="Raise Ticket" />
+        <activity
+            android:name=".activity_crm.TicketActivity"
+            android:exported="true"
+            android:label="My Tickets" />
+        <activity
+            android:name=".activity_crm.NewClaimActivity"
+            android:exported="true"
+            android:label="New Claim Request" />
+        <activity
+            android:name=".activity_crm.ClaimActivity"
+            android:exported="true"
+            android:label="Claim Support" />
+        <activity
+            android:name=".activity.health.icici.HealthReviewNewActivity"
+            android:label="Health Review" />
+        <activity
+            android:name=".activity.ContactActivity"
+            android:label="@string/contact_us" />
+        <activity
+            android:name=".activity.health.HealthCompareActivity"
+            android:label="Compare"
+            android:parentActivityName=".activity.DashboardActivity" />
+        <activity
+            android:name=".activity_motor.InspectionListActivity"
+            android:label="Inspection List" />
+        <activity android:name=".activity.health.FeaturesActivity" />
+        <activity
+            android:name=".activity.health.icici.InsuredMember6Activity"
+            android:label="Insured Member" />
+        <activity
+            android:name=".activity.health.icici.InsuredMember5Activity"
+            android:label="Insured Member" />
+        <activity
+            android:name=".activity.health.icici.InsuredMember4Activity"
+            android:label="Insured Member" />
+        <activity
+            android:name=".activity.health.icici.InsuredMember3Activity"
+            android:label="Insured Member" />
+        <activity
+            android:name=".activity.health.icici.InsuredMember2Activity"
+            android:label="Insured Member" />
+        <activity
+            android:name=".activity.health.icici.NomineeProposerActivity"
+            android:label="Nominee Detail" />
+        <activity
+            android:name=".activity.health.icici.InsuredMember1Activity"
+            android:label="Insured Member" />
+        <activity
+            android:name=".activity_pos.CustomerActivity"
+            android:label="My Customers" />
+        <activity android:name=".activity.PosAgreementActivity" />
+        <activity
+            android:name=".activity_motor.PremiumBikeActivity"
+            android:label="Bike Quotes" />
+        <activity
+            android:name=".activity.CovidActivity"
+            android:label="Covid19 Protection" />
+        <activity android:name=".activity.health.BajajAddressActivity" />
+        <activity
+            android:name=".activity.health.HealthReviewActivity"
+            android:label="Health Review" />
+        <activity
+            android:name=".activity.health.Member6DetailActivity"
+            android:label="Insured member detail" />
+        <activity
+            android:name=".activity.health.Member5DetailActivity"
+            android:label="Insured member detail" />
+        <activity
+            android:name=".activity.health.Member4DetailActivity"
+            android:label="Insured member detail" />
+        <activity
+            android:name=".activity.health.Member3DetailActivity"
+            android:label="Insured member detail" />
+        <activity
+            android:name=".activity.health.Member2DetailActivity"
+            android:label="Insured member detail" />
+        <activity
+            android:name=".activity.health.royal.ProposerRoyalActivity"
+            android:label="Proposer Detail" />
+        <activity android:name=".activity_motor.PremiumActivity" />
+        <activity
+            android:name=".activity.DashboardActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name=".activity.DashboardActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".training.ExamActivity"
+            android:label="PoSP Examination" />
+        <activity
+            android:name=".training.TrainingViewActivity"
+            android:label="Training" />
+        <activity
+            android:name=".training.TrainingActivity"
+            android:label="Training" />
+        <activity android:name=".activity.health.HealthPaymentStatusActivity" />
+        <activity
+            android:name=".activity.health.HealthPaymentActivity"
+            android:label="Payment" />
+        <activity
+            android:name=".activity.health.HealthNomineeActivity"
+            android:label="Nominee Detail" />
+        <activity
+            android:name=".activity.health.MemberDetailActivity"
+            android:label="Insured member detail" />
+        <activity
+            android:name=".activity_motor.PaymentStatusActivity"
+            android:label="Payment Status" />
+        <activity
+            android:name=".activity.health.HealthQuotationActivity"
+            android:label="Quotes"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".activity.ImageActivity" />
+        <activity
+            android:name=".activity_pos.AddLeadActivity"
+            android:label="Add Lead" />
+        <activity
+            android:name=".activity_motor.OverViewActivity"
+            android:label="Overview" />
+        <activity android:name=".activity.BlogActivity" />
+        <activity
+            android:name=".activity.MobileVerifyActivity"
+            android:label="Verify Mobile" />
+        <activity
+            android:name=".activity_motor.PaymentActivity"
+            android:label="Payment" />
+        <activity
+            android:name=".activity_motor.BasicDetailActivity"
+            android:label="Basic Detail" />
+        <activity
+            android:name=".activity_docs.DocViewActivity"
+            android:label="Doc&apos;s Wallet" />
+        <activity
+            android:name=".activity_docs.DocsAllActivity"
+            android:label="Doc&apos;s Wallet" />
+        <activity
+            android:name=".activity_docs.DocWalletActivity"
+            android:label="Doc&apos;s Wallet" />
+        <activity
+            android:name=".activity_profile.DocumentsActivity"
+            android:label="Documents" />
+        <activity
+            android:name=".activity_profile.BankActivity"
+            android:label="Bank Detail" />
+        <activity
+            android:name=".activity_pos.LeadViewActivity"
+            android:label="Lead Detail"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity_profile.ProfileActivity"
+            android:label="My Profile" />
+        <activity
+            android:name=".activity_crm.EarningActivity"
+            android:label="My Earning" />
+        <activity
+            android:name=".activity_pos.LeadsActivity"
+            android:label="Leads" />
+        <activity
+            android:name=".activity_crm.RenewalActivity"
+            android:label="Renewal" />
+        <activity
+            android:name=".activity_pos.QuotationListActivity"
+            android:label="Quotations List"
+            android:parentActivityName=".activity.DashboardActivity" />
+        <activity
+            android:name=".activity_pos.MyPoliciesActivity"
+            android:label="Policy List"
+            android:parentActivityName=".activity.DashboardActivity" />
+        <activity
+            android:name=".activity.health.SumInsuredActivity"
+            android:label="Sum Insured" />
+        <activity
+            android:name=".activity.health.CitySumActivity"
+            android:label="Health Detail"
+            android:parentActivityName=".activity.DashboardActivity" />
+        <activity
+            android:name=".activity.health.MembersAgeActivity"
+            android:label="Member Age" />
+        <activity
+            android:name=".activity.health.HealthMembersActivity"
+            android:label="Select Member" />
+        <activity
+            android:name=".activity.health.HealthViewActivity"
+            android:label="Basic Details" />
+        <activity
+            android:name=".activity_motor.NomineeDetailActivity"
+            android:label="Nominee Detail"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity_motor.VehicleDetailsActivity"
+            android:label="Vehicle Detail"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity_motor.OwnerDetailActivity"
+            android:label="Owner Detail"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity_motor.DetailedVehicleActivity"
+            android:label="Vehicle Detail"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.ResetPasswordActivity"
+            android:label="Forget Password"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity_pos.UploadDocumentActivity"
+            android:label="Upload Documents" />
+        <activity android:name=".activity_motor.AddOnCoverActivity" />
+        <activity
+            android:name=".activity_profile.AgentAddressActivity"
+            android:label="POS Detail"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity_profile.AgentActivity"
+            android:label="Agent Detail"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity_motor.RegistrationDetailedActivity"
+            android:label="Registration Detail"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.NotificationActivity"
+            android:label="@string/notification" />
+        <activity android:name=".activity.PrivacyActivity" />
+        <activity
+            android:name=".activity.travel.GeographicalActivity"
+            android:label="Travel Insurance"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.ui.TravelInsuranceActivity"
+            android:label="@string/travel_insurance" />
+        <activity
+            android:name=".activity_motor.BikeRegistrationActivity"
+            android:parentActivityName=".activity.DashboardActivity" />
+        <activity
+            android:name=".activity.AboutUsActivity"
+            android:label="About us" />
+        <activity
+            android:name=".activity.CorporateActivity"
+            android:label="Corporate Insurance" />
+        <activity
+            android:name=".activity.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".activity.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.IntroActivity"
+            tools:ignore="Instantiatable" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.square.pos.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <service
+            android:name=".FirebaseMessageReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_notification_pos" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/notification_channel_id" />
+        <meta-data
+            android:name="firebase_performance_logcat_enabled"
+            android:value="true" />
+    </application>
+
+</manifest>

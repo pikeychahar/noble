@@ -1,0 +1,936 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg"
+    tools:context=".activity_motor.AddOnCoverActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvIdv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0.0px"
+                android:elevation="8dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:stateListAnimator="@anim/animation"
+                app:layout_constraintTop_toTopOf="parent"
+                card_view:cardElevation="10dp"
+                card_view:cardPreventCornerOverlap="false">
+
+                <RelativeLayout
+                    android:id="@+id/rgPolicyType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/llTop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/img_border"
+                            android:minHeight="90dp">
+
+                            <TextView
+                                android:id="@+id/header"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="5dp"
+                                android:text="@string/plan_type"
+                                android:textColor="@color/colorPrimaryDark" />
+
+                            <TextView
+                                android:id="@+id/lblD"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/header"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="5dp"
+                                android:text="Choose Custom Plans"
+                                android:textColor="@color/colorGreen"
+                                android:textSize="12sp" />
+
+                            <Spinner
+                                android:id="@+id/spnPolicyType"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/lblD"
+                                android:layout_marginTop="5dp"
+                                android:entries="@array/policyType"
+                                android:textAlignment="textStart" />
+
+                            <include
+                                layout="@layout/divider"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/spnPolicyType"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginEnd="5dp" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlIdv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/img_border"
+                            android:minHeight="90dp">
+
+                            <TextView
+                                android:id="@+id/lblMin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="5dp"
+                                android:text="Update Own IDV"
+                                android:textColor="@color/colorPrimaryDark" />
+
+                            <TextView
+                                android:id="@+id/minIdv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/lblMin"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="5dp"
+                                android:text="235000"
+                                android:textColor="@color/colorGreen"
+                                android:textSize="12sp" />
+
+                            <EditText
+                                android:id="@+id/edtIdv"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:layout_below="@+id/minIdv"
+                                android:layout_marginStart="5dp"
+                                android:hint="Customise IDV"
+                                android:importantForAutofill="no"
+                                android:inputType="number"
+                                android:textSize="12sp" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlCarrier"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/llTop"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/img_border"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/lblCarrier"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/carrier_type"
+                            android:textColor="@color/colorPrimaryDark" />
+
+                        <RadioGroup
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblCarrier"
+                            android:layout_marginTop="10dp"
+                            android:checkedButton="@+id/epYes"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/epYes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:onClick="onPublicCarrier"
+                                android:text="@string/public_carrier" />
+
+                            <RadioButton
+                                android:id="@+id/epNo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:onClick="onPrivateCarrier"
+                                android:text="@string/private_carrier" />
+                        </RadioGroup>
+
+                    </RelativeLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/rlSOD"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rlCarrier"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:id="@+id/rrl2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:foregroundGravity="center"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/txtPreIns"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dp"
+                                android:layout_weight="1"
+                                android:text="Previous Insurer" />
+
+                            <TextView
+                                android:id="@+id/txtPEDate"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dp"
+                                android:layout_weight="1"
+                                android:drawablePadding="5dp"
+                                android:onClick="onEditSaOd"
+                                android:text="12-11-2020"
+                                app:drawableEndCompat="@drawable/ic_edit" />
+                        </LinearLayout>
+
+                        <include
+                            android:id="@+id/div"
+                            layout="@layout/divider"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            app:layout_constraintTop_toBottomOf="@+id/rrl2" />
+
+                        <RelativeLayout
+                            android:id="@+id/llSAOD"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            app:layout_constraintTop_toBottomOf="@+id/div">
+
+                            <TextView
+                                android:id="@+id/lblTPD"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:text="THIRD PARTY POLICY DETAILS"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                android:textColor="@color/colorPrimaryDark" />
+
+
+                            <LinearLayout
+                                android:id="@+id/txtPreInsurer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/lblTPD"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/img_border"
+                                android:gravity="center"
+                                android:minHeight="35dp">
+
+                                <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                                    android:id="@+id/edtPreInsurer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:hintText="Select Previous Insurer" />
+                            </LinearLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/txtPN"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txtPreInsurer"
+                                android:layout_margin="10dp"
+                                android:padding="-10dp">
+
+                                <EditText
+                                    android:id="@+id/edtPN"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/policy_number"
+                                    android:inputType="textCapCharacters"
+                                    android:maxLines="1"
+                                    android:singleLine="true" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                android:id="@+id/txtTED"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txtPN"
+                                android:layout_centerHorizontal="true"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/img_border"
+                                android:drawableEnd="@drawable/ic_calendar"
+                                android:hint="@string/select_date"
+                                android:onClick="onDatePicker"
+                                android:padding="10dp" />
+
+
+                            <TextView
+                                android:id="@+id/btnCancel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txtTED"
+                                android:layout_marginEnd="10dp"
+                                android:layout_toStartOf="@+id/btnUpdate"
+                                android:background="@drawable/error_theme"
+                                android:minWidth="100dp"
+                                android:onClick="onHideSaOdClick"
+                                android:padding="5dp"
+                                android:text="@string/close"
+                                android:textAlignment="center"
+                                android:textAllCaps="true"
+                                android:textColor="@android:color/white" />
+
+                            <TextView
+                                android:id="@+id/btnUpdate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txtTED"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/update_theme"
+                                android:minWidth="100dp"
+                                android:onClick="onHideSaOdClick"
+                                android:padding="5dp"
+                                android:text="@string/update"
+                                android:textAlignment="center"
+                                android:textColor="@android:color/white" />
+
+                        </RelativeLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/ccV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rlSOD">
+
+                        <TextView
+                            android:id="@+id/lblNCB"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/colorPrimaryDark"
+                            android:gravity="center_vertical"
+                            android:padding="10dp"
+                            android:text="Update NCB"
+                            android:textColor="@android:color/white" />
+
+                        <TextView
+                            android:id="@+id/lblClaim"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblNCB"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="Previous there any claim in last year?" />
+
+                        <RadioGroup
+                            android:id="@+id/rgClaim"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblClaim"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="10dp"
+                            android:checkedButton="@+id/cNo"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/cYes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/yes" />
+
+                            <RadioButton
+                                android:id="@+id/cNo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/no" />
+                        </RadioGroup>
+
+                        <RelativeLayout
+                            android:id="@+id/cc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rgClaim">
+
+                            <TextView
+                                android:id="@+id/lblCB"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="15dp"
+                                android:text="@string/previous_no_claim_bonus_ncb" />
+
+                            <LinearLayout
+                                android:id="@+id/llNcb"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/lblCB"
+                                android:layout_margin="10dp"
+                                android:baselineAligned="@bool/enable_system_alarm_service_default"
+                                android:orientation="horizontal"
+                                android:weightSum="6">
+
+                                <TextView
+                                    android:id="@+id/txt0"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/img_border"
+                                    android:onClick="onNcbTextClick"
+                                    android:padding="5dp"
+                                    android:text="@string/ncb0"
+                                    android:textAlignment="center" />
+
+                                <TextView
+                                    android:id="@+id/txt20"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/img_border"
+                                    android:onClick="onNcbTextClick"
+                                    android:padding="5dp"
+                                    android:text="@string/ncb20"
+                                    android:textAlignment="center" />
+
+                                <TextView
+                                    android:id="@+id/txt25"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/img_border"
+                                    android:onClick="onNcbTextClick"
+                                    android:padding="5dp"
+                                    android:text="@string/ncb25"
+                                    android:textAlignment="center" />
+
+                                <TextView
+                                    android:id="@+id/txt35"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/img_border"
+                                    android:onClick="onNcbTextClick"
+                                    android:padding="5dp"
+                                    android:text="@string/ncb35"
+                                    android:textAlignment="center" />
+
+                                <TextView
+                                    android:id="@+id/txt45"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/img_border"
+                                    android:onClick="onNcbTextClick"
+                                    android:padding="5dp"
+                                    android:text="@string/ncb45"
+                                    android:textAlignment="center" />
+
+                                <TextView
+                                    android:id="@+id/txt50"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/img_border"
+                                    android:onClick="onNcbTextClick"
+                                    android:padding="5dp"
+                                    android:text="@string/ncb50"
+                                    android:textAlignment="center" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvCover"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0.0px"
+                android:elevation="8dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:stateListAnimator="@anim/animation"
+                app:layout_constraintTop_toBottomOf="@+id/cvIdv"
+                card_view:cardElevation="10dp"
+                card_view:cardPreventCornerOverlap="false">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/lbl_add_cover"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimaryDark"
+                        android:gravity="center_vertical"
+                        android:onClick="onExpandAdditionalCover"
+                        android:padding="5dp"
+                        android:text="ADDITIONAL COVER"
+                        android:textColor="@android:color/white"
+                        app:drawableEndCompat="@drawable/ic_expand_less" />
+
+                    <LinearLayout
+                        android:id="@+id/llAdd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lbl_add_cover"
+                        android:background="@drawable/img_border"
+                        android:orientation="vertical">
+
+                        <CheckBox
+                            android:id="@+id/chkPA"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:checked="true"
+                            android:text="PA Cover for Owner Driver" />
+
+                        <CheckBox
+                            android:id="@+id/chkElAcc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:onClick="onElectricalClick"
+                            android:text="Electrical Accessory" />
+
+                        <EditText
+                            android:id="@+id/edtElAcc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/border"
+                            android:hint="0"
+                            android:inputType="number"
+                            android:minWidth="200dp"
+                            android:padding="5dp"
+                            android:singleLine="true"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:visibility="gone" />
+
+                        <CheckBox
+                            android:id="@+id/chkNonElAcc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:onClick="onNonElectricalClick"
+                            android:text="Non - Electrical Accessory" />
+
+                        <EditText
+                            android:id="@+id/edtNonElAcc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/border"
+                            android:hint="0"
+                            android:inputType="number"
+                            android:minWidth="200dp"
+                            android:padding="5dp"
+                            android:singleLine="true"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:visibility="gone" />
+
+                        <CheckBox
+                            android:id="@+id/chkBiFuelAcc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:onClick="onBiFuelAcc"
+                            android:text="Is Bi-fuel Kit" />
+
+                        <EditText
+                            android:id="@+id/edtBiFuelAcc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/border"
+                            android:hint="0"
+                            android:inputType="number"
+                            android:minWidth="200dp"
+                            android:padding="5dp"
+                            android:singleLine="true"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:visibility="gone" />
+
+                        <CheckBox
+                            android:id="@+id/chkPAUn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:onClick="onPAUn"
+                            android:text="PA Cover for unnamed persons" />
+
+                        <Spinner
+                            android:id="@+id/spnPAUn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/pa_sum"
+                            android:inputType="number"
+                            android:minWidth="200dp"
+                            android:singleLine="true"
+                            android:visibility="gone" />
+
+                        <CheckBox
+                            android:id="@+id/chkLegalEmp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:onClick="onLegalEmp"
+                            android:text="Legal liability of Employee" />
+
+                        <EditText
+                            android:id="@+id/edtLegalEmp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/border"
+                            android:hint="0"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:minWidth="200dp"
+                            android:padding="5dp"
+                            android:singleLine="true"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:visibility="gone" />
+
+                        <CheckBox
+                            android:id="@+id/chkLegalDriver"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:onClick="onLegalDriver"
+                            android:text="Legal liability to Drivers" />
+
+                        <Spinner
+                            android:id="@+id/spnLegalDriver"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/drivers"
+                            android:minWidth="200dp"
+                            android:visibility="gone" />
+
+                        <CheckBox
+                            android:id="@+id/chkFiber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Fiber-Glass Fuel Tank" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/lbl_add_on_cover"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/llAdd"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:gravity="center_vertical"
+                        android:onClick="onExpandAddOnCover"
+                        android:padding="5dp"
+                        android:text="ADD ON COVER"
+                        android:textColor="@android:color/white"
+                        app:drawableEndCompat="@drawable/ic_expand_more" />
+
+                    <RelativeLayout
+                        android:id="@+id/lladdOn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lbl_add_on_cover"
+                        android:background="@drawable/img_border"
+                        android:visibility="gone">
+
+                        <CheckBox
+                            android:id="@+id/chkZeroDep"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Zero Depreciation Cover" />
+
+                        <CheckBox
+                            android:id="@+id/chkImt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/chkZeroDep"
+                            android:layout_marginTop="5dp"
+                            android:text="IMT 23 Cover"
+                            android:visibility="gone" />
+
+                        <CheckBox
+                            android:id="@+id/chkImt34"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/chkImt"
+                            android:layout_marginTop="5dp"
+                            android:text="IMT 34 Cover"
+                            android:visibility="gone" />
+
+                        <LinearLayout
+                            android:id="@+id/lladdOn1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/chkImt34"
+                            android:orientation="vertical">
+
+                            <CheckBox
+                                android:id="@+id/chkEmergency"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Emergency Cover" />
+
+
+                            <CheckBox
+                                android:id="@+id/chkConsumables"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Consumables" />
+
+                            <CheckBox
+                                android:id="@+id/chkTyre"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Tyre Cover" />
+
+                            <CheckBox
+                                android:id="@+id/chkNCB"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="NCB protection" />
+
+                            <CheckBox
+                                android:id="@+id/chkEngine"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Engine Protector" />
+
+                            <CheckBox
+                                android:id="@+id/chkInvoice"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Return of Invoice" />
+
+                            <CheckBox
+                                android:id="@+id/chkLoss"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Loss of Key" />
+
+                            <CheckBox
+                                android:id="@+id/chkRoad"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Road Side Assistance" />
+
+
+                            <CheckBox
+                                android:id="@+id/chkPassenger"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Passenger Assist Cover" />
+
+                            <CheckBox
+                                android:id="@+id/chkPersonal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Loss Personal Belonging" />
+
+                            <CheckBox
+                                android:id="@+id/chkHospital"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Hospital Cash Cover" />
+
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/lbl_discount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lladdOn"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:gravity="center_vertical"
+                        android:onClick="onExpandDiscount"
+                        android:padding="5dp"
+                        android:text="DISCOUNT"
+                        android:textColor="@android:color/white"
+                        android:visibility="gone"
+                        app:drawableEndCompat="@drawable/ic_expand_more" />
+
+                    <LinearLayout
+                        android:id="@+id/llDiscount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lbl_discount"
+                        android:background="@drawable/img_border"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <CheckBox
+                            android:id="@+id/chkTheft"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Anti-Theft Device" />
+
+                        <CheckBox
+                            android:id="@+id/chkModified"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Vehicle Modified for Handicap" />
+
+                        <CheckBox
+                            android:id="@+id/chkTPPD"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="TPPD restricted to 6000" />
+
+                        <CheckBox
+                            android:id="@+id/chkVoluntary"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:onClick="onVoluntary"
+                            android:text="Voluntary Excess" />
+
+                        <Spinner
+                            android:id="@+id/spnVoluntary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/voluntary"
+                            android:minWidth="200dp"
+                            android:visibility="gone" />
+
+                        <CheckBox
+                            android:id="@+id/chkAAI"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:onClick="onAAI"
+                            android:text="Member of AAI" />
+
+                        <EditText
+                            android:id="@+id/edtAAIName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/border"
+                            android:hint="Association Name"
+                            android:inputType="textCapWords"
+                            android:minWidth="200dp"
+                            android:padding="5dp"
+                            android:singleLine="true"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/edtAAINumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/border"
+                            android:hint="Member Number"
+                            android:inputType="number"
+                            android:minWidth="200dp"
+                            android:padding="5dp"
+                            android:singleLine="true"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:visibility="gone" />
+
+                        <EditText
+                            android:id="@+id/edtAAIDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/border"
+                            android:hint="Membership Expire Date"
+                            android:inputType="date"
+                            android:minWidth="200dp"
+                            android:padding="5dp"
+                            android:singleLine="true"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cvCover" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/button_bg"
+        android:onClick="onApplyFilter"
+        android:text="@string/update"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

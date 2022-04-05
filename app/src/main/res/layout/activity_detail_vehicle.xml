@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_motor.DetailedVehicleActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/qt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/fill_content"
+                android:textAlignment="textStart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <LinearLayout
+                android:id="@+id/lblll1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/qt"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="1"
+                    android:hint="@string/manufacture_date" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="1"
+                    android:hint="@string/purchase_date" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblll1"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/txtManuDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/textview_border"
+                    android:gravity="center_vertical"
+                    android:hint="@string/select_date"
+                    android:onClick="onDatePicker"
+                    android:padding="10dp"
+                    app:drawableEndCompat="@drawable/ic_event" />
+
+                <TextView
+                    android:id="@+id/txtPurDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/textview_border"
+                    android:gravity="center_vertical"
+                    android:hint="@string/select_date"
+                    android:onClick="onDatePicker"
+                    android:padding="10dp"
+                    app:drawableEndCompat="@drawable/ic_event" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lblll2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll1"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="1"
+                    android:hint="@string/registration_date" />
+
+                <TextView
+                    android:id="@+id/lblPolicyExpire"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="1"
+                    android:hint="@string/policy_expire_date" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblll2"
+
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/txtRegDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/textview_border"
+                    android:gravity="center_vertical"
+                    android:hint="@string/select_date"
+                    android:onClick="onDatePicker"
+                    android:padding="10dp"
+                    app:drawableEndCompat="@drawable/ic_event" />
+
+                <TextView
+                    android:id="@+id/txtPExpDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/textview_border"
+                    android:gravity="center_vertical"
+                    android:hint="@string/select_date"
+                    android:onClick="onDatePicker"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    app:drawableEndCompat="@drawable/ic_event" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/lblVO"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ll2"
+                android:layout_marginTop="20dp"
+                android:text="@string/vehicle_owned_by" />
+
+            <Spinner
+                android:id="@+id/owned"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll2"
+                android:layout_alignBaseline="@id/lblVO"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:entries="@array/vOwnedBY" />
+
+            <RelativeLayout
+                android:id="@+id/rlNew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/owned">
+
+                <include
+                    android:id="@+id/in3"
+                    layout="@layout/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/lblOC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/in3"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/owner_changed"
+                    android:textColor="@android:color/black"
+                    android:visibility="gone" />
+
+                <RadioGroup
+                    android:id="@+id/rgOwnerChange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/in3"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="10dp"
+                    android:checkedButton="@+id/ocNo"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <RadioButton
+                        android:id="@+id/ocYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onOcYesClick"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:id="@+id/ocNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onOcNoClick"
+                        android:text="@string/no" />
+                </RadioGroup>
+
+                <include
+                    android:id="@+id/in4"
+                    layout="@layout/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblOC"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:id="@+id/lblCM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/in4"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/claim_made_in_expiring_policy" />
+
+                <RadioGroup
+                    android:id="@+id/rgExpiring"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/in4"
+                    android:layout_alignParentEnd="true"
+                    android:checkedButton="@+id/epNo"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/epYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onEPYesClick"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:id="@+id/epNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onEPNoClick"
+                        android:text="@string/no" />
+                </RadioGroup>
+
+                <include
+                    android:id="@+id/in6"
+                    layout="@layout/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rgExpiring" />
+
+                <TextView
+                    android:id="@+id/lblZero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/in6"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/zero_depreciation_previous_policy" />
+
+                <RadioGroup
+                    android:id="@+id/rgZero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/in6"
+                    android:layout_alignParentEnd="true"
+                    android:checkedButton="@+id/zYes"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/zYes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/yes" />
+
+                    <RadioButton
+                        android:id="@+id/zNo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/no" />
+                </RadioGroup>
+
+                <include
+                    android:id="@+id/in5"
+                    layout="@layout/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rgZero" />
+
+                <TextView
+                    android:id="@+id/lblCB"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/in5"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/previous_no_claim_bonus_ncb" />
+
+                <LinearLayout
+                    android:id="@+id/llNcb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblCB"
+                    android:baselineAligned="@bool/enable_system_alarm_service_default"
+                    android:orientation="horizontal"
+                    android:weightSum="6">
+
+                    <TextView
+                        android:id="@+id/txt0"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/img_border"
+                        android:onClick="onNcbTextClick"
+                        android:padding="5dp"
+                        android:text="@string/ncb0"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/txt20"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/img_border"
+                        android:onClick="onNcbTextClick"
+                        android:padding="5dp"
+                        android:text="@string/ncb20"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/txt25"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/img_border"
+                        android:onClick="onNcbTextClick"
+                        android:padding="5dp"
+                        android:text="@string/ncb25"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/txt35"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/img_border"
+                        android:onClick="onNcbTextClick"
+                        android:padding="5dp"
+                        android:text="@string/ncb35"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/txt45"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/img_border"
+                        android:onClick="onNcbTextClick"
+                        android:padding="5dp"
+                        android:text="@string/ncb45"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/txt50"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/img_border"
+                        android:onClick="onNcbTextClick"
+                        android:padding="5dp"
+                        android:text="@string/ncb50"
+                        android:textAlignment="center" />
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rlSbi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlNew"
+                android:visibility="gone">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/txtSpn"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/inSbi"
+                    android:layout_marginTop="5dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    app:helperText="Select Carrier Type">
+
+                    <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                        android:id="@+id/spnSbi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <include
+                    android:id="@+id/inSbi"
+                    layout="@layout/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp" />
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlSbi"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_bg"
+                android:onClick="onGetQuoteClick"
+                android:text="@string/information_is_accurate"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/txtData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btnIn"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/agreed"
+                android:textAlignment="center"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtData"
+                android:onClick="onPrivacyClick"
+                android:text="@string/privacy_policy_amp_terms_of_use"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp" />
+        </RelativeLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

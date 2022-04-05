@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtAddressMob"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:minWidth="100dp">
+
+        <EditText
+            android:id="@+id/edtSbiMobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:drawableStart="@drawable/ic_call"
+            android:drawablePadding="10dp"
+            android:hint="@string/phone_number"
+            android:importantForAutofill="no"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtAddressEmail"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtAddressMob"
+        android:layout_marginTop="10dp"
+        android:minWidth="100dp">
+
+        <EditText
+            android:id="@+id/edtSbiEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:drawableStart="@drawable/ic_mail"
+            android:drawablePadding="10dp"
+            android:hint="@string/email"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/lblDocType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtAddressEmail"
+        android:text="@string/doc" />
+
+    <Spinner
+        android:id="@+id/spnDocType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblDocType"
+        android:layout_marginTop="-10dp"
+        android:entries="@array/doc_type" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textDoc"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spnDocType"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/edtDocNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_docs"
+            android:drawablePadding="10dp"
+            android:hint="@string/doc_no"
+            android:importantForAutofill="no"
+            android:inputType="textCapCharacters"
+            android:maxLines="1"
+            android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtFNominee"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textDoc"
+        android:layout_marginTop="10dp"
+        android:minWidth="100dp">
+
+        <EditText
+            android:id="@+id/edtPlot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:drawableStart="@drawable/ic_map"
+            android:drawablePadding="10dp"
+            android:hint="@string/plot_no"
+            android:importantForAutofill="no"
+            android:inputType="textCapCharacters"
+            android:maxLength="5"
+            android:maxLines="1"
+            android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtNominee"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtFNominee"
+        android:layout_marginTop="10dp"
+        android:minWidth="100dp">
+
+        <EditText
+            android:id="@+id/edtBuilding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:drawableStart="@drawable/ic_map"
+            android:drawablePadding="10dp"
+            android:hint="@string/house_no_building_name"
+            android:importantForAutofill="no"
+            android:inputType="textCapCharacters"
+            android:maxLines="1"
+            android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtStreet"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtNominee"
+        android:layout_marginTop="10dp"
+        android:minWidth="100dp">
+
+        <EditText
+            android:id="@+id/edtStreet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:drawableStart="@drawable/ic_map"
+            android:drawablePadding="10dp"
+            android:hint="@string/street"
+            android:importantForAutofill="no"
+            android:inputType="textCapCharacters"
+            android:maxLength="5"
+            android:maxLines="1"
+            android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtAddress1"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtStreet"
+        android:layout_marginTop="10dp"
+        android:minWidth="100dp">
+
+        <EditText
+            android:id="@+id/edtAddress1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:drawableStart="@drawable/ic_map"
+            android:drawablePadding="10dp"
+            android:hint="@string/address"
+            android:importantForAutofill="no"
+            android:inputType="textCapCharacters"
+            android:maxLines="1"
+            android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_occ"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtAddress1"
+        app:helperText="Pincode"
+        android:layout_marginTop="10dp">
+
+        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+            android:id="@+id/spnSbiPincode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblDocType"
+            android:layout_marginTop="-10dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/lblBQ1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_occ"
+        android:layout_marginTop="10dp"
+        android:text="@string/sbi_q1"
+        android:textColor="@android:color/black" />
+
+    <RadioGroup
+        android:id="@+id/rgCase3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblBQ1"
+        android:layout_margin="10dp"
+        android:checkedButton="@+id/rbS1No"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbS1Yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yes" />
+
+        <RadioButton
+            android:id="@+id/rbS1No"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/lblBQ2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rgCase3"
+        android:layout_marginTop="5dp"
+        android:text="@string/sbi_q2"
+        android:textColor="@android:color/black" />
+
+    <RadioGroup
+        android:id="@+id/rgCase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblBQ2"
+        android:layout_margin="10dp"
+        android:checkedButton="@+id/rbS2No"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbS2Yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yes" />
+
+        <RadioButton
+            android:id="@+id/rbS2No"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/lblBQ3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rgCase"
+        android:layout_marginTop="5dp"
+        android:text="@string/sbi_q3"
+        android:textColor="@android:color/black" />
+
+    <RadioGroup
+        android:id="@+id/rgCase2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblBQ3"
+        android:layout_margin="10dp"
+        android:checkedButton="@+id/rbS3No"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbS3Yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yes" />
+
+        <RadioButton
+            android:id="@+id/rbS3No"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/lblBQ4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rgCase2"
+        android:layout_marginTop="5dp"
+        android:text="@string/sbi_q4"
+        android:textColor="@android:color/black" />
+
+    <RadioGroup
+        android:id="@+id/rgCase31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblBQ4"
+        android:layout_margin="10dp"
+        android:checkedButton="@+id/rbS4No"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbS4Yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/yes" />
+
+        <RadioButton
+            android:id="@+id/rbS4No"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no" />
+    </RadioGroup>
+
+</RelativeLayout>

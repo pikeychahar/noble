@@ -1,0 +1,126 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'com.google.firebase.firebase-perf'
+
+android {
+    compileSdkVersion 31
+    defaultConfig {
+
+        applicationId "com.sibpl.squarepos"
+        minSdkVersion 24
+        minSdkVersion 24
+        targetSdkVersion 31
+        versionCode 232
+        versionName "3.1.17"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+//        viewBinding.enabled = true
+    }
+
+    buildTypes {
+        debug {
+            manifestPlaceholders = [crashlyticsCollectionEnabled:"false"]
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            manifestPlaceholders = [crashlyticsCollectionEnabled:"true"]
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.navigation:navigation-fragment:2.4.1'
+    implementation 'androidx.navigation:navigation-ui:2.4.1'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.work:work-runtime:2.7.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:runner:1.4.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation 'com.google.android.play:core:1.10.3'
+
+    implementation 'com.google.android.material:material:1.5.0'
+
+    implementation platform('com.google.firebase:firebase-bom:26.5.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-crashlytics'
+    implementation 'com.google.firebase:firebase-messaging:23.0.0'
+    implementation 'com.google.firebase:firebase-perf'
+    implementation 'com.google.android.gms:play-services-basement:18.0.0'
+    implementation 'androidx.legacy:legacy-support-v13:1.0.0'
+
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    //circle image
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    //intro app
+    implementation 'com.github.paolorotolo:appintro:4.0.0'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.16'
+
+    //retrofit
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.1'
+    implementation 'com.squareup.retrofit2:converter-jackson:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    //float button
+    implementation 'com.github.clans:fab:1.6.4'
+    //searchable spinner
+    implementation 'com.github.miteshpithadiya:SearchableSpinner:1e4a615cdf'
+
+    //for Play store get version
+    implementation 'org.jsoup:jsoup:1.13.1'
+    //View Pager
+    implementation 'com.chabbal:slidingdotsplash:1.0.2'
+    implementation 'org.apache.commons:commons-lang3:3.6'
+    //progress bar
+    implementation 'com.wang.avi:library:2.1.3'
+
+    //multi selection spinner
+    implementation 'io.apptik.widget:multiselectspinner:1.0.12'
+    //For find real path
+    implementation 'in.gauriinfotech:commons:1.1.2'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+
+    //Bottom Bar
+    implementation 'com.bigscreen:iconic-tab-bar:1.0.5'
+
+    implementation 'com.github.medyo:fancybuttons:1.9.1'
+    implementation 'com.github.florent37:shapeofview:1.3.2'
+
+    //timer
+    implementation 'com.ankushgrover:Hourglass:2.0.0'
+    //compressor
+    implementation 'id.zelory:compressor:1.0.4'
+    //Show case view
+    implementation 'com.github.mreram:showcaseview:1.2.0'
+
+    implementation 'com.google.android.gms:play-services-auth:20.1.0'
+    implementation 'com.google.android.gms:play-services-auth-api-phone:18.0.1'
+
+    //Shimmer
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+    //Lottie
+    implementation "com.airbnb.android:lottie:3.7.0"
+    //Pusher
+    implementation 'com.pusher:pusher-java-client:1.8.0'
+
+    implementation project(':app:noble')
+
+}

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/main_bg">
+
+
+    <ImageView
+        android:id="@+id/imgShareBg"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/main_bg"
+        android:contentDescription="@string/app_name" />
+
+    <RelativeLayout
+        android:id="@+id/old"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/imgShareBg"
+        android:layout_margin="15dp"
+        android:background="@drawable/txt_border"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/edtSEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent"
+            android:drawableStart="@android:drawable/sym_action_email"
+            android:drawablePadding="10dp"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:padding="5dp"
+            android:singleLine="true"
+            tools:ignore="Autofill" />
+
+        <ImageView
+            android:id="@+id/btnSendEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_send" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/newPass"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/old"
+        android:layout_margin="15dp"
+        android:background="@drawable/txt_border"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/edtSPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent"
+            android:drawableStart="@android:drawable/ic_menu_call"
+            android:drawablePadding="10dp"
+            android:hint="@string/phone_number"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:padding="5dp"
+            android:singleLine="true"
+            tools:ignore="Autofill" />
+
+        <ImageView
+            android:id="@+id/btnSendPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_send" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/conPass"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/newPass"
+        android:layout_margin="15dp"
+        android:background="@drawable/txt_border"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/edtSLink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_toStartOf="@+id/btnCopyLink"
+            android:background="@android:color/transparent"
+            android:drawableStart="@android:drawable/ic_menu_revert"
+            android:drawablePadding="10dp"
+            android:hint="@string/link"
+            android:maxLines="1"
+            android:padding="5dp"
+            android:singleLine="true"
+            tools:ignore="Autofill" />
+
+        <ImageView
+            android:id="@+id/btnCopyLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_whatsapp" />
+    </RelativeLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/dialogButtonClose"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/conPass"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/button_bg"
+        android:text="@string/close"
+        android:textColor="@android:color/white" />
+</RelativeLayout>

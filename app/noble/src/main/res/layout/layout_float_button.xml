@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:ignore="NamespaceTypo">
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/menu_yellow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        fab:menu_animationDelayPerItem="0"
+        fab:menu_backgroundColor="@android:color/transparent"
+        fab:menu_colorNormal="@android:color/holo_red_light"
+        fab:menu_colorPressed="@color/colorLightRed"
+        fab:menu_colorRipple="@android:color/holo_red_dark"
+        fab:menu_labels_hideAnimation="@anim/jump_to_down"
+        fab:menu_labels_showAnimation="@anim/jump_from_down"
+        fab:menu_labels_style="@style/MenuLabelsStyle"
+        fab:menu_shadowColor="@android:color/white">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fabEmail"
+            style="@style/MenuButtonsStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onEmail"
+            android:src="@drawable/ic_email" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fabPhone"
+            style="@style/MenuButtonsStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onPhoneCall"
+            android:src="@drawable/ic_call" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fabMessage"
+            style="@style/MenuButtonsStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onMessage"
+            android:src="@drawable/ic_message" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fabWhatsApp"
+            style="@style/MenuButtonsStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onWhatsApp"
+            android:src="@drawable/ic_whatsapp" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

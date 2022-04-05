@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context="com.square.pos.training.TrainingActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ccPos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="20dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:dividerHeight="0.0px"
+            android:elevation="8dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:padding="10dp"
+            android:stateListAnimator="@anim/animation"
+            app:layout_constraintTop_toTopOf="parent"
+            card_view:cardElevation="10dp"
+            card_view:cardPreventCornerOverlap="false">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:id="@+id/lblPos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PoSP Certification"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <include
+                    android:id="@+id/div"
+                    layout="@layout/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblPos"
+                    android:layout_marginTop="2dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/div"
+                    android:layout_margin="5dp"
+                    android:text="Dear Partner Complete just 15 hours of our training session and online examination to become an IRDAI certified POINT OF SALE (POS) person.\nStart Now!!" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/moduleName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/border"
+            android:padding="5dp"
+            android:text="Traning Modules:"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/ccPos" />
+
+        <TextView
+            android:id="@+id/moduleName1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/bg_green_dark"
+            android:onClick="onModule1Click"
+            android:padding="5dp"
+            android:text="Module 1"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/moduleName" />
+
+        <ImageView
+            android:id="@+id/status1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="7dp"
+            android:contentDescription="@string/done_button"
+            android:src="@drawable/ic_shield"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/moduleName1"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/moduleName2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/bg_green"
+            android:onClick="onModule2Click"
+            android:padding="5dp"
+            android:text="Module 2"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/moduleName1" />
+
+        <ImageView
+            android:id="@+id/status2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="7dp"
+            android:contentDescription="@string/done_button"
+            android:src="@drawable/ic_shield"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/moduleName2"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <TextView
+            android:id="@+id/moduleName3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/bg_green"
+            android:onClick="onModule3Click"
+            android:padding="5dp"
+            android:text="Module 3"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/moduleName2" />
+
+
+        <ImageView
+            android:id="@+id/status3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="7dp"
+            android:contentDescription="@string/done_button"
+            android:src="@drawable/ic_shield"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/moduleName3"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/moduleName4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/bg_green"
+            android:onClick="onModule4Click"
+            android:padding="5dp"
+            android:text="Module 4"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/moduleName3" />
+
+        <ImageView
+            android:id="@+id/status4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="7dp"
+            android:contentDescription="@string/done_button"
+            android:src="@drawable/ic_shield"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/moduleName4"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/subModuleList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/moduleName4" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ccExam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:dividerHeight="0.0px"
+            android:elevation="8dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:padding="10dp"
+            android:stateListAnimator="@anim/animation"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/subModuleList"
+            card_view:cardElevation="10dp"
+            card_view:cardPreventCornerOverlap="false">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:id="@+id/lblE"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Congratulation Your Training has been completed successfully!!\nYou are only one step to get certificate."
+                    android:textAlignment="center"
+
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/lblE"
+                    android:layout_margin="20dp"
+                    android:background="@android:color/holo_orange_dark"
+                    android:text="Exam Now"
+                    android:onClick="onExamClick"
+                    android:textColor="@android:color/white" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/ccExam" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

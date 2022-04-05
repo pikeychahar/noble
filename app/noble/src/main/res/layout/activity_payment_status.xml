@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg"
+    tools:context="com.square.pos.activity_motor.PaymentStatusActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rlThank"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark">
+
+            <TextView
+                android:id="@+id/txtTS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/thanks_for_choosing"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtPC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtTS"
+                android:text="@string/app_name"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtEM"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtPC"
+                android:layout_margin="10dp"
+                android:text="@string/payment_status_msg"
+                android:textAlignment="center"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/txtEMailSend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtEM"
+                android:layout_margin="20dp"
+                android:autoLink="email"
+                android:text="@string/support_mail"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@android:color/white" />
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/policyNoStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlThank"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="20dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            android:elevation="10dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/viewStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="-20dp"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true" />
+
+                <include
+                    android:id="@+id/div5"
+                    layout="@layout/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="60dp" />
+
+                <TextView
+                    android:id="@+id/lblName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/div5"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:minWidth="80dp"
+                    android:text="@string/name" />
+
+                <TextView
+                    android:id="@+id/txtName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/div5"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/lblStatus"
+                    android:minWidth="100dp" />
+
+
+                <TextView
+                    android:id="@+id/lblStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtName"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:minWidth="80dp"
+                    android:text="@string/status" />
+
+                <TextView
+                    android:id="@+id/txtStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtName"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/lblStatus"
+                    android:minWidth="100dp"
+                    android:textColor="@android:color/holo_blue_dark" />
+
+                <TextView
+                    android:id="@+id/lblTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblStatus"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:minWidth="80dp"
+                    android:text="@string/time" />
+
+                <TextView
+                    android:id="@+id/txtTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblStatus"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/lblStatus"
+                    android:minWidth="100dp" />
+
+                <TextView
+                    android:id="@+id/lblCompany"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtTime"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:minWidth="80dp"
+                    android:text="@string/strCompany" />
+
+                <TextView
+                    android:id="@+id/txtCompany"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtTime"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/lblCompany"
+                    android:minWidth="100dp"
+                    android:textColor="@android:color/holo_orange_dark"
+                    android:textIsSelectable="true"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/lblQuoteId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblCompany"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:minWidth="80dp"
+                    android:text="@string/quote_id" />
+
+                <TextView
+                    android:id="@+id/txtQuoteId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtCompany"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/lblQuoteId"
+                    android:minWidth="100dp"
+                    android:textColor="@android:color/black"
+                    android:textIsSelectable="true"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtRetry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtQuoteId"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onRetryClick"
+                    android:padding="5dp"
+                    android:text="@string/fetch_again"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorGreen"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/llPolicy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtRetry"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorLightGray"
+                    android:baselineAligned="true"
+                    android:gravity="center"
+                    android:weightSum="3">
+
+                    <RelativeLayout
+                        android:id="@+id/rlRate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/white"
+                        android:onClick="onRateUS"
+                        android:padding="2dp">
+
+                        <ImageView
+                            android:id="@+id/imgRate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:contentDescription="@string/rate_us"
+                            android:src="@drawable/ic_rate_review_24" />
+
+                        <TextView
+                            android:id="@+id/btnRate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/imgRate"
+                            android:padding="2dp"
+                            android:text="@string/rate_us"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlDp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/white"
+                        android:onClick="onDownloadPolicy"
+                        android:padding="2dp"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/imgPolicy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:contentDescription="@string/download_policy"
+                            android:src="@drawable/ic_download_24" />
+
+                        <TextView
+                            android:id="@+id/btnDP"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/imgPolicy"
+                            android:background="@android:color/white"
+                            android:padding="2dp"
+                            android:text="@string/download_policy"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlMail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/white"
+                        android:onClick="onRaiseMail"
+                        android:padding="2dp">
+
+                        <ImageView
+                            android:id="@+id/imgMail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:contentDescription="@string/raise_mail"
+                            android:src="@drawable/ic_email" />
+
+                        <TextView
+                            android:id="@+id/btnMail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/imgMail"
+                            android:background="@android:color/white"
+                            android:padding="2dp"
+                            android:text="@string/raise_mail"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/white"
+                        android:onClick="onHomeClick"
+                        android:padding="2dp">
+
+                        <ImageView
+                            android:id="@+id/imgHome"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:contentDescription="@string/menu_home"
+                            android:src="@drawable/ic_home_24" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/imgHome"
+                            android:background="@android:color/white"
+                            android:padding="2dp"
+                            android:text="@string/menu_home"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</ScrollView>

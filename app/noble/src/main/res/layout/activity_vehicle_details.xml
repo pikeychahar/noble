@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg"
+    tools:context=".activity_motor.VehicleDetailsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ccNm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0.0px"
+                android:elevation="8dp"
+                card_view:cardElevation="10dp"
+                card_view:cardPreventCornerOverlap="false">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/engineNumber"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/edtEngineNo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_docs"
+                            android:drawablePadding="10dp"
+                            android:hint="@string/engine_number"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapCharacters"
+                            android:maxLength="25"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/chassisNumber"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/engineNumber"
+
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/edtChassisNo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_docs"
+                            android:drawablePadding="10dp"
+                            android:hint="@string/chassis_number"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapCharacters"
+                            android:maxLength="17"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlRegNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/chassisNumber"
+                        android:visibility="visible">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/regNumber"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_toEndOf="@+id/rto">
+
+                            <EditText
+                                android:id="@+id/edtRegNo"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/registration_number"
+                                android:importantForAutofill="no"
+                                android:inputType="textCapCharacters"
+                                android:maxLines="1"
+                                android:singleLine="true" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/rto"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:visibility="visible">
+
+                            <EditText
+                                android:id="@+id/edtRto"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:cursorVisible="false"
+                                android:focusable="false"
+                                android:hint="@string/rto"
+                                android:importantForAutofill="no"
+                                android:inputType="textCapCharacters"
+                                android:maxLines="1"
+                                android:singleLine="true" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:id="@+id/lblRto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rlRegNo"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/rto"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:id="@+id/rtoName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lblRto"
+                        android:background="@drawable/img_border">
+
+                        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                            android:id="@+id/spnRTO"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/prePolicy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rtoName"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/lblPolicyExpire"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/previous_policy_detail"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/prePolicyName"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblPolicyExpire"
+                            android:layout_marginTop="10dp"
+                            android:visibility="visible">
+
+                            <EditText
+                                android:id="@+id/edtPrePolicyName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clickable="false"
+                                android:focusable="false"
+                                android:hint="@string/previous_insurer_name"
+                                android:importantForAutofill="no"
+                                android:inputType="textCapCharacters"
+                                android:maxLines="1"
+                                android:singleLine="true" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/prePolicyNo"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/prePolicyName"
+                            android:layout_marginTop="10dp"
+                            android:visibility="visible">
+
+                            <EditText
+                                android:id="@+id/edtPrePolicy"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawableStart="@drawable/ic_docs"
+                                android:drawablePadding="10dp"
+                                android:hint="@string/previous_policy_number"
+                                android:importantForAutofill="no"
+                                android:inputType="textCapCharacters"
+                                android:maxLines="1"
+                                android:singleLine="true" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlIcicHpn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/prePolicy">
+
+                        <CheckBox
+                            android:id="@+id/hypothecation"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:onClick="onClickHypothecation"
+                            android:text="@string/hypothecation" />
+
+                        <RelativeLayout
+                            android:id="@+id/rr2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/hypothecation"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/lblFin"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/financier_name"
+                                android:textSize="12sp" />
+
+                            <LinearLayout
+                                android:id="@+id/llFin"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/lblFin"
+                                android:background="@drawable/img_border">
+
+                                <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                                    android:id="@+id/edtFinanceName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:hintText="Select Financier Name" />
+                            </LinearLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/finName"
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/llFin"
+                                android:layout_marginTop="10dp"
+                                android:visibility="gone">
+
+                                <EditText
+                                    android:id="@+id/edtFinName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:drawableStart="@drawable/ic_docs"
+                                    android:drawablePadding="10dp"
+                                    android:hint="@string/financier_name"
+                                    android:importantForAutofill="no"
+                                    android:inputType="textCapCharacters"
+                                    android:maxLines="1"
+                                    android:singleLine="true" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <TextView
+                                android:id="@+id/lblFinCity"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/finName"
+                                android:layout_marginTop="10dp"
+                                android:text="@string/financier_city"
+                                android:textSize="12sp" />
+
+                            <LinearLayout
+                                android:id="@+id/llTitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/lblFinCity"
+                                android:background="@drawable/img_border">
+
+                                <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                                    android:id="@+id/fCity"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="-5dp" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rlIcicHpn"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/button_bg"
+                        android:onClick="onNomineeClick"
+                        android:text="@string/btn_continue"
+                        android:textColor="@android:color/white" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@+id/ccNm"
+                android:layout_margin="10dp" />
+        </RelativeLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

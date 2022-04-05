@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.square.pos.activity.health.HealthPaymentStatusActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/policyNoStatus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0.0px"
+                android:elevation="10dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/rlThank"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp">
+
+                        <ImageView
+                            android:id="@+id/imgTick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_margin="10dp"
+                            android:src="@drawable/ic_tick" />
+
+                        <TextView
+                            android:id="@+id/txtTS"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/imgTick"
+                            android:layout_margin="10dp"
+                            android:text="Thanks For Choosing"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:textColor="@color/colorGreen"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtPC"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtTS"
+                            android:text="@string/square_insurance_brokers_pvt_ltd"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtEM"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtPC"
+                            android:layout_margin="10dp"
+                            android:text="Dear User, Thanks for Visiting Square Insurance. You will get policy pdf via proposer mail. If something went wrong or report us for any issue, write us on. "
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                        <TextView
+                            android:id="@+id/txtEMailSend"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtEM"
+                            android:layout_margin="10dp"
+                            android:autoLink="email"
+                            android:text="support@squareinsurance.in "
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtEMailSend"
+                            android:layout_margin="15dp">
+
+                            <include
+                                android:id="@+id/div5"
+                                layout="@layout/divider"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+
+                            <TextView
+                                android:id="@+id/lblPaymentStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/div5"
+                                android:layout_marginTop="10dp"
+                                android:minWidth="80dp"
+                                android:text="@string/payment_status" />
+
+                            <TextView
+                                android:id="@+id/txtPaymentStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/div5"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_toEndOf="@+id/lblPaymentStatus"
+                                android:minWidth="100dp"
+                                android:textColor="@color/colorPrimaryDark" />
+
+                            <TextView
+                                android:id="@+id/lblQId"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txtPaymentStatus"
+                                android:layout_marginTop="10dp"
+                                android:minWidth="80dp"
+                                android:text="@string/quotation_id" />
+
+                            <TextView
+                                android:id="@+id/txtQId"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/txtPaymentStatus"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="10dp"
+                                android:textIsSelectable="true"
+                                android:layout_toEndOf="@+id/lblPaymentStatus"
+                                android:minWidth="100dp"
+                                android:textColor="@color/colorPrimaryDark" />
+                            <Button
+                                android:id="@+id/btnDownload"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_below="@+id/txtQId"
+                                android:layout_marginTop="15dp"
+                                android:background="@color/colorGreen"
+                                android:onClick="onDownloadPolicy"
+                                android:text="@string/download_policy"
+                                android:textColor="@android:color/white"
+                                android:textSize="12sp"
+                                android:visibility="gone" />
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rlThank"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <Button
+                            android:id="@+id/btnHome"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorPrimary"
+                            android:onClick="onHomeClick"
+                            android:text="@string/menu_home"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp" />
+
+                        <Button
+                            android:id="@+id/btnFeedBack"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorPrimary"
+                            android:onClick="onRateUS"
+                            android:text="@string/rate_us"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

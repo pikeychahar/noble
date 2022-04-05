@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_crm.RaiseEndorsementActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/llAll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/txtOwner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onOwnerDetailClick"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/owner_detail"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorGray" />
+
+                <TextView
+                    android:id="@+id/txtVehicle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onVehicleDetailClick"
+                    android:paddingTop="10dp"
+                    android:textColor="@color/colorGray"
+                    android:paddingBottom="10dp"
+                    android:text="@string/vehicle_detail"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorGray" />
+
+                <TextView
+                    android:id="@+id/txtOther"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="onOtherDetailClick"
+                    android:paddingTop="10dp"
+                    android:textColor="@color/colorGray"
+                    android:paddingBottom="10dp"
+                    android:text="@string/other_detail"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlLayouts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llAll">
+
+                <include
+                    android:id="@+id/layoutOwnerDetail"
+                    layout="@layout/fragment_owner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <include
+                    android:id="@+id/layoutVehicleDetail"
+                    layout="@layout/fragment_vehicle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+                <include
+                    android:id="@+id/layoutOtherDetail"
+                    layout="@layout/fragment_other"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtDoc1"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlLayouts"
+                android:layout_margin="5dp">
+
+                <EditText
+                    android:id="@+id/edtRcFront"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:cursorVisible="true"
+                    android:focusable="false"
+                    android:hint="@string/rcf"
+                    android:importantForAutofill="no"
+                    android:inputType="none"
+                    android:maxLines="1"
+                    android:onClick="onUploadFile"
+                    android:singleLine="true"
+                    android:textSize="12sp"
+                    app:drawableEndCompat="@drawable/ic_file_upload" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtRcBack"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtDoc1"
+                android:layout_margin="5dp">
+
+                <EditText
+                    android:id="@+id/edtRcBack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:cursorVisible="true"
+                    android:focusable="false"
+                    android:hint="@string/rcb"
+                    android:importantForAutofill="no"
+                    android:inputType="none"
+                    android:maxLines="1"
+                    android:onClick="onUploadFile"
+                    android:singleLine="true"
+                    android:textSize="12sp"
+                    app:drawableEndCompat="@drawable/ic_file_upload" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtLetter"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtRcBack"
+                android:layout_margin="5dp">
+
+                <EditText
+                    android:id="@+id/edtLetter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:cursorVisible="true"
+                    android:focusable="false"
+                    android:hint="@string/request_letter"
+                    android:importantForAutofill="no"
+                    android:inputType="none"
+                    android:maxLines="1"
+                    android:onClick="onUploadFile"
+                    android:singleLine="true"
+                    android:textSize="12sp"
+                    app:drawableEndCompat="@drawable/ic_file_upload" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtOtherDoc"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtLetter"
+                android:layout_margin="5dp">
+
+                <EditText
+                    android:id="@+id/edtOther"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:cursorVisible="true"
+                    android:focusable="false"
+                    android:hint="@string/other_documents"
+                    android:importantForAutofill="no"
+                    android:inputType="none"
+                    android:maxLines="1"
+                    android:onClick="onUploadFile"
+                    android:singleLine="true"
+                    android:textSize="12sp"
+                    app:drawableEndCompat="@drawable/ic_file_upload" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtOtherDoc"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/txt_border"
+                android:onClick="onSubmitClick"
+                android:text="@string/submit"
+                android:textColor="@color/colorPrimaryDark" />
+        </RelativeLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

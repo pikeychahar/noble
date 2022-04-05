@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_motor.RaiseOfflineActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtInvoice"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:visibility="gone"
+        android:layout_marginBottom="5dp">
+
+        <EditText
+            android:id="@+id/edtInvoice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:cursorVisible="true"
+            android:focusable="false"
+            android:hint="@string/invoice"
+            android:importantForAutofill="no"
+            android:inputType="none"
+            android:maxLines="1"
+            android:onClick="onUploadFile"
+            android:singleLine="true"
+            android:textSize="12sp"
+            app:drawableEndCompat="@drawable/ic_file_upload" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtRcFront"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/txtInvoice"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp">
+
+        <EditText
+            android:id="@+id/edtRcFront"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:cursorVisible="true"
+            android:focusable="false"
+            android:hint="@string/rcf"
+            android:importantForAutofill="no"
+            android:inputType="none"
+            android:maxLines="1"
+            android:onClick="onUploadFile"
+            android:singleLine="true"
+            android:textSize="12sp"
+            app:drawableEndCompat="@drawable/ic_file_upload" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtRcBack"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtRcFront"
+        android:layout_margin="5dp">
+
+        <EditText
+            android:id="@+id/edtRcBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:cursorVisible="true"
+            android:focusable="false"
+            android:hint="@string/rcb"
+            android:importantForAutofill="no"
+            android:inputType="none"
+            android:maxLines="1"
+            android:onClick="onUploadFile"
+            android:singleLine="true"
+            android:textSize="12sp"
+            app:drawableEndCompat="@drawable/ic_file_upload" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtPolicy"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtRcBack"
+        android:layout_margin="5dp">
+
+        <EditText
+            android:id="@+id/edtPolicy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:cursorVisible="true"
+            android:focusable="false"
+            android:hint="@string/previous_policy"
+            android:importantForAutofill="no"
+            android:inputType="none"
+            android:maxLines="1"
+            android:onClick="onUploadFile"
+            android:singleLine="true"
+            android:textSize="12sp"
+            app:drawableEndCompat="@drawable/ic_file_upload" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtOther"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtPolicy"
+        android:layout_margin="5dp">
+
+        <EditText
+            android:id="@+id/edtOther"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:cursorVisible="true"
+            android:focusable="false"
+            android:hint="@string/upload_Other"
+            android:importantForAutofill="no"
+            android:inputType="none"
+            android:maxLines="1"
+            android:onClick="onUploadFile"
+            android:singleLine="true"
+            android:textSize="12sp"
+            app:drawableEndCompat="@drawable/ic_file_upload" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtRemark"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtOther"
+        android:layout_margin="5dp">
+
+        <EditText
+            android:id="@+id/edtRemark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/remarks"
+            android:importantForAutofill="no"
+            android:inputType="textCapCharacters"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textSize="12sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtRemark"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/light_theme"
+        android:onClick="onSubmitClick"
+        android:text="@string/submit"
+        android:textColor="@android:color/white" />
+</RelativeLayout>

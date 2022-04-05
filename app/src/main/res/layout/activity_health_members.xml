@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg"
+    tools:context=".activity.health.HealthMembersActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@color/colorPrimaryDark"
+                android:onClick="onMemberAgeClick"
+                android:text="@string/btn_continue"
+                android:elevation="10dp"
+                android:translationZ="10dp"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@+id/cc3" />
+
+            <TextView
+                android:id="@+id/lblFm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="Select Family Members to cover"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="?attr/colorPrimary"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cc3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:dividerHeight="0.0px"
+                android:elevation="8dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:padding="10dp"
+                android:stateListAnimator="@anim/animation"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblFm"
+                card_view:cardElevation="10dp"
+                card_view:cardPreventCornerOverlap="false">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <CheckBox
+                        android:id="@+id/chkSelf"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/member_select"
+                        android:button="@null"
+                        android:enabled="true"
+                        android:onClick="onCheckBoxClick" />
+
+                    <CheckBox
+                        android:id="@+id/chkSpouse"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_below="@+id/chkSelf"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/member_select"
+                        android:button="@null"
+                        android:onClick="onCheckBoxClick" />
+
+
+                    <CheckBox
+                        android:id="@+id/chkFather"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_below="@+id/rlSD"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/member_select"
+                        android:button="@null"
+                        android:onClick="onCheckBoxClick" />
+
+                    <CheckBox
+                        android:id="@+id/chkMother"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_below="@+id/chkFather"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/member_select"
+                        android:button="@null"
+                        android:onClick="onCheckBoxClick" />
+
+
+                    <TextView
+                        android:id="@+id/lblSpouse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/lblSelf"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/spouse" />
+
+                    <TextView
+                        android:id="@+id/lblSelf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="@string/self" />
+
+                    <RelativeLayout
+                        android:id="@+id/rlSD"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/chkSpouse">
+
+                        <include
+                            android:id="@+id/div1"
+                            layout="@layout/divider"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/lblSon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/div1"
+                            android:layout_margin="10dp"
+                            android:text="@string/son_s" />
+
+                        <include
+                            android:id="@+id/div3"
+                            layout="@layout/divider"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/chkSon" />
+
+                        <TextView
+                            android:id="@+id/lblDaughter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/div3"
+                            android:layout_margin="10dp"
+                            android:text="@string/daughter_s" />
+
+                        <CheckBox
+                            android:id="@+id/chkSon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/member_select"
+                            android:button="@null"
+                            android:onClick="onCheckBoxClick" />
+
+                        <CheckBox
+                            android:id="@+id/chkDaughter"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_below="@+id/chkSon"
+                            android:layout_alignParentEnd="true"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/member_select"
+                            android:button="@null"
+                            android:onClick="onCheckBoxClick" />
+
+                        <RelativeLayout
+                            android:id="@+id/rlAddSon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_margin="10dp"
+                            android:layout_toStartOf="@+id/chkSon"
+                            android:background="@drawable/border"
+                            android:gravity="center"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/txtSubSon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:onClick="onSubSon"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:text="-"
+                                android:textColor="@color/colorRed"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtTotalSon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_toEndOf="@+id/txtSubSon"
+                                android:paddingStart="10dp"
+                                android:textColor="@color/colorGray"
+                                android:paddingEnd="10dp"
+                                android:text="1" />
+
+                            <TextView
+                                android:id="@+id/txtAddSon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_toEndOf="@+id/txtTotalSon"
+                                android:onClick="onAddSon"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:text="+"
+                                android:textColor="@color/colorGreen"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlAddDaughter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_below="@+id/chkSon"
+                            android:layout_margin="10dp"
+                            android:layout_toStartOf="@+id/chkDaughter"
+                            android:background="@drawable/border"
+                            android:gravity="center"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/txtSubDaughter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:onClick="onSubDaughter"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:text="-"
+                                android:textColor="@color/colorRed"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtTotalDaughter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_toEndOf="@+id/txtSubDaughter"
+                                android:onClick="onAddDaughter"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:textColor="@color/colorGray"
+                                android:text="1" />
+
+                            <TextView
+                                android:id="@+id/txtAddDaughter"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_toEndOf="@+id/txtTotalDaughter"
+                                android:onClick="onAddDaughter"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:text="+"
+                                android:textColor="@color/colorGreen"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/lblFather"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/div4"
+                        android:layout_margin="10dp"
+                        android:text="@string/father" />
+
+                    <TextView
+                        android:id="@+id/lblMother"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/div5"
+                        android:layout_margin="10dp"
+                        android:text="@string/mother" />
+
+
+                    <include
+                        android:id="@+id/div2"
+                        layout="@layout/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/chkSelf" />
+
+
+                    <include
+                        android:id="@+id/div4"
+                        layout="@layout/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rlSD" />
+
+                    <include
+                        android:id="@+id/div5"
+                        layout="@layout/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/chkFather" />
+
+                    <include
+                        android:id="@+id/div6"
+                        layout="@layout/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/chkMother" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

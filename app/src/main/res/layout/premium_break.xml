@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtRegNumber"
+            style="@style/smallTextView"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/txt_border"
+            android:padding="8dp"
+            android:textColor="@color/colorPrimaryDark" />
+
+        <ImageView
+            android:id="@+id/imgInsureLogo"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:contentDescription="@string/app_name"
+            android:foreground="@drawable/img_border" />
+
+        <ImageView
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_close" />
+
+        <TextView
+            android:id="@+id/txtVehicle"
+            style="@style/smallTextView"
+            android:layout_below="@+id/imgInsureLogo"
+            android:layout_margin="10dp" />
+
+        <RelativeLayout
+            android:id="@+id/rlIDV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtVehicle"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/lblIdv"
+                style="@style/smallTextView"
+                android:text="IDV: " />
+
+            <TextView
+                android:id="@+id/txtIdvValue"
+                style="@style/smallTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/lblIdv"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtIdvRange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/txtIdvValue"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/lblQuote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlIDV"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/quote_id"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/txtQuote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlIDV"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/lblQuote"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12sp" />
+
+        <include
+            android:id="@+id/d1"
+            layout="@layout/divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtQuote"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp" />
+
+        <RelativeLayout
+            android:id="@+id/rlBasicOd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/d1">
+
+            <TextView
+                android:id="@+id/lblBasic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="BASIC OD (A):"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/lblBOD"
+                style="@style/smallTextView"
+                android:layout_below="@+id/lblBasic"
+                android:minWidth="170dp"
+                android:text="Basic OD Premium" />
+
+            <TextView
+                android:id="@+id/txtBasicOD"
+                style="@style/smallTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblBasic"
+                android:layout_toEndOf="@+id/lblBOD"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/rlNcb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtBasicOD"
+                android:layout_marginEnd="10dp">
+
+                <TextView
+                    android:id="@+id/lblNcb"
+                    style="@style/smallTextView"
+                    android:layout_marginTop="10dp"
+                    android:minWidth="30dp"
+                    android:text="NCB:" />
+
+                <TextView
+                    android:id="@+id/txtNcb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/lblNcb"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/lblNcb"
+                    android:minWidth="140dp"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/txtNcbTotal"
+                    style="@style/smallTextView"
+                    android:layout_alignBaseline="@+id/lblNcb"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/txtNcb"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rlZD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlNcb"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/lblZD"
+                    style="@style/smallTextView"
+                    android:layout_marginTop="5dp"
+                    android:minWidth="170dp"
+                    android:text="Zero Dep" />
+
+                <TextView
+                    android:id="@+id/txtZD"
+                    style="@style/smallTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@+id/lblZD"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlRsa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlZD"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/lblRsa"
+                    style="@style/smallTextView"
+                    android:layout_marginTop="5dp"
+                    android:minWidth="170dp"
+                    android:text="@string/rsa" />
+
+                <TextView
+                    android:id="@+id/txtRsa"
+                    style="@style/smallTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@+id/lblRsa"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/lblFutureDis"
+                style="@style/smallTextView"
+                android:layout_below="@+id/rlZD"
+                android:layout_marginTop="10dp"
+                android:minWidth="170dp"
+                android:text="Extra Discount"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/txtFutureDis"
+                style="@style/smallTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlNcb"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/lblFutureDis"
+                android:textStyle="bold"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlTp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlBasicOd">
+
+            <TextView
+                android:id="@+id/lblTP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="Third Party (B):"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lblThird"
+                style="@style/smallTextView"
+                android:layout_below="@+id/lblTP"
+                android:minWidth="170dp"
+                android:text="Third Party Liability" />
+
+            <TextView
+                android:id="@+id/txtTP"
+                style="@style/smallTextView"
+                android:layout_below="@+id/lblTP"
+                android:layout_toEndOf="@+id/lblThird"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlPA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlTp">
+
+            <TextView
+                android:id="@+id/lblPA"
+                style="@style/smallTextView"
+                android:layout_marginTop="5dp"
+                android:minWidth="170dp"
+                android:text="PA Owner Driver" />
+
+            <TextView
+                android:id="@+id/txtPA"
+                style="@style/smallTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/lblPA"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlPD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlPA"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/lblPaid"
+                style="@style/smallTextView"
+                android:layout_marginTop="5dp"
+                android:minWidth="170dp"
+                android:text="@string/legal_liability_to_paid_driver" />
+
+            <TextView
+                android:id="@+id/txtPD"
+                style="@style/smallTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/lblPaid"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlUP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlPD"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/lblUP"
+                style="@style/smallTextView"
+                android:layout_marginTop="5dp"
+                android:minWidth="170dp"
+                android:text="@string/pa_cover_for_unnamed_persons" />
+
+            <TextView
+                android:id="@+id/txtUP"
+                style="@style/smallTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/lblUP"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlTppd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlUP"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/lblp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Discount:"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lblTppd"
+                style="@style/smallTextView"
+                android:layout_below="@+id/lblp"
+                android:minWidth="170dp"
+                android:text="TPPD Restricted" />
+
+            <TextView
+                android:id="@+id/txtTppd"
+                style="@style/smallTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblp"
+                android:layout_toEndOf="@+id/lblTppd"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rlAddOnCover"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlTppd"
+            android:layout_marginTop="10dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/lblAO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Addon Cover:"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listAddOn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblAO"
+                android:layout_marginStart="10dp"
+                android:scrollbars="none" />
+
+        </RelativeLayout>
+
+
+        <include
+            android:id="@+id/d2"
+            layout="@layout/divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlAddOnCover"
+            android:layout_margin="5dp" />
+
+        <TextView
+            android:id="@+id/lblPD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/d2"
+            android:layout_margin="10dp"
+            android:text="Premium Details:"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/lblNet"
+            style="@style/smallTextView"
+            android:layout_below="@+id/lblPD"
+            android:minWidth="170dp"
+            android:text="Net Premium (A+B)" />
+
+        <TextView
+            android:id="@+id/txtNetPremium"
+            style="@style/smallTextView"
+            android:layout_below="@+id/lblPD"
+            android:layout_toEndOf="@+id/lblNet"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblGST"
+            style="@style/smallTextView"
+            android:layout_below="@+id/txtNetPremium"
+            android:layout_marginTop="5dp"
+            android:minWidth="170dp"
+            android:text="GST @18%" />
+
+        <TextView
+            android:id="@+id/txtGST"
+            style="@style/smallTextView"
+            android:layout_below="@+id/txtNetPremium"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/lblGST"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblFP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtGST"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:minWidth="170dp"
+            android:text="@string/gross_premium" />
+
+        <TextView
+            android:id="@+id/txtFinalPremium"
+            style="@style/smallTextView"
+            android:layout_below="@+id/txtGST"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/lblFP"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtFinalPremium"
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btnShare"
+                style="@android:style/Widget.Holo.Button.Small"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/green_theme"
+                android:drawableEnd="@drawable/ic_whatsapp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/menu_share"
+                android:textColor="?attr/colorPrimaryVariant"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnBuy"
+                style="@android:style/Widget.Holo.Button.Small"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:background="@drawable/primary_theme"
+                android:drawableEnd="@drawable/ic_buy"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/buy_now"
+                android:textColor="?attr/colorPrimaryVariant"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_my_account"
+        android:orderInCategory="100"
+        android:title="@string/my_account"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_logout"
+        android:orderInCategory="100"
+        android:title="@string/action_logout"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_login"
+        android:orderInCategory="100"
+        android:title="@string/action_login"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_earning"
+        android:icon="@drawable/ic_money"
+        android:orderInCategory="100"
+        android:title="@string/money"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_notification"
+        android:icon="@drawable/ic_notifications"
+        android:orderInCategory="100"
+        android:title="@string/notification"
+        android:visible="false"
+        app:showAsAction="always" />
+</menu>

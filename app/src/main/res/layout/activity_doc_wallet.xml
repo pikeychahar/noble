@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg"
+    tools:context="com.square.pos.activity_docs.DocWalletActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:elevation="10dp"
+                android:paddingBottom="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/txtDocType"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:minWidth="100dp"
+                        app:boxStrokeColor="?attr/colorPrimary"
+                        app:helperText="Doc's Type">
+
+                        <Spinner
+                            android:id="@+id/spnDocType"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/doc_type" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/txtPolicyNumber"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtDocType"
+                        android:layout_margin="10dp"
+                        android:minWidth="100dp"
+                        app:boxStrokeColor="?attr/colorPrimary">
+
+                        <EditText
+                            android:id="@+id/edtPolicyNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/policy_number"
+                            android:maxLines="1"
+                            android:inputType="textCapCharacters"
+                            android:singleLine="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlHealth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtPolicyNumber"
+                        android:visibility="gone">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/txtPartyName"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:minWidth="100dp">
+
+                            <EditText
+                                android:id="@+id/edtPartyName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/client_party_name"
+                                android:maxLines="1"
+                                android:inputType="textCapCharacters"
+                                android:singleLine="true" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/txtPartyContact"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtPartyName"
+                            android:layout_margin="10dp"
+                            android:minWidth="100dp">
+
+                            <EditText
+                                android:id="@+id/edtPartyContact"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Client/Party Contact"
+                                android:inputType="number"
+                                android:maxLength="10"
+                                android:maxLines="1"
+                                android:singleLine="true" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlMandateForm"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtPartyContact">
+
+                            <RelativeLayout
+                                android:id="@+id/rlMandateDoc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp">
+
+                                <CheckBox
+                                    android:id="@+id/chkMandate"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Mandate" />
+
+
+                                <TextView
+                                    android:id="@+id/uploadMandateForm"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:background="@drawable/textview_border"
+                                    android:drawableEnd="@drawable/ic_cloud_upload"
+                                    android:gravity="center"
+                                    android:hint="Mandate"
+                                    android:minWidth="100dp"
+                                    android:onClick="onUploadDoc"
+                                    android:padding="5dp"
+                                    android:singleLine="true"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                                <include
+                                    layout="@layout/divider"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/uploadMandateForm"
+                                    android:layout_marginTop="5dp" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rlOtherDoc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rlMandateDoc"
+                                android:layout_margin="10dp">
+
+                                <CheckBox
+                                    android:id="@+id/chkOtherDoc"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Other Document" />
+
+
+                                <TextView
+                                    android:id="@+id/uploadOtherDoc"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:background="@drawable/textview_border"
+                                    android:drawableEnd="@drawable/ic_cloud_upload"
+                                    android:gravity="center"
+                                    android:hint="Document"
+                                    android:minWidth="100dp"
+                                    android:onClick="onUploadDoc"
+                                    android:padding="5dp"
+                                    android:singleLine="true"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                                <include
+                                    android:id="@+id/div2"
+                                    layout="@layout/divider"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/uploadOtherDoc"
+                                    android:layout_marginTop="5dp" />
+
+                            </RelativeLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlProposal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rlMandateForm"
+                            android:layout_margin="10dp">
+
+                            <CheckBox
+                                android:id="@+id/chkProposal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Proposal" />
+
+
+                            <TextView
+                                android:id="@+id/uploadProposal"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:background="@drawable/textview_border"
+                                android:drawableEnd="@drawable/ic_cloud_upload"
+                                android:gravity="center"
+                                android:hint="Proposal"
+                                android:singleLine="true"
+                                android:onClick="onUploadDoc"
+                                android:padding="5dp"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                            <include
+                                layout="@layout/divider"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/uploadProposal"
+                                android:layout_marginTop="5dp" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlKyc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rlProposal"
+                            android:layout_margin="10dp">
+
+                            <CheckBox
+                                android:id="@+id/chkKyc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="KYC" />
+
+
+                            <TextView
+                                android:id="@+id/uploadKyc"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:background="@drawable/textview_border"
+                                android:drawableEnd="@drawable/ic_cloud_upload"
+                                android:gravity="center"
+                                android:hint="KYC"
+                                android:singleLine="true"
+                                android:onClick="onUploadDoc"
+                                android:padding="5dp"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                            <include
+                                layout="@layout/divider"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/uploadKyc"
+                                android:layout_marginTop="5dp" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlVehicle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtPolicyNumber"
+                        android:visibility="visible">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/txtVehicleNumber"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtSpnDoc"
+                            android:layout_margin="10dp"
+                            android:minWidth="100dp"
+                            app:boxStrokeColor="?attr/colorPrimary">
+
+                            <EditText
+                                android:id="@+id/edtVehicleNumber"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/registration_number"
+                                android:maxLines="1"
+                                android:inputType="textCapCharacters"
+                                android:singleLine="true" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/txtEngineChassis"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtVehicleNumber"
+                            android:layout_margin="10dp"
+                            android:minWidth="100dp"
+                            app:boxStrokeColor="?attr/colorPrimary">
+
+                            <EditText
+                                android:id="@+id/edtEngineChassis"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/engine_chassis"
+                                android:inputType="textCapCharacters"
+                                android:maxLines="1"
+                                android:singleLine="true" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/rlRC"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtEngineChassis"
+                            android:layout_margin="10dp">
+                                <CheckBox
+                                    android:id="@+id/chkRC"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="RC" />
+
+                                <TextView
+                                    android:id="@+id/uploadRc"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_toStartOf="@+id/uploadBck"
+                                    android:background="@drawable/textview_border"
+                                    android:drawableEnd="@drawable/ic_cloud_upload"
+                                    android:gravity="center"
+                                    android:hint="Front"
+                                    android:singleLine="true"
+                                    android:onClick="onUploadDoc"
+                                    android:padding="5dp"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                                <TextView
+                                    android:id="@+id/uploadBck"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:background="@drawable/textview_border"
+                                    android:drawableEnd="@drawable/ic_cloud_upload"
+                                    android:gravity="center"
+                                    android:hint="Back"
+                                    android:singleLine="true"
+                                    android:minWidth="100dp"
+                                    android:onClick="onUploadDoc"
+                                    android:padding="5dp"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                                <include
+                                    layout="@layout/divider"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/uploadBck"
+                                    android:layout_marginTop="5dp" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rlGST"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rlRC"
+                                android:layout_margin="10dp">
+
+                                <CheckBox
+                                    android:id="@+id/chkGST"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="GST" />
+
+
+                                <TextView
+                                    android:id="@+id/uploadGst"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:background="@drawable/textview_border"
+                                    android:drawableEnd="@drawable/ic_cloud_upload"
+                                    android:gravity="center"
+                                    android:hint="GST"
+                                    android:singleLine="true"
+                                    android:onClick="onUploadDoc"
+                                    android:padding="5dp"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                                <include
+                                    layout="@layout/divider"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/uploadGst"
+                                    android:layout_marginTop="5dp" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rlInsurance"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rlGST"
+                                android:layout_margin="10dp">
+
+                                <CheckBox
+                                    android:id="@+id/chkInsurance"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Insurance" />
+
+
+                                <TextView
+                                    android:id="@+id/uploadInsurance"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:background="@drawable/textview_border"
+                                    android:drawableEnd="@drawable/ic_cloud_upload"
+                                    android:gravity="center"
+                                    android:hint="Insurance"
+                                    android:singleLine="true"
+                                    android:onClick="onUploadDoc"
+                                    android:padding="5dp"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                                <include
+                                    layout="@layout/divider"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/uploadInsurance"
+                                    android:layout_marginTop="5dp" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/rlOther"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rlInsurance"
+                                android:layout_margin="10dp">
+
+                                <CheckBox
+                                    android:id="@+id/chkOther"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Other" />
+
+
+                                <TextView
+                                    android:id="@+id/uploadOther"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:background="@drawable/textview_border"
+                                    android:drawableEnd="@drawable/ic_cloud_upload"
+                                    android:gravity="center"
+                                    android:hint="Other"
+                                    android:onClick="onUploadDoc"
+                                    android:singleLine="true"
+                                    android:padding="5dp"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                                <include
+                                    layout="@layout/divider"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/uploadOther"
+                                    android:layout_marginTop="5dp" />
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="?attr/colorPrimary"
+                android:onClick="onUploadWallet"
+                android:text="@string/upload"
+                android:textColor="@android:color/white"
+                app:layout_constraintTop_toBottomOf="@+id/cv3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

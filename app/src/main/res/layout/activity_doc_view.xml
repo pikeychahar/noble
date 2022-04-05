@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.square.pos.activity_docs.DocViewActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/docType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Mandate"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="?attr/colorPrimary" />
+
+                    <TextView
+                        android:id="@+id/docDes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/docType"
+                        android:layout_marginTop="5dp"
+                        android:text="Square Insurance Brokers Private Limited"
+                        android:textColor="@color/colorPrimaryDark" />
+
+                    <TextView
+                        android:id="@+id/docDes1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/docDes"
+                        android:layout_marginTop="5dp"
+                        android:text="8005600171" />
+
+                    <TextView
+                        android:id="@+id/lblInsert"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/docDes1"
+                        android:layout_marginTop="5dp"
+                        android:text="Insert Date:"
+                        android:textColor="?attr/colorPrimary" />
+
+                    <TextView
+                        android:id="@+id/txtInsert"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/docDes1"
+                        android:layout_margin="5dp"
+                        android:layout_toEndOf="@+id/lblInsert"
+                        android:text="12-11-2019" />
+
+                    <include
+                        android:id="@+id/divider"
+                        layout="@layout/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txtInsert"
+                        android:layout_margin="10dp" />
+
+                    <LinearLayout
+                        android:id="@+id/llDocs1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/divider"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <RelativeLayout
+                            android:id="@+id/rlImage1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:id="@+id/docImage1"
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"
+                                android:scaleType="fitXY" />
+
+                            <TextView
+                                android:id="@+id/btnDownload1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/docImage1"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/textview_background"
+                                android:padding="5dp"
+                                android:text="Download"
+                                android:textAlignment="center"
+                                android:textColor="@android:color/white" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlImage2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:id="@+id/docImage2"
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"
+                                android:scaleType="fitXY" />
+
+                            <TextView
+                                android:id="@+id/btnDownload2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/docImage2"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/textview_background"
+                                android:padding="5dp"
+                                android:text="Download"
+                                android:textAlignment="center"
+                                android:textColor="@android:color/white" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llDocs2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/llDocs1"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <RelativeLayout
+                            android:id="@+id/rlImage3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:id="@+id/docImage3"
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"
+                                android:scaleType="fitXY"/>
+
+                            <TextView
+                                android:id="@+id/btnDownload3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/docImage3"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/textview_background"
+                                android:padding="5dp"
+                                android:text="Download"
+                                android:textAlignment="center"
+                                android:textColor="@android:color/white" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rlImage4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1">
+
+                            <ImageView
+                                android:id="@+id/docImage4"
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"
+                                android:scaleType="fitXY" />
+
+                            <TextView
+                                android:id="@+id/btnDownload4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/docImage4"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/textview_background"
+                                android:padding="5dp"
+                                android:text="Download"
+                                android:textAlignment="center"
+                                android:textColor="@android:color/white" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

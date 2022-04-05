@@ -1,0 +1,982 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg"
+    tools:context="com.square.pos.activity.ui.home.HomeFragment">
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="false"
+        android:scrollbars="none"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimaryDark"
+                    android:minHeight="150dp"
+                    android:shadowColor="@color/colorGreen"
+                    android:shadowDx="2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginEnd="30dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:dividerHeight="0.0px"
+                    android:elevation="10dp"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:outlineSpotShadowColor="@color/colorPrimaryDark"
+                    android:stateListAnimator="@anim/animation"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    card_view:cardElevation="25dp"
+                    card_view:cardPreventCornerOverlap="false"
+                    tools:targetApi="p">
+
+                    <RelativeLayout
+                        android:id="@+id/rlProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="20dp">
+
+                        <View
+                            android:id="@+id/imgUserBadge"
+                            android:layout_width="30dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="-15dp"
+                            android:visibility="gone"
+                            android:background="@drawable/ic_user_badge" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/userImg"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_user" />
+
+                        <ImageView
+                            android:id="@+id/imgBadge"
+                            android:layout_width="50dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/ecard"
+                            android:layout_alignParentEnd="true"
+                            android:contentDescription="@string/back" />
+
+                        <TextView
+                            android:id="@+id/txtUserName"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/userImg"
+                            android:text="@string/guest_user"
+                            android:layout_marginTop="10dp"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                            android:textColor="?attr/colorPrimary"
+                            android:textStyle="bold" />
+
+                        <include
+                            layout="@layout/divider"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtUserName"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"/>
+
+                        <TextView
+                            android:id="@+id/txtAgentId"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtUserName"
+                            android:textAlignment="center"
+                            android:layout_marginTop="5dp"
+                            android:textColor="@android:color/holo_orange_dark" />
+
+                        <TextView
+                            android:id="@+id/txtLogin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txtUserName"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/login_register"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/holo_orange_dark"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <TextView
+                    android:id="@+id/lblHome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:text="Motor Insurance Products"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorGreen"
+                    app:layout_constraintTop_toBottomOf="@+id/cvProfile" />
+
+                <include
+                    android:id="@+id/in21"
+                    layout="@layout/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    app:layout_constraintTop_toBottomOf="@+id/lblHome" />
+
+                <LinearLayout
+                    android:id="@+id/rlMotor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:weightSum="4"
+                    app:layout_constraintTop_toBottomOf="@+id/in21">
+
+                    <RelativeLayout
+                        android:id="@+id/rlBike"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_bike"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="10dp"
+                            android:clipChildren="false"
+                            android:clipToPadding="false"
+                            android:divider="@android:color/transparent"
+                            android:dividerHeight="0.0px"
+                            android:elevation="8dp"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:innerRadius="0dp"
+                            android:stateListAnimator="@anim/animation"
+                            app:cardCornerRadius="30dp"
+                            card_view:cardElevation="10dp"
+                            card_view:cardPreventCornerOverlap="false">
+
+                            <ImageView
+                                android:id="@+id/icon_policy"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_margin="10dp"
+                                android:contentDescription="@string/bike_insurance"
+                                app:srcCompat="@drawable/ic_cltwo" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cv_bike"
+                            android:layout_marginTop="10dp"
+                            android:text="Bike"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlCar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_quote"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="10dp"
+                            android:clipChildren="false"
+                            android:clipToPadding="false"
+                            android:divider="@android:color/transparent"
+                            android:dividerHeight="0.0px"
+                            android:elevation="8dp"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            android:stateListAnimator="@anim/animation"
+                            app:cardCornerRadius="30dp"
+                            card_view:cardElevation="10dp"
+                            card_view:cardPreventCornerOverlap="false">
+
+                            <ImageView
+                                android:id="@+id/icon_quot"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_margin="10dp"
+                                android:contentDescription="@string/car_insurance"
+                                app:srcCompat="@drawable/ic_clcar" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cv_quote"
+                            android:layout_marginTop="10dp"
+                            android:text="Car"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlPcv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_leads"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="10dp"
+                            android:clipChildren="false"
+                            android:clipToPadding="false"
+                            android:divider="@android:color/transparent"
+                            android:dividerHeight="0.0px"
+                            android:elevation="8dp"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            android:stateListAnimator="@anim/animation"
+                            app:cardCornerRadius="30dp"
+                            card_view:cardElevation="10dp"
+                            card_view:cardPreventCornerOverlap="false">
+
+                            <ImageView
+                                android:id="@+id/icon_lead"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_margin="10dp"
+                                android:contentDescription="@string/commercial_vehicle_insurance"
+                                app:srcCompat="@drawable/ic_taxi" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cv_leads"
+                            android:layout_marginTop="10dp"
+                            android:text="Taxi"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlGcv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_renewal"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="10dp"
+                            android:clipChildren="false"
+                            android:clipToPadding="false"
+                            android:divider="@android:color/transparent"
+                            android:dividerHeight="0.0px"
+                            android:elevation="8dp"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            android:stateListAnimator="@anim/animation"
+                            app:cardCornerRadius="30dp"
+                            card_view:cardElevation="10dp"
+                            card_view:cardPreventCornerOverlap="false">
+
+                            <ImageView
+                                android:id="@+id/icon_renewal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_margin="10dp"
+                                android:contentDescription="@string/commercial_vehicle_insurance_gcv"
+                                app:srcCompat="@drawable/ic_truck" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cv_renewal"
+                            android:layout_marginTop="10dp"
+                            android:text="Commercial"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/lblHome2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:text="Other Insurance Products"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorGreen"
+                    app:layout_constraintTop_toBottomOf="@+id/rlMotor" />
+
+                <include
+                    android:id="@+id/in2"
+                    layout="@layout/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    app:layout_constraintTop_toBottomOf="@+id/lblHome2" />
+
+                <LinearLayout
+                    android:id="@+id/rlHealth1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:weightSum="4"
+                    app:layout_constraintTop_toBottomOf="@+id/in2">
+
+
+                    <RelativeLayout
+                        android:id="@+id/rlHealth"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_Ind"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="10dp"
+                            android:clipChildren="false"
+                            android:clipToPadding="false"
+                            android:divider="@android:color/transparent"
+                            android:dividerHeight="0.0px"
+                            android:elevation="8dp"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            android:stateListAnimator="@anim/animation"
+                            app:cardCornerRadius="30dp"
+                            card_view:cardElevation="10dp"
+                            card_view:cardPreventCornerOverlap="false">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_margin="10dp"
+                                android:contentDescription="@string/health_insurance"
+                                app:srcCompat="@drawable/ic_health" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cv_Ind"
+                            android:layout_marginTop="10dp"
+                            android:text="Health"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlTravel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_floater"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="10dp"
+                            android:clipChildren="false"
+                            android:clipToPadding="false"
+                            android:divider="@android:color/transparent"
+                            android:dividerHeight="0.0px"
+                            android:elevation="8dp"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            android:stateListAnimator="@anim/animation"
+                            app:cardCornerRadius="30dp"
+                            card_view:cardElevation="10dp"
+                            card_view:cardPreventCornerOverlap="false">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_margin="10dp"
+                                android:contentDescription="@string/travel_insurance"
+                                app:srcCompat="@drawable/ic_travel" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cv_floater"
+                            android:layout_marginTop="10dp"
+                            android:text="Travel"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlMissDi"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_misdi"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="10dp"
+                            android:clipChildren="false"
+                            android:clipToPadding="false"
+                            android:divider="@android:color/transparent"
+                            android:dividerHeight="0.0px"
+                            android:elevation="8dp"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            android:stateListAnimator="@anim/animation"
+                            app:cardCornerRadius="30dp"
+                            card_view:cardElevation="10dp"
+                            card_view:cardPreventCornerOverlap="false">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_margin="10dp"
+                                android:contentDescription="@string/travel_insurance"
+                                app:srcCompat="@drawable/ic__miss_di" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cv_misdi"
+                            android:layout_marginTop="10dp"
+                            android:text="Misc-D"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlCorona"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_corona"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="10dp"
+                            android:clipChildren="false"
+                            android:clipToPadding="false"
+                            android:divider="@android:color/transparent"
+                            android:dividerHeight="0.0px"
+                            android:elevation="8dp"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            android:stateListAnimator="@anim/animation"
+                            app:cardCornerRadius="30dp"
+                            card_view:cardElevation="10dp"
+                            card_view:cardPreventCornerOverlap="false">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_margin="10dp"
+                                android:contentDescription="@string/travel_insurance"
+                                app:srcCompat="@drawable/ic_life" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cv_corona"
+                            android:layout_marginTop="10dp"
+                            android:text="Life"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12sp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="0.0px"
+                    android:elevation="15dp"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:outlineSpotShadowColor="?attr/colorPrimary"
+                    android:stateListAnimator="@anim/animation"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="10dp"
+                    app:layout_constraintTop_toBottomOf="@+id/rlHealth1"
+                    tools:targetApi="p">
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp" />
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/indicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_gravity="bottom"
+                        app:tabBackground="@drawable/indicator_selector"
+                        app:tabGravity="center"
+                        app:tabIndicatorHeight="0dp" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/lblHome3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:text="Quick Access"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorGreen"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_slider" />
+
+                <include
+                    android:id="@+id/in22"
+                    layout="@layout/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    app:layout_constraintTop_toBottomOf="@+id/lblHome3" />
+
+                <LinearLayout
+                    android:id="@+id/rlQuick"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:weightSum="4"
+                    app:layout_constraintTop_toBottomOf="@+id/in22">
+
+                    <RelativeLayout
+                        android:id="@+id/rlQuote"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_quotation"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="10dp"
+                            android:clipChildren="false"
+                            android:clipToPadding="false"
+                            android:divider="@android:color/transparent"
+                            android:dividerHeight="0.0px"
+                            android:elevation="8dp"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            android:stateListAnimator="@anim/animation"
+                            app:cardCornerRadius="30dp"
+                            card_view:cardElevation="10dp"
+                            card_view:cardPreventCornerOverlap="false">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_margin="15dp"
+                                android:contentDescription="@string/quotation"
+                                android:scaleType="centerCrop"
+                                app:srcCompat="@drawable/ic_quotation" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cv_quotation"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/quotation"
+                            android:textAlignment="center" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlLead"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_lead"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:clipChildren="false"
+                            android:clipToPadding="false"
+                            android:divider="@android:color/transparent"
+                            android:dividerHeight="0.0px"
+                            android:elevation="8dp"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            android:stateListAnimator="@anim/animation"
+                            app:cardCornerRadius="30dp"
+                            card_view:cardElevation="10dp"
+                            card_view:cardPreventCornerOverlap="false">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_margin="15dp"
+                                app:srcCompat="@drawable/ic_lead" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cv_lead"
+                            android:layout_marginTop="10dp"
+                            android:text="Leads"
+                            android:textAlignment="center" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlPolicy"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_policy"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="10dp"
+                            android:clipChildren="false"
+                            android:clipToPadding="false"
+                            android:divider="@android:color/transparent"
+                            android:dividerHeight="0.0px"
+                            android:elevation="8dp"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            android:stateListAnimator="@anim/animation"
+                            app:cardCornerRadius="30dp"
+                            card_view:cardElevation="10dp"
+                            card_view:cardPreventCornerOverlap="false">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_margin="15dp"
+                                android:scaleType="centerCrop"
+                                app:srcCompat="@drawable/ic_policy" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cv_policy"
+                            android:layout_marginTop="10dp"
+                            android:text="Policies"
+                            android:textAlignment="center" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlDoc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_wallet"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="10dp"
+                            android:clipChildren="false"
+                            android:clipToPadding="false"
+                            android:divider="@android:color/transparent"
+                            android:dividerHeight="0.0px"
+                            android:elevation="8dp"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:innerRadius="0dp"
+                            android:shape="ring"
+                            android:stateListAnimator="@anim/animation"
+                            app:cardCornerRadius="30dp"
+                            card_view:cardElevation="10dp"
+                            card_view:cardPreventCornerOverlap="false">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_margin="15dp"
+                                android:scaleType="centerCrop"
+                                app:srcCompat="@drawable/ic_wallet" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/cv_wallet"
+                            android:layout_marginTop="10dp"
+                            android:text="Doc's Wallet"
+                            android:textAlignment="center" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlTraining"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingBottom="30dp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/rlQuick">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="15dp"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        android:divider="@android:color/transparent"
+                        android:dividerHeight="0.0px"
+                        android:elevation="8dp"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:outlineSpotShadowColor="?attr/colorPrimary"
+                        android:stateListAnimator="@anim/animation"
+                        card_view:cardElevation="10dp"
+                        card_view:cardPreventCornerOverlap="false">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+
+                            <TextView
+                                android:id="@+id/textData"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:text="Dear Partner Complete just 15 hours of our online training session and online examination to become an IRDAI certified POINT OF SALE (POS) person."
+                                android:textAlignment="center"
+                                android:textColor="?attr/colorPrimary" />
+
+                            <Button
+                                android:id="@+id/btnTraining"
+                                android:layout_width="wrap_content"
+                                android:layout_height="35dp"
+                                android:layout_below="@+id/textData"
+                                android:layout_centerHorizontal="true"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/bg_green_dark"
+                                android:drawableEnd="@drawable/ic_greater_white"
+                                android:paddingStart="20dp"
+                                android:paddingEnd="10dp"
+                                android:text="@string/start"
+                                android:textColor="@android:color/white" />
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlBlog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/rlTraining">
+
+                    <TextView
+                        android:id="@+id/lblHome4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Recommended Latest Poster"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/colorGreen" />
+
+                    <include
+                        android:id="@+id/inBlog"
+                        layout="@layout/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lblHome4"
+                        android:layout_margin="2dp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerBlog"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/inBlog"
+                        android:layout_marginTop="5dp"
+                        android:scrollbars="horizontal" />
+
+                </RelativeLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvCompany"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="15dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="0.0px"
+                    android:elevation="8dp"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:outlineSpotShadowColor="?attr/colorPrimary"
+                    android:stateListAnimator="@anim/animation"
+                    app:layout_constraintTop_toBottomOf="@+id/rlBlog"
+                    card_view:cardElevation="10dp"
+                    card_view:cardPreventCornerOverlap="false">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp">
+
+                        <TextView
+                            android:id="@+id/lblSI"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:text="@string/square_insurance_brokers"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:textColor="?attr/colorPrimary"
+                            android:textStyle="bold" />
+
+                        <include
+                            android:id="@+id/div"
+                            layout="@layout/divider"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblSI"
+                            android:layout_margin="2dp" />
+
+                        <TextView
+                            android:id="@+id/lblLicence"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/div"
+                            android:layout_marginTop="5dp"
+                            android:text="IRDAI Insurance Broker License (General and Life) - 606"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/lblCode"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblLicence"
+                            android:layout_marginTop="5dp"
+                            android:text="Code No. - Irda/Db697/17"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/lblCIN"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblCode"
+                            android:layout_marginTop="5dp"
+                            android:text="CIN No. - U66000RJ2016PTC056324 "
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/lblL"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/lblCIN"
+                            android:layout_marginTop="5dp"
+                            android:text="ISO 9001:2015 Registration No. - IN118260A"
+                            android:textAlignment="center" />
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    app:layout_constraintTop_toBottomOf="@+id/cvCompany" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

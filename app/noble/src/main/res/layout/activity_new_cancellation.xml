@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_crm.NewCancellationActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtDoc1"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/edtAltPdf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:cursorVisible="true"
+            android:focusable="false"
+            android:hint="@string/alternate_policy"
+            android:importantForAutofill="no"
+            android:inputType="none"
+            android:maxLines="1"
+            android:onClick="onUploadFile"
+            android:singleLine="true"
+            android:textSize="12sp"
+            app:drawableEndCompat="@drawable/ic_file_upload" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtDoc2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/txtDoc1">
+
+        <EditText
+            android:id="@+id/edtLetter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:cursorVisible="true"
+            android:focusable="false"
+            android:hint="@string/customer_letter"
+            android:importantForAutofill="no"
+            android:inputType="none"
+            android:maxLines="1"
+            android:onClick="onUploadFile"
+            android:singleLine="true"
+            android:textSize="12sp"
+            app:drawableEndCompat="@drawable/ic_file_upload" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtDoc3"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/txtDoc2">
+
+        <EditText
+            android:id="@+id/edtCancelCheque"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:cursorVisible="true"
+            android:focusable="false"
+            android:hint="@string/upload_cancel_cheque"
+            android:importantForAutofill="no"
+            android:inputType="none"
+            android:maxLines="1"
+            android:onClick="onUploadFile"
+            android:singleLine="true"
+            android:textSize="12sp"
+            app:drawableEndCompat="@drawable/ic_file_upload" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtRemark"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/txtDoc3">
+
+        <EditText
+            android:id="@+id/edtRemark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/remarks"
+            android:importantForAutofill="no"
+            android:inputType="textCapWords"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textSize="12sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/primary_theme"
+        android:onClick="onSubmit"
+        android:text="@string/submit"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtRemark" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

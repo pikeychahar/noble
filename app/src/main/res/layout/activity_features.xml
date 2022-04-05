@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.health.FeaturesActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/lblHL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorGreen"
+                android:minHeight="22dp"
+                android:onClick="onHospitalView"
+                android:padding="10dp"
+                android:text="Hospital List"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                app:drawableEndCompat="@drawable/ic_expand_more" />
+
+            <RelativeLayout
+                android:id="@+id/rlHospitalList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblHL">
+
+                <RelativeLayout
+                    android:id="@+id/llSCP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:id="@+id/llSC"
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/img_border"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                            android:id="@+id/spnState"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            app:hintText="Select State" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorGray" />
+
+                        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                            android:id="@+id/spnCity"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            app:hintText="Select City" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:layout_below="@+id/llSC"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/img_border"
+                        android:orientation="horizontal">
+
+                        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                            android:id="@+id/spnPincode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            app:hintText="Select Pincode" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <include
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/llSCP"
+                    layout="@layout/divider"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvHospitalList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/llSCP" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/lblPlanCover"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlHospitalList"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorGreen"
+                android:minHeight="22dp"
+                android:onClick="onViewPlans"
+                android:padding="10dp"
+                android:text="Plan Covers"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                app:drawableEndCompat="@drawable/ic_expand_more" />
+
+            <RelativeLayout
+                android:id="@+id/rlPlanList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblPlanCover">
+
+                <RelativeLayout
+                    android:id="@+id/rlCover"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="5dp">
+
+                    <TextView
+                        android:id="@+id/lblCovered"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorGreen"
+                        android:minWidth="100dp"
+                        android:onClick="onCoveredClick"
+                        android:padding="2dp"
+                        android:text="Covered"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/lblNotCovered"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/lblCovered"
+                        android:background="@color/colorRed"
+                        android:minWidth="100dp"
+                        android:onClick="onNotCoveredClick"
+                        android:padding="2dp"
+                        android:text="Not Cover"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white" />
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvCoverList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rlCover" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/lblBrochure"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlPlanList"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorGreen"
+                android:minHeight="22dp"
+                android:onClick="onBrochureClick"
+                android:padding="10dp"
+                android:text="Brochure"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                app:drawableEndCompat="@drawable/ic_expand_more" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBrochureList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblBrochure" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rvBrochureList"
+                android:layout_margin="10dp"
+                android:onClick="onCloseClick"
+                android:text="@string/close" />
+        </RelativeLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

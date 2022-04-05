@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout
+        android:id="@+id/rlCover"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/divh"
+            layout="@layout/divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/lblDes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/divh"
+            android:layout_margin="10dp"
+            android:text="Below filter can affect on policy premium." />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblDes"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/lblInsurer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/insurer"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:visibility="gone" />
+
+            <Spinner
+                android:id="@+id/spnInsurer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblInsurer"
+                android:layout_margin="10dp"
+                android:entries="@array/gender"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/lblSumInsured"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spnInsurer"
+                android:layout_margin="10dp"
+                android:text="Sum Assured"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/colorPrimary" />
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/spnSumAssured"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblSumInsured"
+                android:layout_marginTop="-10dp"
+                android:entries="@array/gender" />
+
+            <include
+                android:id="@+id/div3"
+                layout="@layout/divider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spnSumAssured" />
+
+            <RelativeLayout
+                android:id="@+id/llPin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spnSumAssured">
+
+                <TextView
+                    android:id="@+id/lblChooseCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:minWidth="100dp"
+                    android:text="@string/city"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                    android:id="@+id/spnCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblChooseCity"
+                    android:layout_marginTop="-10dp" />
+
+                <include
+                    android:id="@+id/div"
+                    layout="@layout/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spnCity" />
+
+
+                <TextView
+                    android:id="@+id/lblChoose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spnCity"
+                    android:layout_margin="10dp"
+                    android:minWidth="100dp"
+                    android:text="@string/pin"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                    android:id="@+id/spnPincode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lblChoose"
+                    android:layout_marginTop="-10dp" />
+
+                <include
+                    android:id="@+id/div2"
+                    layout="@layout/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spnPincode" />
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/lblTenure"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llPin"
+                android:layout_margin="10dp"
+                android:text="@string/policy_tenure"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <RadioGroup
+                android:id="@+id/rgCoverFor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblTenure"
+                android:layout_marginStart="15dp"
+                android:checkedButton="@+id/c1"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/c1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 Year" />
+
+                <RadioButton
+                    android:id="@+id/c2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2 Year" />
+
+                <RadioButton
+                    android:id="@+id/c3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3 Year" />
+            </RadioGroup>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnUpdateFilter"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/rlCover"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="20dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/update"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>
