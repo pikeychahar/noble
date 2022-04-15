@@ -14,7 +14,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.text.TextUtils;
-import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -38,7 +37,6 @@ import com.google.android.play.core.install.model.InstallStatus;
 import com.google.android.play.core.install.model.UpdateAvailability;
 import com.google.android.play.core.tasks.OnSuccessListener;
 import com.google.android.play.core.tasks.Task;
-import com.google.firebase.messaging.FirebaseMessaging;
 import com.square.pos.R;
 import com.square.pos.interfaces.onRequestCompleteCallBackListener;
 import com.square.pos.manager.ApiManager;
@@ -112,22 +110,22 @@ public class DashboardActivity extends AbstractActivity implements
             e.printStackTrace();
         }
 
-        FirebaseMessaging.getInstance().getToken()
-                .addOnCompleteListener(task -> {
-                    if (!task.isSuccessful()) {
-                        Log.w("TAG", "Fetching FCM registration token failed",
-                                task.getException());
-                        return;
-                    }
-
-                    // Get new FCM registration token
-                    String token = task.getResult();
-
-                    // Log and toast
-                    String msg = "TOKEN@@@" + token;
-                    Log.d("TAG", msg);
-                    ApiManager.getInstance().storeGcmId(mContext, userId, userType, token);
-                });
+//        FirebaseMessaging.getInstance().getToken()
+//                .addOnCompleteListener(task -> {
+//                    if (!task.isSuccessful()) {
+//                        Log.w("TAG", "Fetching FCM registration token failed",
+//                                task.getException());
+//                        return;
+//                    }
+//
+//                    // Get new FCM registration token
+//                    String token = task.getResult();
+//
+//                    // Log and toast
+//                    String msg = "TOKEN@@@" + token;
+//                    Log.d("TAG", msg);
+//                    ApiManager.getInstance().storeGcmId(mContext, userId, userType, token);
+//                });
 
 
         mBundle = new Bundle();

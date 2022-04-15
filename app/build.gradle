@@ -121,6 +121,6 @@ dependencies {
     //Pusher
     implementation 'com.pusher:pusher-java-client:1.8.0'
 
-    implementation project(':app:noble')
+//    implementation project(':app:noble')
 
 }
