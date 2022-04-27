@@ -469,7 +469,7 @@
                     android:gravity="center"
                     android:minHeight="35dp">
 
-                    <com.square.pos.utils.SearchableSpinner
+                    <com.dmw.noble.utils.SearchableSpinner
                         android:id="@+id/edtTpPreInsurer"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"

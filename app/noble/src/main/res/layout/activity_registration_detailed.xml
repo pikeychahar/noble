@@ -47,7 +47,7 @@
                         android:padding="5dp"
                         app:helperText="Registration Area Code">
 
-                        <com.square.pos.utils.SearchableSpinner
+                        <com.dmw.noble.utils.SearchableSpinner
                             android:id="@+id/edtRegNum"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
                         android:padding="5dp"
                         app:helperText="Fetching Manufacture...">
 
-                        <com.square.pos.utils.SearchableSpinner
+                        <com.dmw.noble.utils.SearchableSpinner
                             android:id="@+id/edtManu"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
                         android:padding="5dp"
                         app:helperText="Fetching Model...">
 
-                        <com.square.pos.utils.SearchableSpinner
+                        <com.dmw.noble.utils.SearchableSpinner
                             android:id="@+id/edtModel"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -126,7 +126,7 @@
                         android:paddingEnd="5dp"
                         app:helperText="Fuel Type">
 
-                        <com.square.pos.utils.SearchableSpinner
+                        <com.dmw.noble.utils.SearchableSpinner
                             android:id="@+id/spnFuelType"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -150,7 +150,7 @@
                         android:padding="5dp"
                         app:helperText="Fetching Variant...">
 
-                        <com.square.pos.utils.SearchableSpinner
+                        <com.dmw.noble.utils.SearchableSpinner
                             android:id="@+id/edtVariant"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -214,7 +214,7 @@
                                 android:padding="5dp"
                                 app:helperText="Fetching Previous Insurer...">
 
-                                <com.square.pos.utils.SearchableSpinner
+                                <com.dmw.noble.utils.SearchableSpinner
                                     android:id="@+id/edtPreInsurer"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"

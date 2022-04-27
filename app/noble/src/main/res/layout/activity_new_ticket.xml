@@ -63,7 +63,7 @@
                     android:layout_below="@+id/lblQuoteId"
                     android:background="@drawable/img_border">
 
-                    <com.square.pos.utils.SearchableSpinner
+                    <com.dmw.noble.utils.SearchableSpinner
                         android:id="@+id/spnSearchQuoteId"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

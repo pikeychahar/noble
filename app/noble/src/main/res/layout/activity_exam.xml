@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
-    tools:context="com.square.pos.training.ExamActivity">
+    tools:context="com.dmw.noble.training.ExamActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutParent"
@@ -157,7 +157,7 @@
                 android:padding="5dp"
                 android:text="Not Attempted" />
 
-            <com.square.pos.elements.ExpandableHeightGridView
+            <com.dmw.noble.elements.ExpandableHeightGridView
                 android:id="@+id/recyclerQuestions"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/main_bg"
-    tools:context="com.square.pos.activity.ui.home.HomeFragment">
+    tools:context="com.dmw.noble.activity.ui.home.HomeFragment">
 
     <ScrollView
         android:id="@+id/scroll_view"

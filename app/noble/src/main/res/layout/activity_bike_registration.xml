@@ -165,7 +165,7 @@
                         app:cardCornerRadius="5dp"
                         app:cardElevation="10dp">
 
-                        <com.square.pos.utils.SearchableSpinner
+                        <com.dmw.noble.utils.SearchableSpinner
                             android:id="@+id/spnMiscType"
                             android:layout_width="280dp"
                             android:layout_height="wrap_content"

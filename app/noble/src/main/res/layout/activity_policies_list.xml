@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/main_bg"
-    tools:context="com.square.pos.activity_pos.MyPoliciesActivity">
+    tools:context="com.dmw.noble.activity_pos.MyPoliciesActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv1"
@@ -130,7 +130,7 @@
                         android:background="@drawable/img_border"
                         android:padding="3dp">
 
-                        <com.square.pos.utils.MultiSelectionSpinner
+                        <com.dmw.noble.utils.MultiSelectionSpinner
                             android:id="@+id/spnSource"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -163,7 +163,7 @@
                         android:background="@drawable/img_border"
                         android:padding="3dp">
 
-                        <com.square.pos.utils.MultiSelectionSpinner
+                        <com.dmw.noble.utils.MultiSelectionSpinner
                             android:id="@+id/spnLob"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -207,7 +207,7 @@
                         android:background="@drawable/img_border"
                         android:padding="3dp">
 
-                        <com.square.pos.utils.MultiSelectionSpinner
+                        <com.dmw.noble.utils.MultiSelectionSpinner
                             android:id="@+id/spnBusinessType"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -239,7 +239,7 @@
                         android:background="@drawable/img_border"
                         android:padding="3dp">
 
-                        <com.square.pos.utils.MultiSelectionSpinner
+                        <com.dmw.noble.utils.MultiSelectionSpinner
                             android:id="@+id/spnProductType"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -284,7 +284,7 @@
                         android:background="@drawable/img_border"
                         android:padding="3dp">
 
-                        <com.square.pos.utils.MultiSelectionSpinner
+                        <com.dmw.noble.utils.MultiSelectionSpinner
                             android:id="@+id/spnPolicyType"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -316,7 +316,7 @@
                         android:background="@drawable/img_border"
                         android:padding="3dp">
 
-                        <com.square.pos.utils.MultiSelectionSpinner
+                        <com.dmw.noble.utils.MultiSelectionSpinner
                             android:id="@+id/spnInsurer"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

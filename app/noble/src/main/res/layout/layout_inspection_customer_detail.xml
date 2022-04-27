@@ -307,7 +307,7 @@
                     android:layout_marginBottom="2dp"
                     android:background="@drawable/img_border">
 
-                    <com.square.pos.utils.SearchableSpinner
+                    <com.dmw.noble.utils.SearchableSpinner
                         android:id="@+id/spnEmpName"
                         android:layout_width="match_parent"
                         android:layout_height="35dp"
@@ -374,7 +374,7 @@
                     android:layout_marginBottom="2dp"
                     android:background="@drawable/img_border">
 
-                    <com.square.pos.utils.SearchableSpinner
+                    <com.dmw.noble.utils.SearchableSpinner
                         android:id="@+id/spnPos"
                         android:layout_width="match_parent"
                         android:layout_height="35dp"

@@ -19,11 +19,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/textview_border"
-            android:drawableEnd="@drawable/ic_cloud_upload"
             android:hint="@string/upload_pan_card"
             android:onClick="onUploadDoc"
             android:padding="10dp"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:drawableEndCompat="@drawable/ic_cloud_upload" />
 
         <TextView
             android:id="@+id/ulAF"
@@ -31,11 +31,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/textview_border"
-            android:drawableEnd="@drawable/ic_cloud_upload"
             android:hint="@string/upload_aadhar_card_front"
             android:onClick="onUploadDoc"
             android:padding="10dp"
-            app:layout_constraintTop_toBottomOf="@+id/ulPAN" />
+            app:layout_constraintTop_toBottomOf="@+id/ulPAN"
+            app:drawableEndCompat="@drawable/ic_cloud_upload" />
 
         <TextView
             android:id="@+id/ulAB"
@@ -43,11 +43,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/textview_border"
-            android:drawableEnd="@drawable/ic_cloud_upload"
             android:hint="@string/upload_aadhar_card_back"
             android:onClick="onUploadDoc"
             android:padding="10dp"
-            app:layout_constraintTop_toBottomOf="@+id/ulAF" />
+            app:layout_constraintTop_toBottomOf="@+id/ulAF"
+            app:drawableEndCompat="@drawable/ic_cloud_upload" />
 
         <TextView
             android:id="@+id/ulQualification"
@@ -55,11 +55,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/textview_border"
-            android:drawableEnd="@drawable/ic_cloud_upload"
             android:hint="@string/upload_marksheet"
             android:onClick="onUploadDoc"
             android:padding="10dp"
-            app:layout_constraintTop_toBottomOf="@+id/ulAB" />
+            app:layout_constraintTop_toBottomOf="@+id/ulAB"
+            app:drawableEndCompat="@drawable/ic_cloud_upload" />
 
         <TextView
             android:id="@+id/ulCheck"
@@ -67,11 +67,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/textview_border"
-            android:drawableEnd="@drawable/ic_cloud_upload"
             android:hint="@string/upload_check"
             android:onClick="onUploadDoc"
             android:padding="10dp"
-            app:layout_constraintTop_toBottomOf="@+id/ulQualification" />
+            app:layout_constraintTop_toBottomOf="@+id/ulQualification"
+            app:drawableEndCompat="@drawable/ic_cloud_upload" />
 
         <TextView
             android:id="@+id/ulProfilePhoto"
@@ -79,11 +79,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/textview_border"
-            android:drawableEnd="@drawable/ic_cloud_upload"
             android:hint="@string/upload_profile_photo"
             android:onClick="onUploadDoc"
             android:padding="10dp"
-            app:layout_constraintTop_toBottomOf="@+id/ulCheck" />
+            app:layout_constraintTop_toBottomOf="@+id/ulCheck"
+            app:drawableEndCompat="@drawable/ic_cloud_upload" />
 
         <TextView
             android:id="@+id/ulSign"
@@ -91,11 +91,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/textview_border"
-            android:drawableEnd="@drawable/ic_cloud_upload"
             android:hint="@string/upload_signature"
             android:onClick="onUploadDoc"
             android:padding="10dp"
-            app:layout_constraintTop_toBottomOf="@+id/ulProfilePhoto" />
+            app:layout_constraintTop_toBottomOf="@+id/ulProfilePhoto"
+            app:drawableEndCompat="@drawable/ic_cloud_upload" />
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/checkbox"

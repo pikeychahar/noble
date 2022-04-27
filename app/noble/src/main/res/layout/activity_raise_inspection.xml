@@ -60,7 +60,7 @@
                     android:layout_margin="2dp"
                     android:background="@drawable/img_border">
 
-                    <com.square.pos.utils.SearchableSpinner
+                    <com.dmw.noble.utils.SearchableSpinner
                         android:id="@+id/spnProduct"
                         android:layout_width="match_parent"
                         android:layout_height="35dp"
@@ -115,7 +115,7 @@
                         android:layout_weight="1"
                         android:background="@drawable/img_border">
 
-                        <com.square.pos.utils.SearchableSpinner
+                        <com.dmw.noble.utils.SearchableSpinner
                             android:id="@+id/spnMake"
                             android:layout_width="match_parent"
                             android:layout_height="35dp"
@@ -130,7 +130,7 @@
                         android:layout_weight="1"
                         android:background="@drawable/img_border">
 
-                        <com.square.pos.utils.SearchableSpinner
+                        <com.dmw.noble.utils.SearchableSpinner
                             android:id="@+id/spnModel"
                             android:layout_width="match_parent"
                             android:layout_height="35dp"
@@ -188,7 +188,7 @@
                         android:visibility="gone"
                         android:background="@drawable/img_border">
 
-                        <com.square.pos.utils.SearchableSpinner
+                        <com.dmw.noble.utils.SearchableSpinner
                             android:id="@+id/spnFuel"
                             android:layout_width="match_parent"
                             android:layout_height="35dp"
@@ -203,7 +203,7 @@
                         android:layout_weight="1.5"
                         android:background="@drawable/img_border">
 
-                        <com.square.pos.utils.SearchableSpinner
+                        <com.dmw.noble.utils.SearchableSpinner
                             android:id="@+id/spnVariant"
                             android:layout_width="match_parent"
                             android:layout_height="35dp"
@@ -237,7 +237,7 @@
                         android:layout_marginBottom="2dp"
                         android:background="@drawable/img_border">
 
-                        <com.square.pos.utils.SearchableSpinner
+                        <com.dmw.noble.utils.SearchableSpinner
                             android:id="@+id/spnInsurer"
                             android:layout_width="match_parent"
                             android:layout_height="35dp"

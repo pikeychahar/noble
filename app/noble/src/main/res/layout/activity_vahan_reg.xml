@@ -156,7 +156,7 @@
                                 android:padding="5dp"
                                 app:helperText="Previous Insurer">
 
-                                <com.square.pos.utils.SearchableSpinner
+                                <com.dmw.noble.utils.SearchableSpinner
                                     android:id="@+id/spnInsurer"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"

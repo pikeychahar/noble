@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.square.pos.activity_docs.DocViewActivity">
+    tools:context="com.dmw.noble.activity_docs.DocViewActivity">
 
     <ScrollView
         android:layout_width="match_parent"

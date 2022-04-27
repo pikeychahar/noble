@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/main_bg"
-    tools:context="com.square.pos.activity_docs.DocWalletActivity">
+    tools:context="com.dmw.noble.activity_docs.DocWalletActivity">
 
     <ScrollView
         android:layout_width="match_parent"
