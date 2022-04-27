@@ -3,7 +3,6 @@ package com.dmw.noble.activity_motor;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
@@ -19,7 +18,6 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-import com.google.android.gms.auth.api.phone.SmsRetriever;
 import com.dmw.noble.R;
 import com.dmw.noble.activity.AbstractActivity;
 import com.dmw.noble.activity.PrivacyActivity;
@@ -29,7 +27,6 @@ import com.dmw.noble.manager.UserManager;
 import com.dmw.noble.model.SendOtp;
 import com.dmw.noble.model.VehicleQuote;
 import com.dmw.noble.utils.AppUtils;
-import com.dmw.noble.utils.SmsBroadcastReceiver;
 
 import java.util.Objects;
 import java.util.regex.Matcher;
@@ -50,7 +47,7 @@ public class BasicDetailActivity extends AbstractActivity implements
     Button btnOtp;
 
     private static final int REQ_USER_CONSENT = 200;
-    SmsBroadcastReceiver smsBroadcastReceiver;
+//    SmsBroadcastReceiver smsBroadcastReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -306,12 +303,12 @@ public class BasicDetailActivity extends AbstractActivity implements
             if ((resultCode == RESULT_OK) && (data != null)) {
                 //That gives all message to us.
                 // We need to get the code from inside with regex
-                String message = data.getStringExtra(SmsRetriever.EXTRA_SMS_MESSAGE);
-                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
-                edtOtp.setText(
-                        String.format("%s - %s", getString(R.string.received_message), message));
-
-                getOtpFromMessage(message);
+//                String message = data.getStringExtra(SmsRetriever.EXTRA_SMS_MESSAGE);
+//                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+//                edtOtp.setText(
+//                        String.format("%s - %s", getString(R.string.received_message), message));
+//
+//                getOtpFromMessage(message);
             }
         }
     }
@@ -326,21 +323,21 @@ public class BasicDetailActivity extends AbstractActivity implements
     }
 
     private void registerBroadcastReceiver() {
-        smsBroadcastReceiver = new SmsBroadcastReceiver();
-        smsBroadcastReceiver.smsBroadcastReceiverListener =
-                new SmsBroadcastReceiver.SmsBroadcastReceiverListener() {
-                    @Override
-                    public void onSuccess(Intent intent) {
-                        startActivityForResult(intent, REQ_USER_CONSENT);
-                    }
-
-                    @Override
-                    public void onFailure() {
-
-                    }
-                };
-        IntentFilter intentFilter = new IntentFilter(SmsRetriever.SMS_RETRIEVED_ACTION);
-        registerReceiver(smsBroadcastReceiver, intentFilter);
+//        smsBroadcastReceiver = new SmsBroadcastReceiver();
+//        smsBroadcastReceiver.smsBroadcastReceiverListener =
+//                new SmsBroadcastReceiver.SmsBroadcastReceiverListener() {
+//                    @Override
+//                    public void onSuccess(Intent intent) {
+//                        startActivityForResult(intent, REQ_USER_CONSENT);
+//                    }
+//
+//                    @Override
+//                    public void onFailure() {
+//
+//                    }
+//                };
+//        IntentFilter intentFilter = new IntentFilter(SmsRetriever.SMS_RETRIEVED_ACTION);
+//        registerReceiver(smsBroadcastReceiver, intentFilter);
     }
 
     @Override
@@ -352,6 +349,6 @@ public class BasicDetailActivity extends AbstractActivity implements
     @Override
     protected void onStop() {
         super.onStop();
-        unregisterReceiver(smsBroadcastReceiver);
+//        unregisterReceiver(smsBroadcastReceiver);
     }
 }
