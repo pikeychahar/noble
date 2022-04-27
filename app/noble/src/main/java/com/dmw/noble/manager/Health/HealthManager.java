@@ -37,7 +37,6 @@ import com.dmw.noble.model_health.v2.Salutation;
 import com.dmw.noble.network.ApiClient;
 import com.dmw.noble.network.ApiInterface;
 import com.dmw.noble.utils.AppUtils;
-import com.google.firebase.BuildConfig;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -165,7 +164,8 @@ public class HealthManager {
         ApiClient restClient = new ApiClient(cxt);
         restClient.setCommunication();
         ApiInterface apiService = restClient.getApiService();
-        String version = "android pos - " + BuildConfig.VERSION_CODE;
+        String version = "android pos - " ;
+//                + BuildConfig.VERSION_CODE;
 
         try {
             Call<HealthQuote> call = apiService.getHealthQuoteId(AppUtils.TOKEN, version, userId,

@@ -38,7 +38,6 @@ import com.dmw.noble.model_pos.AgentDetail;
 import com.dmw.noble.network.ApiClient;
 import com.dmw.noble.network.ApiInterface;
 import com.dmw.noble.utils.AppUtils;
-import com.google.firebase.BuildConfig;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -86,7 +85,7 @@ public class OtherFragment extends Fragment {
         txtRmName = root.findViewById(R.id.tvRmName);
         txtRmContact = root.findViewById(R.id.tvRmContact);
 
-        lblVersion.setText("App Version " + BuildConfig.VERSION_CODE);
+//        lblVersion.setText("App Version " + BuildConfig.VERSION_CODE);
         String userType = preferences.getString(AppUtils.USER_TYPE, "");
 
         if (TextUtils.isEmpty(userType)) {
@@ -168,8 +167,7 @@ public class OtherFragment extends Fragment {
                 shareIntent.setType("text/plain");
                 shareIntent.putExtra(Intent.EXTRA_SUBJECT, "My application name");
                 String msg = AppUtils.SHARE_MESSAGE
-                        + "https://play.google.com/store/apps/details?id="
-                        + BuildConfig.VERSION_CODE;
+                        + "https://play.google.com/store/apps/details?id=";
 
                 shareIntent.putExtra(Intent.EXTRA_TEXT, msg);
                 startActivity(Intent.createChooser(shareIntent, "choose one"));

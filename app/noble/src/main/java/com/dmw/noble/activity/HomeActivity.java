@@ -58,7 +58,6 @@ import com.dmw.noble.model.blog.BlogList;
 import com.dmw.noble.model_pos.AgentDetail;
 import com.dmw.noble.training.TrainingActivity;
 import com.dmw.noble.utils.AppUtils;
-import com.google.firebase.BuildConfig;
 
 import org.jsoup.Jsoup;
 
@@ -103,7 +102,7 @@ public class HomeActivity extends AbstractActivity
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
 
         mBundle = new Bundle();
-        int versionCode = BuildConfig.VERSION_CODE;
+//        int versionCode = BuildConfig.VERSION_CODE;
         try {
             currentVersion = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
         } catch (PackageManager.NameNotFoundException e) {
@@ -351,8 +350,8 @@ public class HomeActivity extends AbstractActivity
                 shareIntent.setType("text/plain");
                 shareIntent.putExtra(Intent.EXTRA_SUBJECT, "My application name");
                 AppUtils.SHARE_MESSAGE = AppUtils.SHARE_MESSAGE
-                        + "https://play.google.com/store/apps/details?id="
-                        + BuildConfig.APPLICATION_ID;
+                        + "https://play.google.com/store/apps/details?id=";
+//                        + BuildConfig.APPLICATION_ID;
                 shareIntent.putExtra(Intent.EXTRA_TEXT, AppUtils.SHARE_MESSAGE);
                 startActivity(Intent.createChooser(shareIntent, "choose one"));
             } catch (Exception e) {

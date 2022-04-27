@@ -48,7 +48,6 @@ import com.dmw.noble.model_life.SumList;
 import com.dmw.noble.network.ApiClient;
 import com.dmw.noble.network.ApiInterface;
 import com.dmw.noble.utils.AppUtils;
-import com.google.firebase.BuildConfig;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -145,7 +144,8 @@ public class ApiManager {
         restClient.setCommunication();
         ApiInterface apiService = restClient.getApiService();
 
-        String version = "android pos - " + BuildConfig.VERSION_CODE;
+        String version = "android pos - " ;
+//                BuildConfig.VERSION_CODE;
 
         try {
             Call<VehicleQuote> call = apiService.initQuoteId(ipAddress, email, AppUtils.TOKEN, version, mobile, policyExpiry,

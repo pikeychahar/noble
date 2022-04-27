@@ -14,7 +14,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.text.TextUtils;
-import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -28,6 +27,14 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.dmw.noble.R;
+import com.dmw.noble.interfaces.onRequestCompleteCallBackListener;
+import com.dmw.noble.manager.ApiManager;
+import com.dmw.noble.manager.CrmManager;
+import com.dmw.noble.manager.UserManager;
+import com.dmw.noble.model.Login;
+import com.dmw.noble.model_pos.AgentDetail;
+import com.dmw.noble.utils.AppUtils;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.play.core.appupdate.AppUpdateInfo;
 import com.google.android.play.core.appupdate.AppUpdateManager;
@@ -38,15 +45,6 @@ import com.google.android.play.core.install.model.InstallStatus;
 import com.google.android.play.core.install.model.UpdateAvailability;
 import com.google.android.play.core.tasks.OnSuccessListener;
 import com.google.android.play.core.tasks.Task;
-import com.google.firebase.messaging.FirebaseMessaging;
-import com.dmw.noble.R;
-import com.dmw.noble.interfaces.onRequestCompleteCallBackListener;
-import com.dmw.noble.manager.ApiManager;
-import com.dmw.noble.manager.CrmManager;
-import com.dmw.noble.manager.UserManager;
-import com.dmw.noble.model.Login;
-import com.dmw.noble.model_pos.AgentDetail;
-import com.dmw.noble.utils.AppUtils;
 
 import org.jetbrains.annotations.NotNull;
 import org.jsoup.Jsoup;
@@ -111,24 +109,24 @@ public class DashboardActivity extends AbstractActivity implements
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        FirebaseMessaging.getInstance().getToken()
-                .addOnCompleteListener(task -> {
-                    if (!task.isSuccessful()) {
-                        Log.w("TAG", "Fetching FCM registration token failed",
-                                task.getException());
-                        return;
-                    }
-
-                    // Get new FCM registration token
-                    String token = task.getResult();
-
-                    // Log and toast
-                    String msg = "TOKEN@@@" + token;
-                    Log.d("TAG", msg);
-                    ApiManager.getInstance().storeGcmId(mContext, userId, userType, token);
-                });
-
+//
+//        FirebaseMessaging.getInstance().getToken()
+//                .addOnCompleteListener(task -> {
+//                    if (!task.isSuccessful()) {
+//                        Log.w("TAG", "Fetching FCM registration token failed",
+//                                task.getException());
+//                        return;
+//                    }
+//
+//                    // Get new FCM registration token
+//                    String token = task.getResult();
+//
+//                    // Log and toast
+//                    String msg = "TOKEN@@@" + token;
+//                    Log.d("TAG", msg);
+//                    ApiManager.getInstance().storeGcmId(mContext, userId, userType, token);
+//                });
+//
 
         mBundle = new Bundle();
         try {
